@@ -1,0 +1,42 @@
+{
+  "name": "qingshanasd",
+  "version": "0.2.0",
+  "description": "qingshan",
+  "author": "ittuann <ittuann@outlook.com>",
+  "license": "AGPL-3.0",
+  "homepage": "https://github.com/ittuann/qingshanasd",
+  "repository": {
+    "url": "https://github.com/ittuann/qingshanasd",
+    "type": "git"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write '**/*.{js,mjs,ts,css,scss,json,mjs,jsx,md}'",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "echarts": "^5.6.0",
+    "next": "15.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remixicon": "^4.6.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
+  }
+}
