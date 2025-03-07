@@ -38,7 +38,7 @@ class MapInfoNav extends Component {
             title={isSticky ? "取消固定" : "固定导航"}
           >
             <i
-              class={`ri-pushpin-fill w-5 h-5 ${isSticky ? "text-green-500" : "text-gray-400"}`}
+              className={`ri-pushpin-fill w-5 h-5 ${isSticky ? "text-green-500" : "text-gray-400"}`}
             ></i>
           </button>
         </div>

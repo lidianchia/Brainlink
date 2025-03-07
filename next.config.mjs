@@ -3,6 +3,7 @@
  */
 const nextConfig = {
   reactStrictMode: true,
+  distDir: 'dist',
   output: "export",
   trailingSlash: true,
 

@@ -52,7 +52,7 @@ class MapChart extends Component {
         formatter: function (params) {
           const data = hospitalData.find((item) => item.name === params.name);
           if (data) {
-            return `${params.name}：<br>${data.hospitals}家医院<br>${data.doctors}位医生可诊`;
+            return `${params.name}：<br>${data.hospitals}家医院<br>${data.doctors}位医生可诊<br>点击查看详细信息`;
           }
           return params.name + ": 暂无数据";
         },
