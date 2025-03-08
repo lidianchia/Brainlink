@@ -10,7 +10,7 @@ const scales = [
     title: "成人 ADHD 自填量表 (ASRS)",
     description: "ADHD多动症成人测试量表，用于测试成年人的多动症情况。",
     tags: ["多动症", "量表", "在线测试", "ADHD", "成人测试"],
-    link: "/scales/adhd",
+    link: "/quotients/adhd",
   },
   {
     icon: "ri-empathize-line",
@@ -19,7 +19,7 @@ const scales = [
     title: "孤独商儿童测试量表",
     description: "孤独商儿童测试量表，用于测试儿童的孤独症商数",
     tags: ["孤独症", "量表", "在线测试", "AQ", "儿童测试"],
-    link: "/scales/adhd",
+    link: "/quotients/adhd",
   },
   {
     icon: "ri-heart-pulse-line",
@@ -28,7 +28,7 @@ const scales = [
     title: "边缘人格障碍表现量表(BSL-23)",
     description: "边缘人格障碍表现量表 BSL-23",
     tags: ["量表", "在线测试", "BSL-23"],
-    link: "/scales/adhd",
+    link: "/quotients/adhd",
   },
   {
     icon: "ri-user-heart-line",
@@ -37,7 +37,7 @@ const scales = [
     title: "孤独商成人测试量表",
     description: "孤独商成人测试量表，用于测试成年人的孤独商数",
     tags: ["孤独症", "量表", "在线测试", "AQ", "成人测试"],
-    link: "/scales/adhd",
+    link: "/quotients/adhd",
   },
   {
     icon: "ri-mental-health-line",
@@ -46,7 +46,7 @@ const scales = [
     title: "Aspie-Quiz 测试量表",
     description: "本测试的目的是检验成人的神经多样性神经典型性特点",
     tags: ["孤独症", "量表", "在线测试", "AQ", "成人测试"],
-    link: "/scales/adhd",
+    link: "/quotients/adhd",
   },
   {
     icon: "ri-hearts-line",
@@ -55,7 +55,7 @@ const scales = [
     title: "G2达情障碍测试量表",
     description: '达情障碍又译作"情感表达不能"或"情感迟钝症"',
     tags: ["述情障碍", "量表", "在线测试", "OAQ"],
-    link: "/scales/adhd",
+    link: "/quotients/adhd",
   },
 ];
 

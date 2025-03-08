@@ -8,7 +8,13 @@ class ADHD extends Component {
   state = {
     answers: {},
     showModal: false,
-    score: 0,
+    scoreA: 0,
+    scoreB: 0,
+    result: "",
+  };
+
+  closeModal = () => {
+    this.setState({ showModal: false });
   };
 
   handleRadioChange = (questionId, value) => {
@@ -21,32 +27,89 @@ class ADHD extends Component {
   };
 
   handleSubmit = (e) => {
+    // 检查提交前是否所有问题都已经回答
     e.preventDefault();
-
     const answeredQuestions = Object.keys(this.state.answers).length;
     const requiredQuestions = questionData.questionADHD.filter(
-      (q) => q.id !== 0,
+      (q) => q.id !== 0
     ).length;
-
     if (answeredQuestions < requiredQuestions) {
       alert("请完成量表所有问题的作答");
       return;
     }
 
-    const totalScore = Object.values(this.state.answers).reduce(
-      (sum, val) => sum + val,
-      0,
-    );
+    // 计算A部分（1-9题）和B部分（10-18题）的得分
+    let scoreA = 0, scoreB = 0;
+    Object.entries(this.state.answers).forEach(([questionId, value]) => {
+      const id = parseInt(questionId);
+      if (id >= 1 && id <= 9) {
+        scoreA += value;
+      } else if (id >= 10 && id <= 18) {
+        scoreB += value;
+      }
+    });
+
+    const result = this.CalResultADHD(scoreA, scoreB);
 
     this.setState({
-      score: totalScore,
+      scoreA,
+      scoreB,
+      result,
       showModal: true,
     });
   };
 
-  closeModal = () => {
-    this.setState({ showModal: false });
+  CalResultADHD(ResultA, ResultB) {
+    const ADHD = {
+      "A": {
+          "A": "您不太可能有ADHD"
+      },
+      "B": {
+          "A": "您很有可能有ADHD-I（注意力缺失为主）",
+          "B": "您非常有可能有ADHD-I（注意力缺失为主）"
+      },
+      "C": {
+          "A": "您很有可能有ADHD-H（多动/冲动障碍为主）",
+          "B": "您非常有可能有ADHD-H（多动/冲动障碍为主）"
+      },
+      "D": {
+          "A": "您很有可能有ADHD-C（注意力缺失与多动/冲动障碍混合）",
+          "B": "您非常有可能有ADHD-C（注意力缺失与多动/冲动障碍混合）"
+      },
+      "E": {
+          "A": "您很有可能有ADHD-C（注意力缺失与多动/冲动障碍混合，其中多动/冲动障碍比较严重）",
+          "B": "您很有可能有ADHD-C（注意力缺失与多动/冲动障碍混合，其中注意力缺失比较严重）"
+      },
   };
+
+    let type, subType;
+    if (ResultA <= 16) {
+      if (ResultB <= 16) {
+        type = "A", subType = "A";
+      } else if (ResultB <= 23) {
+        type = "C", subType = "A";
+      } else {
+        type = "C", subType = "B";
+      }
+    } else if (ResultA <= 23) {
+      if (ResultB <= 16) {
+        type = "B", subType = "A";
+      } else if (ResultB <= 23) {
+        type = "D", subType = "A";
+      } else {
+        type = "E", subType = "A";
+      }
+    } else {
+      if (ResultB <= 16) {
+        type = "B", subType = "B";
+      } else if (ResultB <= 23) {
+        type = "E", subType = "B";
+      } else {
+        type = "D", subType = "B";
+      }
+    }
+    return ADHD[type][subType];
+  }
 
   render() {
     return (
@@ -56,6 +119,7 @@ class ADHD extends Component {
       >
         <main className="max-w-3xl mx-auto px-4 py-8">
           <div className="bg-white rounded-lg shadow-sm p-8">
+            {/* 信息 */}
             <div className="text-center mb-8">
               <h1 className="text-2xl font-semibold text-gray-900">
                 成人 ADHD 自填量表 (ASRS)
@@ -67,10 +131,11 @@ class ADHD extends Component {
             </div>
 
             <form className="space-y-8" onSubmit={this.handleSubmit}>
+              {/* 量表问题 */}
               <div className="space-y-6">
                 {questionData.questionADHD.map((question) => (
                   <QuestionItem
-                    key={question.id}
+                    key={`adhd_${question.id}`}
                     question={question}
                     degree={["经常这样", "从来没有"]}
                     onAnswerChange={this.handleRadioChange}
@@ -88,7 +153,9 @@ class ADHD extends Component {
           </div>
 
           <QuestionResult
-            score={this.state.score}
+            scoreA={this.state.scoreA}
+            scoreB={this.state.scoreB}
+            result={this.state.result}
             showModal={this.state.showModal}
             onClose={this.closeModal}
           />

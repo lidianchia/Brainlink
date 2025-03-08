@@ -3,18 +3,12 @@ import "remixicon/fonts/remixicon.css";
 
 class QuestionResult extends Component {
   getResultText() {
-    const { score } = this.props;
-    if (score >= 12) {
-      return "您的得分较高，建议进一步咨询专业医生获取专业建议。";
-    } else if (score >= 8) {
-      return "您的得分中等，如有困扰建议咨询专业医生。";
-    } else {
-      return "您的得分较低，暂时无需过分担心。";
-    }
+    const { result } = this.props;
+    return result || "error";
   }
 
   render() {
-    const { score, showModal, onClose } = this.props;
+    const { scoreA, scoreB, showModal, onClose } = this.props;
 
     if (!showModal) return null;
 
@@ -32,6 +26,7 @@ class QuestionResult extends Component {
             </button>
           </div>
 
+          {/* 量表分数 */}
           <div className="space-y-6">
             <div className="flex justify-between items-center p-4 rounded-lg bg-gradient-to-r from-green-600/10 to-indigo-600/10">
               <div>
@@ -39,7 +34,7 @@ class QuestionResult extends Component {
                 <p className="text-lg font-semibold mt-1">注意力障碍</p>
               </div>
               <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-indigo-600 bg-clip-text text-transparent">
-                {score}
+                {scoreA}
               </div>
             </div>
 
@@ -49,10 +44,11 @@ class QuestionResult extends Component {
                 <p className="text-lg font-semibold mt-1">多动/冲动障碍</p>
               </div>
               <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-indigo-600 bg-clip-text text-transparent">
-                {score}
+                {scoreB}
               </div>
             </div>
 
+            {/* 量表结论 */}
             <div className="border-t border-gray-200 pt-4">
               <div className="flex items-center mb-3">
                 <i className="ri-mental-health-line text-green-500 text-xl mr-2"></i>
@@ -63,6 +59,7 @@ class QuestionResult extends Component {
               </p>
             </div>
 
+            {/* 注意事项 */}
             <div className="bg-yellow-50 p-4 rounded-lg">
               <div className="flex items-center mb-2">
                 <i className="ri-information-line text-yellow-500 mr-2"></i>
