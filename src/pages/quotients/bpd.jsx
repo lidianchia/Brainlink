@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import Layout from "@/components/Layout";
 import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
-import questionData from "@/data/questionADHD.json";
+import questionData from "@/data/questionBPD.json";
 import BackToTop from "@/components/BackToTop";
+import QuestionIntervention from "@/components/QuestionIntervention";
 
-class ADHD extends Component {
+class BPD extends Component {
   state = {
     answers: {},
     showModal: false,
-    scoreA: 0,
-    scoreB: 0,
+    score: 0,
     result: "",
   };
 
@@ -39,93 +39,51 @@ class ADHD extends Component {
       return;
     }
 
-    const { scoreA, scoreB } = this.calculateScores();
-    const result = this.calculateResult(scoreA, scoreB);
+    const score = this.calculateScores();
+    const result = this.calculateResult(score);
 
     this.setState({
-      scoreA,
-      scoreB,
+      score,
       result,
       showModal: true,
     });
   };
 
   getQuestionDetail() {
-    return questionData.questionADHD;
+    return questionData.questionBPD;
   }
 
   calculateScores() {
-    // 计算A部分（1-9题）和B部分（10-18题）的得分
-    let scoreA = 0,
-      scoreB = 0;
+    let score = 0;
     Object.entries(this.state.answers).forEach(([questionId, value]) => {
-      const id = parseInt(questionId);
-      if (id >= 1 && id <= 9) {
-        scoreA += value;
-      } else if (id >= 10 && id <= 18) {
-        scoreB += value;
-      }
+      score += value;
     });
-
-    return { scoreA, scoreB };
+    score = Number((score / 23.0).toFixed(2));
+    return score;
   }
 
-  calculateResult(scoreA, scoreB) {
-    const resultADHD = {
-      A: {
-        A: "您不太可能有ADHD",
-      },
-      B: {
-        A: "您很有可能有ADHD-I（注意力缺失为主）",
-        B: "您非常有可能有ADHD-I（注意力缺失为主）",
-      },
-      C: {
-        A: "您很有可能有ADHD-H（多动/冲动障碍为主）",
-        B: "您非常有可能有ADHD-H（多动/冲动障碍为主）",
-      },
-      D: {
-        A: "您很有可能有ADHD-C（注意力缺失与多动/冲动障碍混合）",
-        B: "您非常有可能有ADHD-C（注意力缺失与多动/冲动障碍混合）",
-      },
-      E: {
-        A: "您很有可能有ADHD-C（注意力缺失与多动/冲动障碍混合，其中多动/冲动障碍比较严重）",
-        B: "您很有可能有ADHD-C（注意力缺失与多动/冲动障碍混合，其中注意力缺失比较严重）",
-      },
-    };
-
-    let type, subType;
-    if (scoreA <= 16) {
-      if (scoreB <= 16) {
-        (type = "A"), (subType = "A");
-      } else if (scoreB <= 23) {
-        (type = "C"), (subType = "A");
-      } else {
-        (type = "C"), (subType = "B");
-      }
-    } else if (scoreA <= 23) {
-      if (scoreB <= 16) {
-        (type = "B"), (subType = "A");
-      } else if (scoreB <= 23) {
-        (type = "D"), (subType = "A");
-      } else {
-        (type = "E"), (subType = "A");
-      }
+  calculateResult(score) {
+    if (score < 0.3) {
+      return "None/Low 您不太可能有BPD";
+    } else if (score < 1.1) {
+      return "Mild 您不太可能有BPD";
+    } else if (score < 1.5) {
+      return "Moderate 您不太可能有BPD";
+    } else if (score < 1.9) {
+      return "Moderate";
+    } else if (score < 2.7) {
+      return "High";
+    } else if (score < 3.5) {
+      return "Very High";
     } else {
-      if (scoreB <= 16) {
-        (type = "B"), (subType = "B");
-      } else if (scoreB <= 23) {
-        (type = "E"), (subType = "B");
-      } else {
-        (type = "D"), (subType = "B");
-      }
+      return "Extremely High";
     }
-    return resultADHD[type][subType];
   }
 
   render() {
     return (
       <Layout
-        title="成人 ADHD 自填量表 (ASRS) | 青衫 Neuro"
+        title="边缘人格障碍表现量表 BSL-23 | 青衫 Neuro"
         description="ADHD多动症成人测试量表，用于测试成年人的多动症情况。"
       >
         <main className="max-w-3xl mx-auto px-4 py-8">
@@ -133,7 +91,7 @@ class ADHD extends Component {
             {/* 信息 */}
             <div className="text-center mb-8">
               <h1 className="text-2xl font-semibold text-gray-900">
-                成人 ADHD 自填量表 (ASRS)
+                边缘人格障碍表现量表 BSL-23
               </h1>
               <p className="text-gray-500 mt-2">焦虑抑郁等都可能造成分值偏高</p>
               <p className="text-sm text-gray-500 mt-2">
@@ -142,12 +100,12 @@ class ADHD extends Component {
               <p className="text-sm text-gray-400 mt-1">
                 本量表参考文献：
                 <a
-                  href="https://www.hcp.med.harvard.edu/ncs/ftpdir/adhd/adhd/18Q_Chinese%20(Traditional)_final.pdf"
+                  href="https://www.zi-mannheim.de/fileadmin/user_upload/downloads/forschung/PSM_downloads/BSL-23_taiwanesisch.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gray-600 underline"
                 >
-                  18Q-Chinese-Traditional.pdf
+                  BSL-23.pdf
                 </a>
               </p>
             </div>
@@ -159,7 +117,7 @@ class ADHD extends Component {
                   <QuestionItem
                     key={`quotients_${question.id}`}
                     question={question}
-                    degree={["经常这样", "从来没有"]}
+                    degree={["频繁", "没有"]}
                     onAnswerChange={this.handleRadioChange}
                   />
                 ))}
@@ -177,20 +135,17 @@ class ADHD extends Component {
           <QuestionResult
             scores={[
               {
-                title: "A部分",
-                subtitle: "注意力障碍",
-                score: this.state.scoreA,
-              },
-              {
-                title: "B部分",
-                subtitle: "多动/冲动障碍",
-                score: this.state.scoreB,
+                title: "分数（总分4.0）",
+                subtitle: "得分",
+                score: this.state.score,
               },
             ]}
             result={this.state.result}
             showModal={this.state.showModal}
             onClose={this.closeModal}
           />
+
+          <QuestionIntervention />
 
           <BackToTop isShowButton={true} isShowProgress={true} />
         </main>
@@ -199,4 +154,4 @@ class ADHD extends Component {
   }
 }
 
-export default ADHD;
+export default BPD;
