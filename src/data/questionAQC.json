@@ -1,0 +1,14 @@
+{
+  "questionAQC": [
+    {
+      "id": 1,
+      "text": "测试中",
+      "scoresAagree": [3, 2, 1, 0]
+    },
+    {
+      "id": 2,
+      "text": "测试中",
+      "scoresAagree": [0, 1, 2, 3]
+    }
+  ]
+}

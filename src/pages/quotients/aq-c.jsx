@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import Layout from "@/components/Layout";
 import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
-import questionData from "@/data/questionBPD.json";
+import questionData from "@/data/questionAQC.json";
 import BackToTop from "@/components/BackToTop";
-import QuestionIntervention from "@/components/QuestionIntervention";
 
-class BPD extends Component {
+class AQC extends Component {
   state = {
     answers: {},
     showModal: false,
@@ -50,7 +49,7 @@ class BPD extends Component {
   };
 
   getQuestionDetail() {
-    return questionData.questionBPD;
+    return questionData.questionAQC;
   }
 
   calculateScores() {
@@ -58,42 +57,34 @@ class BPD extends Component {
     Object.entries(this.state.answers).forEach(([questionId, value]) => {
       score += value;
     });
-    score = Number((score / 23.0).toFixed(2));
     return score;
   }
 
   calculateResult(score) {
-    if (score < 0.3) {
-      return "None/Low 您不太可能有BPD";
-    } else if (score < 1.1) {
-      return "Mild 您不太可能有BPD";
-    } else if (score < 1.5) {
-      return "Moderate 您不太可能有BPD";
-    } else if (score < 1.9) {
-      return "Moderate";
-    } else if (score < 2.7) {
-      return "High";
-    } else if (score < 3.5) {
-      return "Very High";
+    if (score < 76) {
+      return "基本可排除孤独症倾向";
     } else {
-      return "Extremely High";
+      return "孩子可能有高功能孤独症倾向";
     }
   }
 
   render() {
     return (
       <Layout
-        title="边缘人格障碍表现量表 BSL-23 | 青衫 Neuro"
-        description="边缘人格障碍表现量表 BSL-23"
+        title="孤独商儿童测试量表 | 青衫 Neuro"
+        description="孤独商儿童测试量表，用于测试儿童的孤独症商数"
       >
         <main className="max-w-3xl mx-auto px-4 py-8">
           <div className="bg-white rounded-lg shadow-sm p-8">
             {/* 信息 */}
             <div className="text-center mb-8">
               <h1 className="text-2xl font-semibold text-gray-900">
-                边缘人格障碍表现量表 BSL-23
+                儿童ASD筛查量表
               </h1>
-              <p className="text-gray-500 mt-2">焦虑抑郁等都可能造成分值偏高</p>
+              <p className="text-gray-500 mt-2">
+                孩子处于焦虑，抑郁，社恐等都可能造成分值偏高
+              </p>
+              <p className="text-gray-500 mt-2">请父母代替儿童完成</p>
               <p className="text-sm text-gray-500 mt-2">
                 *本量表仅供参考，不能作为诊断依据。
               </p>
@@ -102,27 +93,18 @@ class BPD extends Component {
                 <ul className="list-disc pl-4 space-y-1">
                   <li>
                     <a
-                      href="https://www.zi-mannheim.de/fileadmin/user_upload/downloads/forschung/PSM_downloads/BSL-23_taiwanesisch.pdf"
+                      href="https://www.ncbi.nlm.nih.gov/pubmed/18064550?ordinalpos=2&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-gray-600"
                     >
-                      BSL-23.pdf
+                      Auyeung B, Baron-Cohen S, Wheelwright S, Allison C. (2007)
                     </a>
                   </li>
                   <li>
-                    Yang, H., Lei, X., Zhong, M., Zhou, Q., Ling, Y., Jungkunz,
-                    M., & Yi, J. (2018). Psychometric properties of the Chinese
-                    version of the brief borderline symptom list in
-                    undergraduate students and clinical patients. Frontiers in
-                    psychology, 9, 605.
+                    The Autism Spectrum Quotient: Children's Version (AQ-Child).
                   </li>
-                  <li>
-                    Bohus, M., Limberger, M. F., Frank, U., Chapman, A. L.,
-                    Kühler, T., & Stieglitz, R. D. (2007). sychometric
-                    properties of the borderline symptom list (BSL).
-                    Psychopathology, 40(2), 126-132.
-                  </li>
+                  <li>Journal of Autism and Developmental Disorders Dec 7</li>
                 </ul>
               </div>
             </div>
@@ -134,7 +116,7 @@ class BPD extends Component {
                   <QuestionItem
                     key={`quotients_${question.id}`}
                     question={question}
-                    degree={["频繁", "没有"]}
+                    degree={["赞同", "反对"]}
                     onAnswerChange={this.handleRadioChange}
                   />
                 ))}
@@ -152,7 +134,32 @@ class BPD extends Component {
           <QuestionResult
             scores={[
               {
-                title: "分数（总分4.0）",
+                title: "测试分数",
+                subtitle: "得分",
+                score: this.state.score,
+              },
+              {
+                title: "社交技巧",
+                subtitle: "得分",
+                score: this.state.score,
+              },
+              {
+                title: "交流",
+                subtitle: "得分",
+                score: this.state.score,
+              },
+              {
+                title: "注意力切换",
+                subtitle: "得分",
+                score: this.state.score,
+              },
+              {
+                title: "细节注意力",
+                subtitle: "得分",
+                score: this.state.score,
+              },
+              {
+                title: "交流",
                 subtitle: "得分",
                 score: this.state.score,
               },
@@ -162,8 +169,6 @@ class BPD extends Component {
             onClose={this.closeModal}
           />
 
-          <QuestionIntervention />
-
           <BackToTop isShowButton={true} isShowProgress={true} />
         </main>
       </Layout>
@@ -171,4 +176,4 @@ class BPD extends Component {
   }
 }
 
-export default BPD;
+export default AQC;

@@ -19,7 +19,7 @@ const scales = [
     title: "孤独商儿童测试量表",
     description: "孤独商儿童测试量表，用于测试儿童的孤独症商数",
     tags: ["孤独症", "量表", "在线测试", "AQ", "儿童测试"],
-    link: "/quotients/adhd",
+    link: "/quotients/aq-c",
   },
   {
     icon: "ri-heart-pulse-line",
@@ -37,7 +37,7 @@ const scales = [
     title: "孤独商成人测试量表",
     description: "孤独商成人测试量表，用于测试成年人的孤独商数",
     tags: ["孤独症", "量表", "在线测试", "AQ", "成人测试"],
-    link: "/quotients/adhd",
+    link: "/quotients/aq-a",
   },
   {
     icon: "ri-mental-health-line",
@@ -52,10 +52,19 @@ const scales = [
     icon: "ri-hearts-line",
     iconColor: "text-yellow-500",
     iconBg: "bg-yellow-100",
-    title: "G2达情障碍测试量表",
-    description: '达情障碍又译作"情感表达不能"或"情感迟钝症"',
+    title: "G2述情障碍测试量表",
+    description: '述情障碍又译作"情感表达不能"或"情感难言症"',
     tags: ["述情障碍", "量表", "在线测试", "OAQ"],
-    link: "/quotients/adhd",
+    link: "/quotients/oaq",
+  },
+  {
+    icon: "ri-guide-line",
+    iconColor: "text-teal-500",
+    iconBg: "bg-teal-100",
+    title: "共情商测试量表 (Empathy Quotient)",
+    description: "本量表效度存在争议，仅供参考",
+    tags: ["共情商", "量表", "在线测试", "EQ", "成人测试"],
+    link: "/quotients/eq60",
   },
 ];
 

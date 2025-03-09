@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import Layout from "@/components/Layout";
 import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
-import questionData from "@/data/questionBPD.json";
+import questionData from "@/data/questionOAQ.json";
 import BackToTop from "@/components/BackToTop";
-import QuestionIntervention from "@/components/QuestionIntervention";
 
-class BPD extends Component {
+class OAQ extends Component {
   state = {
     answers: {},
     showModal: false,
@@ -50,7 +49,7 @@ class BPD extends Component {
   };
 
   getQuestionDetail() {
-    return questionData.questionBPD;
+    return questionData.questionOAQ;
   }
 
   calculateScores() {
@@ -58,42 +57,32 @@ class BPD extends Component {
     Object.entries(this.state.answers).forEach(([questionId, value]) => {
       score += value;
     });
-    score = Number((score / 23.0).toFixed(2));
     return score;
   }
 
   calculateResult(score) {
-    if (score < 0.3) {
-      return "None/Low 您不太可能有BPD";
-    } else if (score < 1.1) {
-      return "Mild 您不太可能有BPD";
-    } else if (score < 1.5) {
-      return "Moderate 您不太可能有BPD";
-    } else if (score < 1.9) {
-      return "Moderate";
-    } else if (score < 2.7) {
-      return "High";
-    } else if (score < 3.5) {
-      return "Very High";
+    if (score <= 94) {
+      return "非诉情障碍";
+    } else if (score <= 112) {
+      return "可能有诉情障碍";
     } else {
-      return "Extremely High";
+      return "诉情障碍";
     }
   }
 
   render() {
     return (
       <Layout
-        title="边缘人格障碍表现量表 BSL-23 | 青衫 Neuro"
-        description="边缘人格障碍表现量表 BSL-23"
+        title="G2述情障碍测试量表 | 青衫 Neuro"
+        description="述情障碍又译作“情感表达不能”或“情感难言症”"
       >
         <main className="max-w-3xl mx-auto px-4 py-8">
           <div className="bg-white rounded-lg shadow-sm p-8">
             {/* 信息 */}
             <div className="text-center mb-8">
               <h1 className="text-2xl font-semibold text-gray-900">
-                边缘人格障碍表现量表 BSL-23
+                OAQ- G2述情障碍测试量表
               </h1>
-              <p className="text-gray-500 mt-2">焦虑抑郁等都可能造成分值偏高</p>
               <p className="text-sm text-gray-500 mt-2">
                 *本量表仅供参考，不能作为诊断依据。
               </p>
@@ -101,27 +90,19 @@ class BPD extends Component {
                 <p>本量表参考文献：</p>
                 <ul className="list-disc pl-4 space-y-1">
                   <li>
+                    青衫取得了OAQ- G2（Online Alexithymia
+                    Questionnaire）量表作者授权，将量表翻译成中文版：OAQ-
+                    G2述情障碍在线测试
+                  </li>
+                  <li>
                     <a
-                      href="https://www.zi-mannheim.de/fileadmin/user_upload/downloads/forschung/PSM_downloads/BSL-23_taiwanesisch.pdf"
+                      href="https://www.amazon.com/Emotionally-Dumb-Alexithymia-Jason-Thompson-ebook/dp/B0038VZJ9U/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-gray-600"
                     >
-                      BSL-23.pdf
+                      Jason著有与述情障碍相关的两本书（点击购买）
                     </a>
-                  </li>
-                  <li>
-                    Yang, H., Lei, X., Zhong, M., Zhou, Q., Ling, Y., Jungkunz,
-                    M., & Yi, J. (2018). Psychometric properties of the Chinese
-                    version of the brief borderline symptom list in
-                    undergraduate students and clinical patients. Frontiers in
-                    psychology, 9, 605.
-                  </li>
-                  <li>
-                    Bohus, M., Limberger, M. F., Frank, U., Chapman, A. L.,
-                    Kühler, T., & Stieglitz, R. D. (2007). sychometric
-                    properties of the borderline symptom list (BSL).
-                    Psychopathology, 40(2), 126-132.
                   </li>
                 </ul>
               </div>
@@ -134,7 +115,7 @@ class BPD extends Component {
                   <QuestionItem
                     key={`quotients_${question.id}`}
                     question={question}
-                    degree={["频繁", "没有"]}
+                    degree={["赞同", "反对"]}
                     onAnswerChange={this.handleRadioChange}
                   />
                 ))}
@@ -152,7 +133,7 @@ class BPD extends Component {
           <QuestionResult
             scores={[
               {
-                title: "分数（总分4.0）",
+                title: "测试分数",
                 subtitle: "得分",
                 score: this.state.score,
               },
@@ -162,8 +143,6 @@ class BPD extends Component {
             onClose={this.closeModal}
           />
 
-          <QuestionIntervention />
-
           <BackToTop isShowButton={true} isShowProgress={true} />
         </main>
       </Layout>
@@ -171,4 +150,4 @@ class BPD extends Component {
   }
 }
 
-export default BPD;
+export default OAQ;
