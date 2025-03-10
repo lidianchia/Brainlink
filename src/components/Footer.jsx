@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import "remixicon/fonts/remixicon.css";
 
 class Footer extends Component {
@@ -10,7 +11,13 @@ class Footer extends Component {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <i className="ri-brain-line text-green-600 text-2xl mr-2"></i>
+                <Image
+                  src="/favicon.ico"
+                  alt="logo"
+                  width={32}
+                  height={32}
+                  className="mr-2"
+                />
                 <span className="font-['Pacifico'] text-xl text-gray-900">
                   青衫 Neuro
                 </span>
@@ -20,7 +27,7 @@ class Footer extends Component {
               </p>
               <a
                 href="https://qingshanasd.cn/"
-                className="text-gray-500 hover:text-green-600 transition-colors duration-300 text-sm inline-flex items-center mt-1"
+                className="text-gray-500 hover:text-primary transition-colors duration-300 text-sm inline-flex items-center mt-1"
               >
                 <i className="ri-earth-line text-sm mr-1"></i>
                 qingshanasd.cn
@@ -68,7 +75,7 @@ class Footer extends Component {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/term"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
                     使用条款
@@ -120,6 +127,9 @@ class Footer extends Component {
           <div className="border-t mt-12 pt-8">
             <div className="flex flex-col items-center space-y-4">
               <p className="text-center text-gray-500 text-sm">
+                量表版本: 1.1.7
+              </p>
+              <p className="text-center text-gray-500 text-sm">
                 © 2025 青衫 Neuro. All rights reserved.
               </p>
               <div className="flex items-center space-x-2">
@@ -128,7 +138,7 @@ class Footer extends Component {
                   <a
                     href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
                     target="_blank"
-                    className="text-green-600 hover:text-green-600/80 transition"
+                    className="text-primary hover:text-primary/80 transition"
                   >
                     知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议
                   </a>

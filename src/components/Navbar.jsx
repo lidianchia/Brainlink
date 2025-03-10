@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Pacifico } from "next/font/google";
+import Image from "next/image";
 import { withRouter } from "next/router";
 import Link from "next/link";
 import "remixicon/fonts/remixicon.css";
@@ -16,8 +17,8 @@ class Navbar extends Component {
 
   isActive = (path) => {
     return this.props.router.pathname === path
-      ? "text-green-600 font-medium"
-      : "text-gray-500 hover:text-purple-400";
+      ? "text-primary/90 font-medium border-b-2 border-primary"
+      : "text-gray-500 hover:text-primary-dark";
   };
 
   toggleMobileMenu = () => {
@@ -31,7 +32,13 @@ class Navbar extends Component {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <a href="/" className="flex items-center">
-                <i className="ri-brain-line text-green-600 text-2xl mr-2"></i>
+                <Image
+                  src="/favicon.ico"
+                  alt="logo"
+                  width={32}
+                  height={32}
+                  className="mr-2"
+                />
                 <span className={`${pacifico.className} text-xl text-gray-900`}>
                   青衫 Neuro
                 </span>
@@ -67,7 +74,7 @@ class Navbar extends Component {
               <Link href="/res" className={this.isActive("/res")}>
                 资源引索
               </Link>
-              <Link href="#" className={this.isActive("/terms")}>
+              <Link href="/term" className={this.isActive("/term")}>
                 使用条款
               </Link>
             </div>
@@ -102,8 +109,8 @@ class Navbar extends Component {
                   资源引索
                 </Link>
                 <Link
-                  href="#"
-                  className={`block px-3 py-2 rounded-md ${this.isActive("/terms")}`}
+                  href="/term"
+                  className={`block px-3 py-2 rounded-md ${this.isActive("/term")}`}
                 >
                   使用条款
                 </Link>
