@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import * as echarts from "echarts";
 import { transformMedicalData } from "@/utils/dataTransform";
-import medicalDataSource from "@/data/medicalData.json";
 import chinaGeoJson from "@/data/100000_full.json";
+import { MedicalDataContext } from "@/context/MedicalDataContext";
 
 class MapChart extends Component {
+  static contextType = MedicalDataContext;
+
   constructor(props) {
     super(props);
     this.chartRef = React.createRef();
@@ -15,21 +17,20 @@ class MapChart extends Component {
     this.initChart();
   }
 
+  componentDidUpdate() {
+    const { currentData } = this.context;
+    this.updateChart();
+  }
+
   componentWillUnmount() {
     if (this.chart) {
       this.chart.dispose();
     }
   }
 
-  initChart() {
-    if (!this.chartRef.current) return;
-
-    this.chart = echarts.init(this.chartRef.current);
-
-    // https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json
-    echarts.registerMap("china", chinaGeoJson);
-
-    const hospitalData = transformMedicalData(medicalDataSource.medicalData);
+  updateChart() {
+    const { currentData } = this.context;
+    const hospitalData = transformMedicalData(currentData.medicalData);
 
     const option = {
       animation: true,
@@ -61,8 +62,8 @@ class MapChart extends Component {
         inverse: true,
         pieces: [
           { value: 1, label: "可诊断 ADHD/ASD", color: "#fce7f3" },
-          { value: 2, label: "可诊断 ADHD", color: "#dbeafe" },
-          { value: 3, label: "可诊断 ASD", color: "#dcfce7" },
+          { value: 2, label: "仅可诊断 ADHD", color: "#dbeafe" },
+          { value: 3, label: "仅可诊断 ASD", color: "#dcfce7" },
         ],
       },
       // 图形类型
@@ -74,6 +75,10 @@ class MapChart extends Component {
           roam: true, // 鼠标缩放和平移
           selectedMode: false,
           zoom: 1.0,
+          scaleLimit: {
+            min: 0.6,
+            max: 10,
+          },
           // 图形上的文本标签
           label: {
             show: true,
@@ -114,8 +119,8 @@ class MapChart extends Component {
     // 添加点击事件处理
     this.chart.on("click", (params) => {
       const data = hospitalData.find((item) => item.name === params.name);
-      if (data && data.brief) {
-        const element = document.getElementById(data.brief);
+      if (data && data.name) {
+        const element = document.getElementById(data.name);
         if (element) {
           element.scrollIntoView({
             behavior: "smooth",
@@ -124,6 +129,14 @@ class MapChart extends Component {
         }
       }
     });
+  }
+
+  initChart() {
+    if (!this.chartRef.current) return;
+
+    this.chart = echarts.init(this.chartRef.current);
+    echarts.registerMap("china", chinaGeoJson);
+    this.updateChart();
   }
 
   render() {

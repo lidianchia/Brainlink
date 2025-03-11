@@ -1,8 +1,49 @@
-import React, { Component } from "react";
-import medicalData from "@/data/medicalData.json";
+import React, { Component, useContext } from "react";
+import { MedicalDataContext } from "@/context/MedicalDataContext";
 import "remixicon/fonts/remixicon.css";
 
+const MapInfoSelect = () => {
+  const { dataType, switchData } = useContext(MedicalDataContext);
+
+  return (
+    <div className="flex justify-end space-x-3 my-4">
+      <button
+        onClick={() => switchData("domestic")}
+        className={`px-4 py-2 text-sm rounded-lg shadow-sm transition-all duration-200 ${
+          dataType === "domestic"
+            ? "bg-primary text-white"
+            : "bg-white text-gray-700 hover:bg-gray-50"
+        }`}
+      >
+        国内版
+      </button>
+      <button
+        onClick={() => switchData("child")}
+        className={`px-4 py-2 text-sm rounded-lg shadow-sm transition-all duration-200 ${
+          dataType === "child"
+            ? "bg-primary text-white"
+            : "bg-white text-gray-700 hover:bg-gray-50"
+        }`}
+      >
+        儿童版
+      </button>
+      <button
+        onClick={() => switchData("abroad")}
+        className={`px-4 py-2 text-sm rounded-lg shadow-sm transition-all duration-200 ${
+          dataType === "abroad"
+            ? "bg-primary text-white"
+            : "bg-white text-gray-700 hover:bg-gray-50"
+        }`}
+      >
+        海外版
+      </button>
+    </div>
+  );
+};
+
 class MapInfoNav extends Component {
+  static contextType = MedicalDataContext;
+
   state = {
     isSticky: false,
   };
@@ -15,17 +56,18 @@ class MapInfoNav extends Component {
 
   render() {
     const { isSticky } = this.state;
+    const { currentData } = this.context;
     const containerClass = `${isSticky ? "sticky" : ""} top-0 py-4 z-50 bg-white/80 backdrop-blur-lg shadow-sm rounded-lg mt-8`;
 
     return (
       <div className={containerClass}>
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
-          <div className="flex space-x-4 overflow-x-auto pb-2 scrollbar-hide">
-            {medicalData.medicalData.map((area, index) => (
+          <div className="flex flex-wrap gap-2">
+            {currentData.medicalData.map((area, index) => (
               <a
                 key={index}
-                href={`#${area.areaBrief}`}
-                className="px-6 py-2.5 text-sm bg-white rounded-full shadow hover:shadow-md hover:bg-primary hover:text-white transition-all duration-200 whitespace-nowrap font-medium"
+                href={`#${area.area}`}
+                className="px-6 py-2.5 text-sm bg-white rounded-full shadow hover:shadow-md hover:bg-primary hover:text-white transition-all duration-200 font-medium"
               >
                 {area.area}
               </a>
@@ -34,7 +76,7 @@ class MapInfoNav extends Component {
 
           <button
             onClick={this.toggleSticky}
-            className="ml-4 p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+            className="shrink-0 ml-4 p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
             title={isSticky ? "取消固定" : "固定导航"}
           >
             <i
@@ -48,16 +90,19 @@ class MapInfoNav extends Component {
 }
 
 class MapInfo extends Component {
+  static contextType = MedicalDataContext;
+
   render() {
+    const { currentData } = this.context;
     return (
       <div className="space-y-12">
-        {medicalData.medicalData.map((areaData, areaIndex) => (
+        {currentData.medicalData.map((areaData, areaIndex) => (
           <div
             key={areaIndex}
-            id={areaData.areaBrief}
+            id={areaData.area}
             className="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 pb-2 border-b-2 border-primary/20">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8 pb-2 border-b-2 border-primary-light/50">
               {areaData.area}
             </h2>
 
@@ -78,14 +123,16 @@ class MapInfo extends Component {
                   <div className="space-y-4">
                     {hospital.doctors.map((doctor, doctorIndex) => (
                       <div key={doctorIndex} className="space-y-3">
-                        <div className="flex items-center justify-between p-4 rounded-lg bg-gray-50 hover:bg-primary/5 transition-all duration-200">
-                          <span className="text-gray-800 font-medium">
-                            {doctor.name}
-                          </span>
-                          <span className="text-sm text-primary bg-primary/10 px-3 py-1 rounded-full">
-                            {doctor.capacity.join(", ")}
-                          </span>
-                        </div>
+                        {doctor.name && (
+                          <div className="flex items-center justify-between p-4 rounded-lg bg-gray-50 hover:bg-primary-light/50 transition-all duration-200">
+                            <span className="text-gray-800 font-medium">
+                              {doctor.name}
+                            </span>
+                            <span className="text-sm text-primary bg-primary-light px-3 py-1 rounded-full">
+                              {doctor.capacity.join(", ")}
+                            </span>
+                          </div>
+                        )}
 
                         {/* 医生备注 和 分享 */}
                         {(doctor.notes || doctor.shares.length > 0) && (
@@ -103,7 +150,7 @@ class MapInfo extends Component {
                                     href={share.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-4 py-2 bg-primary-light/80 hover:bg-primary-light rounded-lg text-primary/80 hover:text-primary transition-colors duration-200"
+                                    className="flex items-center gap-2 px-4 py-2 bg-primary-light hover:bg-green-200 rounded-lg text-primary hover:text-green-600 transition-colors duration-200"
                                   >
                                     <i className="ri-link text-lg"></i>
                                     <span className="text-sm font-medium">
@@ -129,4 +176,4 @@ class MapInfo extends Component {
 }
 
 export default MapInfo;
-export { MapInfoNav };
+export { MapInfoNav, MapInfoSelect };
