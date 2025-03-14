@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import Layout from "@/components/Layout";
 import Card from "@/components/Card";
 
@@ -72,7 +74,53 @@ export default class Index extends Component {
   render() {
     return (
       <Layout>
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        {/* Banner */}
+        <div className="w-full px-4 py-12">
+          <div className="container max-w-6xl mx-auto">
+            <div className="flex flex-col-reverse md:flex-row items-center md:justify-between gap-8">
+              {/* Content */}
+              <div className="text-center md:text-left">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
+                  青衫 Neuro
+                </h1>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-content">
+                  为神经多样性群体提供支持
+                </h2>
+                <p className="text-lg md:text-xl mb-8 text-primary-content/80">
+                  因为你我，这个世界终将丰富多彩
+                </p>
+
+                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                  <Link
+                    href="/medical-map"
+                    className="px-6 py-2 bg-accent text-accent-content rounded-full font-medium hover:bg-primary transition-colors"
+                  >
+                    就诊地图
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-primary transition-colors"
+                  >
+                    关于
+                  </Link>
+                </div>
+              </div>
+
+              <div className="flex justify-center md:justify-start">
+                <Image
+                  src="favicon.ico"
+                  alt="logo"
+                  width={96}
+                  height={96}
+                  className="rounded-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 量表 */}
+        <div className="max-w-7xl mx-auto px-4 py-2">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {scales.map((scale, index) => (
               <Card key={index} {...scale} />

@@ -55,15 +55,15 @@ class About extends Component {
             <div className="text-center">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl">
                 <span className="block">关于青衫 Neuro</span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-500 mt-3">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mt-3">
                   为神经多样性群体提供支持
                 </span>
               </h1>
-              <p className="mt-5 text-base text-gray-500 sm:mt-6 sm:text-lg sm:max-w-2xl sm:mx-auto md:mt-6 md:text-xl">
+              <p className="mt-5 text-base-content sm:mt-6 sm:text-lg sm:max-w-2xl sm:mx-auto md:mt-6 md:text-xl">
                 因为你我，这个世界终将丰富多彩
               </p>
               <div className="mt-8 flex justify-center">
-                <div className="h-1 w-20 bg-gradient-to-r from-primary to-teal-500 rounded-full"></div>
+                <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full"></div>
               </div>
             </div>
           </div>
