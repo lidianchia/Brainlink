@@ -8,7 +8,7 @@ export default class Document extends Component {
       <Html lang="en">
         <Head>
           <Script
-            src="../utils/detection.js"
+            src="lib/detection.js"
             data-website-id="ed6801de-a80a-452f-ab47-a81ddec2904a"
           />
         </Head>
