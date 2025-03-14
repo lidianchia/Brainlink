@@ -2,12 +2,12 @@
   "name": "qingshanasd",
   "version": "0.5.0",
   "description": "qingshan",
-  "author": "ittuann <ittuann@outlook.com>",
-  "license": "AGPL-3.0",
+  "author": "ittuann <ittuann@outlook.com> (https://github.com/ittuann)",
+  "license": "GPL-3.0",
   "homepage": "https://github.com/ittuann/qingshanasd",
   "repository": {
-    "url": "https://github.com/ittuann/qingshanasd",
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/ittuann/qingshanasd.git"
   },
   "private": true,
   "scripts": {
