@@ -152,7 +152,7 @@ class Footer extends Component {
                   rel="license"
                 >
                   <img
-                    src="/cc-by-nc-nd.svg"
+                    src="/img/cc-by-nc-nd.svg"
                     alt="CC BY-NC-ND 4.0"
                     width="88"
                     height="31"

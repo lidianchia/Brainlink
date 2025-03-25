@@ -12,7 +12,7 @@ const MapChart = dynamic(() => import("@/components/MapChart"), {
 class MedicalMap extends Component {
   render() {
     return (
-      <Layout>
+      <Layout title="就诊地图 - 青衫 Neuro">
         <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
           <MedicalDataProvider>
             <div className="max-w-7xl mx-auto px-4 py-8">

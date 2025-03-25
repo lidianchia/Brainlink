@@ -76,8 +76,8 @@ class MapChart extends Component {
           selectedMode: false,
           zoom: 1.0,
           scaleLimit: {
-            min: 0.6,
-            max: 10,
+            min: 0.7,
+            max: 7,
           },
           // 图形上的文本标签
           label: {

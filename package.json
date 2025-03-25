@@ -1,6 +1,6 @@
 {
   "name": "qingshanasd",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "qingshan",
   "author": "ittuann <ittuann@outlook.com> (https://github.com/ittuann)",
   "license": "GPL-3.0",
@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "serve": "serve dist/",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write '**/*.{js,mjs,ts,css,scss,json,mjs,jsx,md}'",
@@ -32,6 +33,7 @@
     "eslint-config-next": "15.2.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "prettier": "^3.5.3",
+    "serve": "^14.2.4",
     "tailwindcss": "^4"
   },
   "pnpm": {

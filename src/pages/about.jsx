@@ -14,7 +14,7 @@ const contributors = [
     name: "air wish",
     role: "开发者",
     icon: "/img/ittuann.png",
-    link: "#",
+    link: "https://github.com/ittuann",
   },
   {
     name: "H-MALGANIS",
@@ -26,7 +26,7 @@ const contributors = [
     name: "GLOOMYGHOST",
     role: "开发者",
     icon: "/img/G-150x150.png",
-    link: "#",
+    link: "https://github.com/YuzukiTsuru",
   },
   {
     name: "SPACEDUCK",
@@ -110,7 +110,7 @@ class About extends Component {
                     key={index}
                     className="transform transition-all duration-300 hover:-translate-y-2"
                   >
-                    <a href={contributor.link} rel="" className="block">
+                    <a href={contributor.link} target="" className="block">
                       <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-8 text-center border border-gray-100 h-full">
                         <div className="flex items-center justify-center mx-auto rounded-full mb-6">
                           <Image

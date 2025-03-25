@@ -1,9 +1,40 @@
-# [qingshanasd demo](https://qingshanasd.vercel.app)
+# [青衫 Neuro](https://qingshanasd.cn)
 
-青衫 Neuro demo <https://qingshanasd.vercel.app>
+> [!NOTE]
+> 访问 青衫 Neuro 网站: <https://qingshanasd.cn>
 
-![index](screenshot/首页.png)
-![about](screenshot/关于.png)
-![medical-map](screenshot/就诊地图.png)
-![scales/adhd](screenshot/量表ADHD示例.png)
-![res](screenshot/资源索引.png)
+除特别说明外，作品均采用[知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议（CC BY-NC-ND 4.0）](https://github.com/ittuann/qingshanasd/blob/main/LICENSE-CC-BY-NC-ND)进行许可。
+
+我们支持您将文章分享给更多的人，只需要带上我们的出处与链接即可！
+
+网站代码采用 [GPL-3.0](https://github.com/ittuann/qingshanasd/blob/main/LICENSE) 进行许可。
+
+## 🛠️ Develop
+
+1. Clone the Repository
+
+```bash
+git clone https://github.com/ittuann/qingshanasd.git
+cd qingshanasd
+```
+
+2. Install Dependencies
+
+```bash
+pnpm i
+```
+
+3. Preview
+
+```bash
+pnpm dev
+```
+
+To preview the builded static site:
+
+```bash
+pnpm build
+pnpm serve
+```
+
+Then you can open `http://localhost:3000` in your browser.
