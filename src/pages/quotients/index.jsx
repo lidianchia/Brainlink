@@ -3,11 +3,11 @@
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-export default function Term() {
+export default function Quotients() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/term");
+    router.push("/");
   }, []);
 
   return null;
