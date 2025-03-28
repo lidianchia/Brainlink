@@ -28,16 +28,16 @@ jobs:
           cd dist-branch
           MAIN_LATEST_HASH=$(git rev-parse --short=7 HEAD)
           git checkout dist
+          cd ..
 
           echo "--- Clean old files: ---"
           echo "--- Delete all tracked files ---"
-          cd ..
           git rm -rf . || echo "No tracked files to remove."
           echo "--- Delete all untracked files ---"
           git clean -fxd
 
           echo "--- Copy new files. ---"
-          rsync -av ../dist-branch/ .
+          rsync -av --exclude=".git" dist-branch/ .
           git add .
 
           echo "--- Attempts to commit changes. If there are no changes the new commit will not be created. ---"
