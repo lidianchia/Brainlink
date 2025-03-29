@@ -42,7 +42,7 @@ class QuestionItem extends Component {
                     onChange={() => onAnswerChange(question.id, val)}
                   />
                   <div
-                    className={`${size} border-2 border-gray-300 rounded-full peer-checked:border-primary peer-checked:bg-primary duration-200`}
+                    className={`${size} border-2 border-gray-500 rounded-full peer-checked:border-primary peer-checked:bg-primary duration-200`}
                   ></div>
                 </label>
               );

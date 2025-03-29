@@ -9,16 +9,20 @@ class ScaleCard extends Component {
 
     return (
       <Link href={link} rel="" className="block h-full">
-        <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all p-6 h-full">
-          <div
-            className={`w-16 h-16 ${iconBg} rounded-full flex items-center justify-center mb-4`}
-          >
-            <i className={`${icon} ${iconColor} text-2xl`}></i>
+        <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all p-6 h-full flex flex-col">
+          <div className="flex-grow">
+            <div
+              className={`w-16 h-16 ${iconBg} rounded-full flex items-center justify-center mb-4`}
+            >
+              <i className={`${icon} ${iconColor} text-2xl`}></i>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              {title}
+            </h3>
+            <p className="text-gray-600 text-sm mb-4">{description}</p>
           </div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
-          <p className="text-gray-600 text-sm mb-4">{description}</p>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mt-auto">
             {tags.map((tag, index) => (
               <span
                 key={index}

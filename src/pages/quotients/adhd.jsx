@@ -149,9 +149,9 @@ class ADHD extends Component {
                 className="hover:text-gray-600"
               >
                 18Q-Chinese-Traditional.pdf
-              </a>
+              </a>{" "}
+              转自世界卫生组织 Composite International Diagnostic Interview
             </li>
-            <li>世界卫生组织 Composite International Diagnostic Interview</li>
           </ul>
         </div>
         <p className="text-xs text-gray-400 mt-2">
@@ -199,7 +199,7 @@ class ADHD extends Component {
                 type="submit"
                 className="w-full bg-gradient-to-r from-green-600 to-indigo-600 text-white py-3 px-6 rounded-lg hover:from-green-600/90 hover:to-indigo-600/90 transition-all duration-200 shadow-lg shadow-green-600/20"
               >
-                提交答案
+                提交
               </button>
             </form>
           </div>

@@ -147,7 +147,7 @@ class BPD extends Component {
                 type="submit"
                 className="w-full bg-gradient-to-r from-green-600 to-indigo-600 text-white py-3 px-6 rounded-lg hover:from-green-600/90 hover:to-indigo-600/90 transition-all duration-200 shadow-lg shadow-green-600/20"
               >
-                提交答案
+                提交
               </button>
             </form>
           </div>

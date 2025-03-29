@@ -23,7 +23,7 @@ class Footer extends Component {
                 </span>
               </div>
               <p className="text-gray-500 text-sm">
-                致力于孤独症谱系权威资讯资源
+                致力于神经多元的科普、资讯、资源
               </p>
               <a
                 href="https://qingshanasd.cn/"

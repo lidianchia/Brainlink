@@ -8,7 +8,7 @@ export default class Layout extends Component {
     const {
       children,
       title = "青衫 Neuro",
-      description = "致力于孤独症谱系权威资讯资源",
+      description = "致力于神经多元的科普、资讯、资源",
     } = this.props;
 
     return (
