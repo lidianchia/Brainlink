@@ -12,7 +12,9 @@ const QuestionInfoAlert = ({ showModal, onClose, content }) => {
           <h3 className="text-xl font-semibold text-gray-900">重要信息</h3>
         </div>
 
-        <div className="space-y-4">{content}</div>
+        <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
+          {content}
+        </div>
 
         <div className="mt-6 flex justify-center">
           <button

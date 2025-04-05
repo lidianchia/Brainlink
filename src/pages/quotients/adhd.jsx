@@ -166,7 +166,7 @@ class ADHD extends Component {
                 焦虑 / 抑郁 / 睡眠障碍<strong>等其他情况</strong>
                 均有可能造成分值偏高
               </p>
-              <p className="text-sm text-gray-500 mt-2">
+              <p className="text-gray-500 mt-2">
                 本量表<strong>仅供筛查</strong>，<strong>不代表</strong>
                 确诊或作为诊断依据
               </p>
@@ -180,7 +180,7 @@ class ADHD extends Component {
           content={
             <>
               <p className="text-xs text-gray-600">本量表参考文献：</p>
-              <p className="text-xs text-gray-500 mt-2">
+              <p className="text-xs text-gray-500 mt-1">
                 <a
                   href="https://www.hcp.med.harvard.edu/ncs/ftpdir/adhd/adhd/18Q_Chinese%20(Traditional)_final.pdf"
                   target="_blank"
