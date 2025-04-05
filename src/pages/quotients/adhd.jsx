@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Cookies from "js-cookie";
 import Layout from "@/components/Layout";
 import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
@@ -9,6 +10,7 @@ import BackToTop from "@/components/BackToTop";
 
 class ADHD extends Component {
   state = {
+    quotientsName: "answers_adhd",
     answers: {},
     showResultModal: false,
     showInfoModal: true,
@@ -16,6 +18,16 @@ class ADHD extends Component {
     scoreB: 0,
     result: "",
   };
+
+  // React method
+  componentDidMount() {
+    const savedAnswers = Cookies.get(this.state.quotientsName);
+    if (savedAnswers) {
+      this.setState({
+        answers: JSON.parse(savedAnswers),
+      });
+    }
+  }
 
   closeModal = () => {
     this.setState({ showResultModal: false });
@@ -25,13 +37,24 @@ class ADHD extends Component {
     this.setState({ showInfoModal: false });
   };
 
-  handleRadioChange = (questionId, value) => {
-    this.setState((prevState) => ({
-      answers: {
-        ...prevState.answers,
-        [questionId]: parseInt(value),
-      },
-    }));
+  handleRadioChange = (questionId, value, index) => {
+    const newAnswers = {
+      ...this.state.answers,
+      // { questionId: { index: number, value: number } }
+      [questionId]: { index, value: parseInt(value) },
+    };
+
+    // 保存到Cookie
+    Cookies.set(this.state.quotientsName, JSON.stringify(newAnswers), {
+      expires: 1 / 12,
+    });
+
+    this.setState({ answers: newAnswers });
+  };
+
+  clearAnswersCookie = () => {
+    Cookies.remove(this.state.quotientsName);
+    this.setState({ answers: {} });
   };
 
   handleSubmit = (e) => {
@@ -65,12 +88,12 @@ class ADHD extends Component {
     // 计算A部分（1-9题）和B部分（10-18题）的得分
     let scoreA = 0,
       scoreB = 0;
-    Object.entries(this.state.answers).forEach(([questionId, value]) => {
+    Object.entries(this.state.answers).forEach(([questionId, data]) => {
       const id = parseInt(questionId);
       if (id >= 1 && id <= 9) {
-        scoreA += value;
+        scoreA += data.value;
       } else if (id >= 10 && id <= 18) {
-        scoreB += value;
+        scoreB += data.value;
       }
     });
 
@@ -130,7 +153,7 @@ class ADHD extends Component {
   }
 
   render() {
-    const { showResultModal, showInfoModal, scoreA, scoreB, result } =
+    const { showResultModal, showInfoModal, scoreA, scoreB, result, answers } =
       this.state;
 
     const infoContent = (
@@ -169,8 +192,16 @@ class ADHD extends Component {
                 转自世界卫生组织 Composite International Diagnostic Interview
               </p>
               <p className="text-xs text-gray-500 mt-2">
-                * 本站符合 GDPR 数据保护条例。不会使用 Cookie
-                记录和存储任何可识别个人身份的信息
+                * 本站符合 GDPR
+                欧盟通用数据保护条例。页面会在您的本地浏览器中使用 Cookie
+                临时存储量表填写选项，且会在2小时后自动
+                <button
+                  onClick={this.clearAnswersCookie}
+                  className="underline hover:text-gray-600 transition-colors"
+                >
+                  删除
+                </button>
+                。
               </p>
             </>
           }
@@ -208,6 +239,7 @@ class ADHD extends Component {
                     question={question}
                     degree={["经常这样", "从来没有"]}
                     onAnswerChange={this.handleRadioChange}
+                    checkedIndex={answers[question.id]?.index}
                   />
                 ))}
               </div>

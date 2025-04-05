@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Cookies from "js-cookie";
 import Layout from "@/components/Layout";
 import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
@@ -7,23 +8,39 @@ import BackToTop from "@/components/BackToTop";
 
 class EQ60 extends Component {
   state = {
+    quotientsName: "answers_eq60",
     answers: {},
     showResultModal: false,
     score: 0,
     result: "",
   };
 
+  componentDidMount() {
+    const savedAnswers = Cookies.get(this.state.quotientsName);
+    if (savedAnswers) {
+      this.setState({
+        answers: JSON.parse(savedAnswers),
+      });
+    }
+  }
+
   closeModal = () => {
     this.setState({ showResultModal: false });
   };
 
-  handleRadioChange = (questionId, value) => {
-    this.setState((prevState) => ({
-      answers: {
-        ...prevState.answers,
-        [questionId]: parseInt(value),
-      },
-    }));
+  handleRadioChange = (questionId, value, index) => {
+    const newAnswers = {
+      ...this.state.answers,
+      // { questionId: { index: number, value: number } }
+      [questionId]: { index, value: parseInt(value) },
+    };
+
+    // 保存到Cookie
+    Cookies.set(this.state.quotientsName, JSON.stringify(newAnswers), {
+      expires: 1 / 12,
+    });
+
+    this.setState({ answers: newAnswers });
   };
 
   handleSubmit = (e) => {
@@ -54,8 +71,8 @@ class EQ60 extends Component {
 
   calculateScores() {
     let score = 0;
-    Object.entries(this.state.answers).forEach(([questionId, value]) => {
-      score += value;
+    Object.entries(this.state.answers).forEach(([questionId, data]) => {
+      score += data.value;
     });
     return score;
   }
@@ -69,7 +86,7 @@ class EQ60 extends Component {
   }
 
   render() {
-    const { showResultModal, score, result } = this.state;
+    const { showResultModal, score, result, answers } = this.state;
 
     return (
       <Layout
@@ -115,6 +132,7 @@ class EQ60 extends Component {
                     question={question}
                     degree={["非常赞同", "绝对反对"]}
                     onAnswerChange={this.handleRadioChange}
+                    checkedIndex={answers[question.id]?.index}
                   />
                 ))}
               </div>

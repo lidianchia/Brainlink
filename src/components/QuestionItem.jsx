@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class QuestionItem extends Component {
   render() {
-    const { question, degree, onAnswerChange } = this.props;
+    const { question, degree, onAnswerChange, checkedIndex } = this.props;
 
     return (
       <div className="question-item">
@@ -37,9 +37,11 @@ class QuestionItem extends Component {
                   <input
                     type="radio"
                     name={question.id}
+                    id={`${question.id}_${index}`}
                     value={val}
                     className="hidden peer"
-                    onChange={() => onAnswerChange(question.id, val)}
+                    checked={checkedIndex === index}
+                    onChange={() => onAnswerChange(question.id, val, index)}
                   />
                   <div
                     className={`${size} border-2 border-gray-500 rounded-full peer-checked:border-primary peer-checked:bg-primary duration-200`}

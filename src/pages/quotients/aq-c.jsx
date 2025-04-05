@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Cookies from "js-cookie";
 import Layout from "@/components/Layout";
 import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
@@ -7,6 +8,7 @@ import BackToTop from "@/components/BackToTop";
 
 class AQC extends Component {
   state = {
+    quotientsName: "answers_aqc",
     answers: {},
     showResultModal: false,
     score: 0,
@@ -18,17 +20,32 @@ class AQC extends Component {
     imaginationScore: 0,
   };
 
+  componentDidMount() {
+    const savedAnswers = Cookies.get(this.state.quotientsName);
+    if (savedAnswers) {
+      this.setState({
+        answers: JSON.parse(savedAnswers),
+      });
+    }
+  }
+
   closeModal = () => {
     this.setState({ showResultModal: false });
   };
 
-  handleRadioChange = (questionId, value) => {
-    this.setState((prevState) => ({
-      answers: {
-        ...prevState.answers,
-        [questionId]: parseInt(value),
-      },
-    }));
+  handleRadioChange = (questionId, value, index) => {
+    const newAnswers = {
+      ...this.state.answers,
+      // { questionId: { index: number, value: number } }
+      [questionId]: { index, value: parseInt(value) },
+    };
+
+    // 保存到Cookie
+    Cookies.set(this.state.quotientsName, JSON.stringify(newAnswers), {
+      expires: 1 / 12,
+    });
+
+    this.setState({ answers: newAnswers });
   };
 
   handleSubmit = (e) => {
@@ -66,23 +83,23 @@ class AQC extends Component {
     const questionImagination = [3, 8, 14, 20, 21, 24, 40, 41, 42, 50];
 
     const socialScore = questionSocial.reduce(
-      (sum, id) => sum + (answers[id] || 0),
+      (sum, id) => sum + (answers[id]?.value || 0),
       0,
     );
     const attentionSwitchingScore = questionAttentionSwitching.reduce(
-      (sum, id) => sum + (answers[id] || 0),
+      (sum, id) => sum + (answers[id]?.value || 0),
       0,
     );
     const attentionDetailScore = questionAttentionDetail.reduce(
-      (sum, id) => sum + (answers[id] || 0),
+      (sum, id) => sum + (answers[id]?.value || 0),
       0,
     );
     const communicationScore = questionCommunication.reduce(
-      (sum, id) => sum + (answers[id] || 0),
+      (sum, id) => sum + (answers[id]?.value || 0),
       0,
     );
     const imaginationScore = questionImagination.reduce(
-      (sum, id) => sum + (answers[id] || 0),
+      (sum, id) => sum + (answers[id]?.value || 0),
       0,
     );
 
@@ -122,6 +139,7 @@ class AQC extends Component {
       attentionDetailScore,
       communicationScore,
       imaginationScore,
+      answers,
     } = this.state;
 
     return (
@@ -174,6 +192,7 @@ class AQC extends Component {
                     question={question}
                     degree={["赞同", "反对"]}
                     onAnswerChange={this.handleRadioChange}
+                    checkedIndex={answers[question.id]?.index}
                   />
                 ))}
               </div>
