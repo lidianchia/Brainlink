@@ -33,5 +33,5 @@ body:
       options:
         - label: Check that there isn't already an issue that request the same feature to avoid creating a duplicate.
           required: true
-        - label: Remember to follow the Code of Conduct and be friendly.
+        - label: Maintain a respectful, civil, open-minded, and friendly attitude in all interactions.
           required: true

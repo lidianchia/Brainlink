@@ -19,16 +19,7 @@ export default class Layout extends Component {
           <meta name="description" content={description} />
           <meta name="keywords" content="ASD,ADHD" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta
-            name="theme-color"
-            media="(prefers-color-scheme: light)"
-            content="#52b394"
-          />
-          <meta
-            name="theme-color"
-            media="(prefers-color-scheme: dark)"
-            content="#497D00"
-          />
+          <meta name="theme-color" content="#52b394" />
         </Head>
 
         <div className="bg-zinc-50 min-h-screen flex flex-col">

@@ -11,7 +11,17 @@
 
 ## 🛠️ Develop
 
-1. Clone the Repository
+1. Fork and Clone this Repository
+
+- Create [your own fork](https://docs.github.com/get-started/quickstart/fork-a-repo) of this repository to your GitHub account.
+- Clone your fork to your local machine
+
+```bash
+git clone https://github.com/<your-github-username>/qingshanasd.git
+cd qingshanasd
+```
+
+If you simply wish to explore the repository, you can clone the original repository directly:
 
 ```bash
 git clone https://github.com/ittuann/qingshanasd.git

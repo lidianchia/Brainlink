@@ -27,5 +27,5 @@ body:
       label: Validations
       description: Before submitting the issue, please make sure you do the following
       options:
-        - label: Remember to follow the Code of Conduct and be friendly.
+        - label: Maintain a respectful, civil, open-minded, and friendly attitude in all interactions.
           required: true
