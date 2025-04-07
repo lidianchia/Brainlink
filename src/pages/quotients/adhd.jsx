@@ -192,9 +192,8 @@ class ADHD extends Component {
                 转自世界卫生组织 Composite International Diagnostic Interview
               </p>
               <p className="text-xs text-gray-500 mt-2">
-                * 本站符合 GDPR
-                欧盟通用数据保护条例。页面在您的本地浏览器中使用 Cookie
-                临时保存量表填写选项，并于2小时后自动
+                * 本站符合 GDPR 欧盟通用数据保护条例。页面在您的本地浏览器中使用
+                Cookie 临时保存量表填写选项，并于2小时后自动
                 <button
                   onClick={this.clearAnswersCookie}
                   className="underline hover:text-gray-600 transition-colors"
@@ -220,6 +219,7 @@ class ADHD extends Component {
               <h1 className="text-2xl font-semibold text-gray-900 mb-4">
                 成人 ADHD 自填量表 (ASRS)
               </h1>
+
               <div className="mt-2">{infoContent}</div>
             </div>
 

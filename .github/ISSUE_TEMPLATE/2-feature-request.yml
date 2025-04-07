@@ -12,7 +12,7 @@ body:
   - type: textarea
     id: feature-description
     attributes:
-      label: Clear and concise description of your idea
+      label: Clear description of your idea
       description: "A clear and concise description of what the feature would do. If you intend to submit a PR for this issue, tell us in the description. Thanks!"
     validations:
       required: true
@@ -24,6 +24,15 @@ body:
       description: "A clear and concise description of how the feature would be helpful to users."
     validations:
       required: true
+
+  - type: checkboxes
+    id: pr-intention
+    attributes:
+      label: Contributing
+      description: (Optional) Let us know if you're willing to implement this new feature.
+      options:
+        - label: I would like to submit a Pull Request for this feature
+          required: false
 
   - type: checkboxes
     id: checkboxes

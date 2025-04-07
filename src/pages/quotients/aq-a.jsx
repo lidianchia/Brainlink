@@ -3,6 +3,8 @@ import Cookies from "js-cookie";
 import Layout from "@/components/Layout";
 import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
+import QuestionInfo from "@/components/QuestionInfo";
+import QuestionInfoAlert from "@/components/QuestionInfoAlert";
 import questionData from "@/data/questionAQA.json";
 import BackToTop from "@/components/BackToTop";
 
@@ -11,6 +13,7 @@ class AQA extends Component {
     quotientsName: "answers_aqa",
     answers: {},
     showResultModal: false,
+    showInfoModal: true,
     score: 0,
     result: "",
     socialScore: 0,
@@ -33,6 +36,10 @@ class AQA extends Component {
     this.setState({ showResultModal: false });
   };
 
+  closeInfoModal = () => {
+    this.setState({ showInfoModal: false });
+  };
+
   handleRadioChange = (questionId, value, index) => {
     const newAnswers = {
       ...this.state.answers,
@@ -46,6 +53,11 @@ class AQA extends Component {
     });
 
     this.setState({ answers: newAnswers });
+  };
+
+  clearAnswersCookie = () => {
+    Cookies.remove(this.state.quotientsName);
+    this.setState({ answers: {} });
   };
 
   handleSubmit = (e) => {
@@ -138,6 +150,7 @@ class AQA extends Component {
       score,
       result,
       showResultModal,
+      showInfoModal,
       socialScore,
       attentionSwitchingScore,
       attentionDetailScore,
@@ -145,6 +158,57 @@ class AQA extends Component {
       imaginationScore,
       answers,
     } = this.state;
+
+    const infoContent = (
+      <>
+        <QuestionInfo
+          icon={<i className="ri-information-2-line text-xl text-rose-400"></i>}
+          content={
+            <>
+              <p className="text-gray-600">
+                焦虑 / 抑郁 / 睡眠障碍<strong>等其他情况</strong>
+                均有可能造成分值偏高
+              </p>
+              <p className="text-gray-600 mt-2">
+                最终确诊需要结合儿童时期的情况
+              </p>
+              <p className="text-gray-600 mt-2">
+                本量表<strong>仅供筛查</strong>，<strong>不代表</strong>
+                确诊或作为诊断依据
+              </p>
+            </>
+          }
+        />
+
+        <QuestionInfo
+          icon={<i className="ri-lightbulb-line text-xl text-primary"></i>}
+          iconBg="bg-green-100"
+          content={
+            <>
+              <p className="text-xs text-gray-600">本量表参考文献：</p>
+              <p className="text-xs text-gray-500 mt-1">
+                Simon Baron-Cohen, et al. The Autism-Spectrum Quotient (AQ):
+                Evidence from Asperger Syndrome/High-Functioning Autism,
+                Malesand Females, Scientists and Mathematicians. 31: J Autism
+                Dev Disord 5-17. 2001.
+              </p>
+              <p className="text-xs text-gray-500 mt-1">翻译：青衫</p>
+              <p className="text-xs text-gray-500 mt-2">
+                * 本站符合 GDPR 欧盟通用数据保护条例。页面在您的本地浏览器中使用
+                Cookie 临时保存量表填写选项，并于2小时后自动
+                <button
+                  onClick={this.clearAnswersCookie}
+                  className="underline hover:text-gray-600 transition-colors"
+                >
+                  删除
+                </button>
+                。
+              </p>
+            </>
+          }
+        />
+      </>
+    );
 
     return (
       <Layout
@@ -158,24 +222,15 @@ class AQA extends Component {
               <h1 className="text-2xl font-semibold text-gray-900">
                 成人ASD筛查量表
               </h1>
-              <p className="text-gray-500 mt-2">焦虑抑郁等都可能造成分值偏高</p>
-              <p className="text-gray-500 mt-2">
-                最终确诊需要结合儿童时期的情况
-              </p>
-              <p className="text-sm text-gray-500 mt-2">
-                *本量表仅供参考，不能作为诊断依据。
-              </p>
-              <div className="text-xs text-gray-400 mt-2">
-                <p>本量表参考文献：</p>
-                <p className="mt-1">
-                  Simon Baron-Cohen, et al. The Autism-Spectrum Quotient (AQ):
-                  Evidence from Asperger Syndrome/High-Functioning Autism,
-                  Malesand Females, Scientists and Mathematicians. 31: J Autism
-                  Dev Disord 5-17. 2001.
-                </p>
-                <p className="mt-1">翻译：青衫</p>
-              </div>
+
+              <div className="mt-2">{infoContent}</div>
             </div>
+
+            <QuestionInfoAlert
+              showModal={showInfoModal}
+              onClose={this.closeInfoModal}
+              content={infoContent}
+            />
 
             <form className="space-y-8" onSubmit={this.handleSubmit}>
               {/* 量表问题 */}
