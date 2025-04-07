@@ -91,9 +91,9 @@ class EQ60 extends Component {
 
   calculateResult(score) {
     if (score <= 30) {
-      return "您不太可能有ASD";
-    } else {
       return "您可能有ASD";
+    } else {
+      return "您不太可能有ASD";
     }
   }
 
