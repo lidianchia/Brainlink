@@ -381,21 +381,6 @@
       "area": "河南省",
       "hospitals": [
         {
-          "name": "郑州大学第五附属医院（郑州铁路局中心医院）",
-          "notes": "",
-          "doctors": [
-            {
-              "name": "李恩耀 医生",
-              "capacity": [
-                "ADHD",
-                "ASD"
-              ],
-              "shares": [],
-              "notes": ""
-            }
-          ]
-        },
-        {
           "name": "郑州大学第一附属医院",
           "notes": "",
           "doctors": [
