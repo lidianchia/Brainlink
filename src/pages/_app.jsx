@@ -6,7 +6,7 @@ export default class App extends Component {
     const { Component: PageComponent, pageProps } = this.props;
     return (
       <>
-        <PageComponent {...pageProps} />;
+        <PageComponent {...pageProps} />
       </>
     );
   }
