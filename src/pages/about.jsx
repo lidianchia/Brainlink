@@ -107,7 +107,7 @@ class About extends Component {
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
                 <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
-                  贡献者
+                  维护者
                 </p>
               </div>
 
@@ -139,6 +139,20 @@ class About extends Component {
                     </a>
                   </div>
                 ))}
+              </div>
+
+              <div className="text-center mt-8">
+                <p className="text-gray-600">
+                  以及热心的贡献者们为项目提供力量
+                  <a
+                    href="https://github.com/ittuann/qingshanasd/graphs/contributors"
+                    target="_blank"
+                    className="ml-2 text-primary hover:text-accent inline-flex items-center"
+                  >
+                    <span>前往 GitHub 查看</span>
+                    <i className="ri-arrow-right-line ml-1"></i>
+                  </a>
+                </p>
               </div>
             </div>
           </div>
