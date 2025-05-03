@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import ScaleCard from "@/components/Card";
 
 /**
@@ -58,9 +59,9 @@ const components = {
   h5: (props) => <h5 {...props} className="text-base font-bold mt-1 mb-1" />,
   h6: (props) => <h6 {...props} className="text-sm font-bold mt-1 mb-1" />,
   p: (props) => <p {...props} className="mb-4 leading-relaxed" />,
+  li: (props) => <li {...props} className="mb-2" />,
   ul: (props) => <ul {...props} className="list-disc pl-6 mb-4" />,
   ol: (props) => <ol {...props} className="list-decimal pl-6 mb-4" />,
-  li: (props) => <li {...props} className="mb-2" />,
   blockquote: (props) => (
     <blockquote
       {...props}
@@ -76,11 +77,9 @@ const components = {
       className="bg-gray-100 rounded p-4 overflow-x-auto mb-4 font-mono"
     />
   ),
-  del: (props) => <del {...props} className="line-through text-gray-500" />,
-  sup: (props) => (
-    <sup {...props} className="text-xs align-super text-gray-600" />
-  ),
   a: CustomLink,
+  del: (props) => <del {...props} className="text-gray-500" />,
+  sup: (props) => <sup {...props} className="text-xs text-gray-600" />,
   Card: Card,
 };
 
@@ -109,6 +108,13 @@ export function CustomMDX(props) {
       <MDXRemote
         {...props}
         components={{ ...components, ...(props.components || {}) }}
+        options={{
+          mdxOptions: {
+            remarkPlugins: [remarkGfm],
+            rehypePlugins: [],
+            format: "mdx",
+          },
+        }}
       />
     </article>
   );
