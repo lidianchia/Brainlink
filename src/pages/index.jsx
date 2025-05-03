@@ -108,10 +108,13 @@ export default class Index extends Component {
                 </div>
               </div>
 
-              <div className="flex justify-center md:justify-start">
+              <div
+                id="logo-index"
+                className="flex justify-center md:justify-start"
+              >
                 <Image
                   src="/assets/img/logo.png"
-                  alt="logo"
+                  alt="logo index"
                   width={128}
                   height={128}
                   priority={false}

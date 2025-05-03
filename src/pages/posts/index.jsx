@@ -8,9 +8,15 @@ import Layout from "@/components/Layout";
  */
 export async function getStaticProps() {
   const posts = await getPosts();
+  // 按发布日期降序排序
+  const sortedPosts = posts.sort(
+    (a, b) =>
+      new Date(b.metadata.pubDate).getTime() -
+      new Date(a.metadata.pubDate).getTime(),
+  );
   return {
     props: {
-      posts,
+      posts: sortedPosts,
     },
   };
 }
@@ -38,19 +44,31 @@ export default function PostsList({ posts }) {
               key={post.slug}
               className="border-b border-gray-200 pb-8 last:border-b-0"
             >
-              {/* 文章链接，使用 group 实现hover效果 */}
+              {/* 文章链接 */}
               <Link href={`/posts/${post.slug}`} className="block group">
                 {/* 文章标题 */}
                 <h2 className="text-2xl font-semibold mb-3 text-gray-900 group-hover:text-primary">
                   {post.metadata.title}
                 </h2>
 
-                {/* 文章描述（如果存在） */}
-                {post.metadata.description && (
-                  <p className="text-gray-600 mb-4">
-                    {post.metadata.description}
-                  </p>
-                )}
+                {/* 文章描述 */}
+                <p className="text-gray-600 mb-2">
+                  {post.metadata.description}
+                </p>
+
+                {/* 文章日期 */}
+                <p className="flex items-center gap-4 text-sm text-gray-500 mb-2">
+                  <span className="flex items-center gap-1">
+                    <i className="ri-time-line"></i>
+                    {post.metadata.pubDate}
+                  </span>
+                  {post.metadata.modDate && (
+                    <span className="flex items-center gap-1">
+                      <i className="ri-history-line"></i>
+                      {post.metadata.modDate}
+                    </span>
+                  )}
+                </p>
 
                 {/* 链接 */}
                 <span className="text-primary font-medium">阅读 →</span>

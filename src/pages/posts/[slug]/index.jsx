@@ -56,10 +56,24 @@ export default function Posts({ post }) {
 
         {/* 文章描述 */}
         {post.metadata.description && (
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg text-gray-600 mb-2">
             {post.metadata.description}
           </p>
         )}
+
+        {/* 文章日期 */}
+        <p className="flex items-center gap-4 text-sm text-gray-500 mb-8">
+          <span className="flex items-center gap-1">
+            <i className="ri-time-line"></i>
+            {post.metadata.pubDate}
+          </span>
+          {post.metadata.modDate && (
+            <span className="flex items-center gap-1">
+              <i className="ri-history-line"></i>
+              {post.metadata.modDate}
+            </span>
+          )}
+        </p>
 
         {/* 文章正文 */}
         <article className="prose prose-lg max-w-none">

@@ -48,11 +48,15 @@ function CustomLink({ href, children, ...props }) {
 
 /**
  * 为常用的HTML元素映射定义样式
+ * https://mdxjs.com/table-of-components/
  */
 const components = {
   h1: (props) => <h1 {...props} className="text-3xl font-bold mt-8 mb-4" />,
   h2: (props) => <h2 {...props} className="text-2xl font-bold mt-6 mb-3" />,
   h3: (props) => <h3 {...props} className="text-xl font-bold mt-4 mb-2" />,
+  h4: (props) => <h4 {...props} className="text-lg font-bold mt-2 mb-1" />,
+  h5: (props) => <h5 {...props} className="text-base font-bold mt-1 mb-1" />,
+  h6: (props) => <h6 {...props} className="text-sm font-bold mt-1 mb-1" />,
   p: (props) => <p {...props} className="mb-4 leading-relaxed" />,
   ul: (props) => <ul {...props} className="list-disc pl-6 mb-4" />,
   ol: (props) => <ol {...props} className="list-decimal pl-6 mb-4" />,
@@ -71,6 +75,10 @@ const components = {
       {...props}
       className="bg-gray-100 rounded p-4 overflow-x-auto mb-4 font-mono"
     />
+  ),
+  del: (props) => <del {...props} className="line-through text-gray-500" />,
+  sup: (props) => (
+    <sup {...props} className="text-xs align-super text-gray-600" />
   ),
   a: CustomLink,
   Card: Card,
