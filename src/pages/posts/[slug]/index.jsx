@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getPosts } from "@/utils/mdx";
 import { CustomMDX } from "@/components/Mdx";
 import Layout from "@/components/Layout";
@@ -46,6 +47,8 @@ export async function getStaticProps({ params }) {
  * @returns {JSX.Element}
  */
 export default function Posts({ post }) {
+  const githubFileLink = `https://github.com/ittuann/qingshanasd/blob/main/src/pages/posts/_posts/${post.slug}.mdx`;
+
   return (
     <Layout title={post.metadata.title + " - 青衫 Neuro"}>
       <main className="max-w-4xl mx-auto px-4 py-8">
@@ -73,6 +76,17 @@ export default function Posts({ post }) {
               {post.metadata.modDate}
             </span>
           )}
+          <span className="flex items-center gap-1">
+            <i className="ri-github-fill"></i>
+            <Link
+              href={githubFileLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-600 transition-colors"
+            >
+              在 GitHub 上查看
+            </Link>
+          </span>
         </p>
 
         {/* 文章正文 */}

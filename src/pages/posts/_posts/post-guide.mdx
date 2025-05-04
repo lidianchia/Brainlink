@@ -1,0 +1,178 @@
+---
+title: Post Guide
+description: This frontmatter description will appear below the title.
+pubDate: 2025-04-29
+modDate: 2025-05-01
+---
+
+## 文章系统使用指南
+
+本站的文章系统基于 MDX 文件自动化构建。在网站的构建阶段会自动扫描并解析位于 `src/pages/posts/_posts` 目录下的所有 MarkdownX (.mdx) 格式文件，并将其转换为对应的网页页面。
+
+MDX 是 Markdown 语法的扩展，集成了 JSX 功能。我们这里主要使用的是 mdx 的 frontmatter 特性来管理文章的元数据。frontmatter 位于文件的最顶部，是由两行`---`包裹的 YAML 格式数据区域。
+
+frontmatter 定义的 Metadata 结构如下：
+
+| Prop        | Status   | Type   | Example                         | Describe                   |
+| ----------- | -------- | ------ | ------------------------------- | -------------------------- |
+| title       | Required | String | title: Example Post             | 文章标题                   |
+| description | Required | String | title: Description of the post. | 文章简介                   |
+| pubDate     | Required | String | pubDate: 2025-04-29             | 发布日期。格式为YYYY-MM-DD |
+| modDate     | Optional | String | modDate: 2025-04-29             | 最后修改日期               |
+
+请务必正确填写所有标记为 `Required` 的必填字段，这是文章系统正常工作的必要条件。
+
+以下是一个包含可选字段的完整 frontmatter 示例。只需将这部分内容添加到现有的 .md 文件最顶端即可：
+
+```YAML
+---
+title: Example Post
+description: The description of this article.
+pubDate: 2025-04-29
+modDate: 2025-05-01
+---
+```
+
+然后请将文件的扩展名从 `.md` 更改为 `.mdx`。
+
+- 文件命名规范：
+
+文件命名至关重要，因为它将直接映射为文章网页的 URL 路径。请使用简洁且具有描述意义的全小写英文字词(以及数字)，并用连字符(-)连接单词(而不是使用下划线_)，例如`example-post.mdx`.
+
+有关更详细的 URL 结构推荐阅读 [URL structure best practices for Google](https://developers.google.com/search/docs/crawling-indexing/url-structure).
+
+## Markdown Syntax Example
+
+### HTML
+
+<i>This is italic using raw HTML.</i>
+
+#### React component
+
+<Card
+  icon="ri-book-2-line"
+  iconColor="text-lime-500"
+  iconBg="bg-lime-100"
+  title="《电子版手册》"
+  description="青衫 Neuro 发布的所有 PDF 手册"
+  link="/public"
+/>
+
+---
+
+### Headers
+
+# H1 Headline
+
+## H2 Example
+
+### H3 Example
+
+#### H4 Example
+
+##### H5 Example
+
+---
+
+### Emphasis
+
+_Italic_ or _Italic_
+
+*asterisks*
+
+**Bold** or **Bold**
+
+**_Bold and Italic_**
+
+~one~ or ~~two~~ tildes ~~Strikethrough~~
+
+---
+
+### Lists
+
+#### Unordered List
+
+- Item 1
+- Item 2
+  - Subitem 2.1
+  - Subitem 2.2
+
+***
+
+#### Ordered List
+
+1. First
+2. Second
+   1. Sub-second
+   2. Sub-third
+
+---
+
+### Links
+
+[link](https://qingshanasd.cn)
+
+[home](/posts)
+
+---
+
+### Images
+
+![Alt text](/favicon.ico)
+
+![Alt text](https://qingshanasd.cn/assets/img/ittuann.png)
+
+---
+
+### Code
+
+Inline `code` example.
+
+Code Block
+
+```python
+def hello():
+    print("Hello, world!")
+```
+
+---
+
+### Blockquotes
+
+> This is a blockquote.
+>
+> > Nested blockquote.
+
+---
+
+### Tables
+
+| Header 1 | Header 2 |
+| -------- | -------- |
+| Cell 1   | Cell 2   |
+| Cell 3   | Cell 4   |
+
+---
+
+### Task Lists
+
+- [x] Task 1
+- [ ] Task 2
+
+---
+
+### Escaping Characters
+
+\*Literal asterisk\*
+
+\# Literal hash
+
+\[Literal brackets\]
+
+---
+
+### Footnote
+
+Here is a footnote reference[^1].
+
+[^1]: This is the footnote text.

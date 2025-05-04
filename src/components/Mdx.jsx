@@ -68,6 +68,7 @@ const components = {
       className="border-l-4 border-gray-300 pl-4 italic my-4"
     />
   ),
+  br: (props) => <br {...props} className="mt-2 mb-2" />,
   code: (props) => (
     <code {...props} className="bg-gray-100 rounded px-1 py-1 mb-4 font-mono" />
   ),
@@ -80,6 +81,26 @@ const components = {
   a: CustomLink,
   del: (props) => <del {...props} className="text-gray-500" />,
   sup: (props) => <sup {...props} className="text-xs text-gray-600" />,
+  table: (props) => (
+    <table
+      {...props}
+      className="overflow-x-auto rounded border-collapse my-6 text-sm"
+    />
+  ),
+  thead: (props) => <thead {...props} className="bg-gray-100" />,
+  tbody: (props) => <tbody {...props} className="divide-y divide-gray-200" />,
+  tr: (props) => (
+    <tr {...props} className="hover:bg-gray-50 transition-colors" />
+  ),
+  th: (props) => (
+    <th
+      {...props}
+      className="px-4 py-3 font-medium text-left text-gray-700 border-b border-gray-200"
+    />
+  ),
+  td: (props) => (
+    <td {...props} className="px-4 py-3 border-b border-gray-100" />
+  ),
   Card: Card,
 };
 
