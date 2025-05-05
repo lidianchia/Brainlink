@@ -82,10 +82,12 @@ const components = {
   del: (props) => <del {...props} className="text-gray-500" />,
   sup: (props) => <sup {...props} className="text-xs text-gray-600" />,
   table: (props) => (
-    <table
-      {...props}
-      className="overflow-x-auto rounded border-collapse my-6 text-sm"
-    />
+    <div className="overflow-x-auto">
+      <table
+        {...props}
+        className="table-auto border-collapse rounded my-6 text-sm"
+      />
+    </div>
   ),
   thead: (props) => <thead {...props} className="bg-gray-100" />,
   tbody: (props) => <tbody {...props} className="divide-y divide-gray-200" />,
