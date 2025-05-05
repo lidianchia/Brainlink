@@ -537,6 +537,21 @@
               "notes": ""
             }
           ]
+        },
+        {
+          "name": "大连大学附属中山医院",
+          "notes": "",
+          "doctors": [
+            {
+              "name": "于晓辉 医生",
+              "capacity": [
+                "ADHD",
+                "ASD"
+              ],
+              "shares": [],
+              "notes": "儿童发育科"
+            }
+          ]
         }
       ]
     },

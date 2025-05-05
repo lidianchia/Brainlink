@@ -84,7 +84,7 @@ export default function Posts({ post }) {
               rel="noopener noreferrer"
               className="hover:text-blue-600 transition-colors"
             >
-              在 GitHub 上查看
+              GitHub
             </Link>
           </span>
         </p>
