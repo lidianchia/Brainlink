@@ -7,13 +7,14 @@ export default class Document extends Component {
     return (
       <Html lang="en">
         <Head>
+          <Script id="msc" src="/assets/lib/msc.min.js" />
           <Script
             id="cfa"
             src="https://static.cloudflareinsights.com/beacon.min.js"
             data-cf-beacon='{"token":"88bd8ee90d8f430f83c854149b786eb7"}'
-            strategy="afterInteractive"
           />
           <Script
+            id="umamiis"
             src="/assets/lib/detection.min.js"
             data-website-id="ed6801de-a80a-452f-ab47-a81ddec2904a"
           />

@@ -125,9 +125,9 @@ class MapInfo extends Component {
                       <div key={doctorIndex} className="space-y-3">
                         {doctor.name && (
                           <div className="flex items-center justify-between p-4 rounded-lg bg-gray-50 hover:bg-secondary/50 transition-all duration-200">
-                            <span className="text-gray-800 font-medium">
-                              {doctor.name}
-                            </span>
+                            <h4 className="text-gray-800 font-medium">
+                              {doctor.name} 医生
+                            </h4>
                             <span className="text-sm text-primary bg-secondary px-3 py-1 rounded-full">
                               {doctor.capacity.join(", ")}
                             </span>
