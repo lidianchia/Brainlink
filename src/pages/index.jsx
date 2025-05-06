@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/components/Layout";
+import { Button } from "@/components/ui/button";
 import Card from "@/components/Card";
 import "remixicon/fonts/remixicon.css";
 
@@ -93,18 +94,21 @@ export default class Index extends Component {
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                  <Link
-                    href="/medical-map"
-                    className="px-6 py-2 bg-accent text-primary-foreground rounded-full font-medium hover:bg-primary transition-colors"
+                  <Button
+                    asChild
+                    size="lg"
+                    className="rounded-full font-medium"
                   >
-                    就诊地图
-                  </Link>
-                  <Link
-                    href="/about"
-                    className="px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-primary transition-colors"
+                    <Link href="/medical-map">就诊地图</Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="rounded-full font-medium"
                   >
-                    关于
-                  </Link>
+                    <Link href="/about">关于</Link>
+                  </Button>
                 </div>
               </div>
 

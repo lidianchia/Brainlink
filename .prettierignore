@@ -1,3 +1,4 @@
 # Ignore json files in the data folder
 /src/_data/
 /public/assets/lib/
+/src/components/ui/
