@@ -7,7 +7,7 @@
   /* To preview the theme: https://tweakcn.com/editor/theme */
   /* 主色调 */
   --primary: #52b394;
-  --primary-foreground: oklch(0.984 0.003 247.858); /* 内容颜色 */
+  --primary-foreground: oklch(0.984 0.003 247.858); /* 内容文本颜色 */
   /* Base Colors */
   --background: oklch(0.98 0 247.86);
   --foreground: oklch(0.28 0.04 260.03);
