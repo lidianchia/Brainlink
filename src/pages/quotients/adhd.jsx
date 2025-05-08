@@ -182,7 +182,7 @@ class ADHD extends Component {
               <p className="text-xs text-gray-600">本量表参考文献：</p>
               <p className="text-xs text-gray-500 mt-1">
                 <a
-                  href="https://www.hcp.med.harvard.edu/ncs/ftpdir/adhd/adhd/18Q_Chinese%20(Traditional)_final.pdf"
+                  href="https://www.hcp.med.harvard.edu/ncs/ftpdir/adhd/adhd/Old%20Versions/18Q-Chinese-Traditional.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-gray-600 transition-colors"
