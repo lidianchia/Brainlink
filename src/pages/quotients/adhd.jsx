@@ -179,7 +179,15 @@ class ADHD extends Component {
           iconBg="bg-green-100"
           content={
             <>
-              <p className="text-xs text-gray-600">本量表参考文献：</p>
+              <a
+                href="https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247484259&idx=1&sn=c3aa8e8dbef9f5445212b1dfa2a31cd4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs mt-1 text-gray-600 hover:text-gray-700 transition-colors underline"
+              >
+                量表介绍
+              </a>
+              <p className="text-xs text-gray-600 mt-1">本量表参考文献：</p>
               <p className="text-xs text-gray-500 mt-1">
                 <a
                   href="https://www.hcp.med.harvard.edu/ncs/ftpdir/adhd/adhd/Old%20Versions/18Q-Chinese-Traditional.pdf"

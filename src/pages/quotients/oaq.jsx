@@ -122,7 +122,15 @@ class OAQ extends Component {
           iconBg="bg-green-100"
           content={
             <>
-              <p className="text-xs text-gray-600">本量表参考文献：</p>
+              <a
+                href="https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247484022&idx=1&sn=f088cdb2e239aa9db799fbce6aa3315a"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs mt-1 text-gray-600 hover:text-gray-700 transition-colors underline"
+              >
+                量表介绍
+              </a>
+              <p className="text-xs text-gray-600 mt-1">本量表参考文献：</p>
               <p className="text-xs text-gray-500 mt-1">
                 青衫取得了OAQ- G2（Online Alexithymia
                 Questionnaire）量表作者授权，将量表翻译成中文版：OAQ- G2
