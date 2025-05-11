@@ -117,7 +117,7 @@ export default class Index extends Component {
                 className="flex justify-center md:justify-start"
               >
                 <Image
-                  src="/assets/img/logo.png"
+                  src="/assets/img/logo.webp"
                   alt="logo index"
                   width={128}
                   height={128}

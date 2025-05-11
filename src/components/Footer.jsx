@@ -13,7 +13,7 @@ class Footer extends Component {
             <div>
               <div className="flex items-center mb-4">
                 <Image
-                  src="/favicon.ico"
+                  src="/assets/img/logo.webp"
                   alt="logo"
                   width={32}
                   height={32}

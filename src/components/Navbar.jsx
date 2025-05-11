@@ -34,7 +34,7 @@ class Navbar extends Component {
             <div className="flex items-center">
               <a href="/" className="flex items-center">
                 <Image
-                  src="/favicon.ico"
+                  src="/assets/img/logo.webp"
                   alt="logo"
                   width={32}
                   height={32}
