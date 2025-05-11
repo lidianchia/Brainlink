@@ -51,6 +51,7 @@ class Navbar extends Component {
               <button
                 onClick={this.toggleMobileMenu}
                 className="text-gray-500 hover:text-purple-400"
+                aria-description="Toggle mobile menu"
               >
                 <i
                   className={`ri-${this.state.isMobileMenuOpen ? "close" : "menu"}-line text-2xl`}

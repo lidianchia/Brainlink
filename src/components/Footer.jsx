@@ -35,9 +35,9 @@ class Footer extends Component {
               </a>
             </div>
             <div>
-              <h4 className="font-medium text-gray-900 mb-4">
+              <p className="font-medium text-gray-900 mb-4">
                 <FormattedMessage id="Footer.resources" />
-              </h4>
+              </p>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -66,9 +66,9 @@ class Footer extends Component {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium text-gray-900 mb-4">
+              <p className="font-medium text-gray-900 mb-4">
                 <FormattedMessage id="Footer.about" />
-              </h4>
+              </p>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -89,9 +89,9 @@ class Footer extends Component {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium text-gray-900 mb-4">
+              <p className="font-medium text-gray-900 mb-4">
                 <FormattedMessage id="Footer.contact" />
-              </h4>
+              </p>
               <ul className="space-y-2">
                 <li>
                   <a
