@@ -122,6 +122,7 @@ export default class Index extends Component {
                   width={128}
                   height={128}
                   priority={true}
+                  fetchPriority="high"
                   className="rounded-full"
                 />
               </div>

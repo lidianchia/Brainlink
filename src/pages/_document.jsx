@@ -19,7 +19,7 @@ export default class Document extends Component {
             data-website-id="ed6801de-a80a-452f-ab47-a81ddec2904a"
           />
         </Head>
-        <body className="antialiased">
+        <body>
           <Main />
           <NextScript />
         </body>
