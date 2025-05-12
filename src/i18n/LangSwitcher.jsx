@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { LocaleContext } from "@/i18n/i18n";
+import { supportedLocales, LocaleContext } from "@/i18n/i18n";
 import "remixicon/fonts/remixicon.css";
 import {
   Select,
@@ -8,15 +8,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-export const locales = {
-  "zh-CN": {
-    name: "Chinese Simplified",
-  },
-  en: {
-    name: "English",
-  },
-};
 
 export default function LangSwitcher() {
   const { locale, setLocale } = useContext(LocaleContext);
@@ -43,13 +34,13 @@ export default function LangSwitcher() {
           >
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Language">
-                {locales[locale]?.name || "Language"}
+                {supportedLocales[locale]?.name || "Language"}
               </SelectValue>
             </SelectTrigger>
             <SelectContent>
-              {Object.keys(locales).map((loc) => (
+              {Object.keys(supportedLocales).map((loc) => (
                 <SelectItem value={loc} key={loc}>
-                  {locales[loc].name}
+                  {supportedLocales[loc].name}
                 </SelectItem>
               ))}
             </SelectContent>
