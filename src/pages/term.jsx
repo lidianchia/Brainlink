@@ -12,7 +12,7 @@ export default class Terms extends Component {
           <div className={`mb-24 transition-opacity duration-700`}>
             <div className="flex items-center justify-center mb-10">
               <Image
-                src="/favicon.ico"
+                src="/assets/img/logo.webp"
                 alt="logo"
                 width={64}
                 height={64}

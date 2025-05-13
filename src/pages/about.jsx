@@ -2,35 +2,36 @@ import React, { Component } from "react";
 import Image from "next/image";
 import Layout from "@/components/Layout";
 import "remixicon/fonts/remixicon.css";
+import { FormattedMessage } from "react-intl";
 
 const contributors = [
   {
     name: "青衫",
-    role: "创立者",
+    role: <FormattedMessage id="About.creatorRole" />,
     icon: "/assets/img/qingshan_150.png",
     link: "#",
   },
   {
     name: "air wish",
-    role: "开发者",
+    role: <FormattedMessage id="About.developerRole" />,
     icon: "/assets/img/ittuann.png",
     link: "https://github.com/ittuann",
   },
   {
     name: "H-MALGANIS",
-    role: "开发者",
+    role: <FormattedMessage id="About.developerRole" />,
     icon: "/assets/img/zealot.png",
     link: "#",
   },
   {
     name: "GLOOMYGHOST",
-    role: "开发者",
+    role: <FormattedMessage id="About.developerRole" />,
     icon: "/assets/img/G-150x150.png",
     link: "https://github.com/YuzukiTsuru",
   },
   {
     name: "SPACEDUCK",
-    role: "维护者",
+    role: <FormattedMessage id="About.maintainerRole" />,
     icon: "/assets/img/SpaceDuck.png",
     link: "#",
   },
@@ -45,7 +46,7 @@ class About extends Component {
           <div className={`mb-24 transition-opacity duration-700`}>
             <div className="flex items-center justify-center mb-10">
               <Image
-                src="/favicon.ico"
+                src="/assets/img/logo.webp"
                 alt="logo"
                 width={64}
                 height={64}
@@ -55,16 +56,16 @@ class About extends Component {
             <div className="text-center">
               <h1 className="tracking-tight font-extrabold text-gray-900">
                 <span className="block text-4xl md:text-5xl">
-                  关于青衫 Neuro
+                  <FormattedMessage id="About.title" />
                 </span>
                 <span className="block mt-5">
                   <span className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                    为神经多元群体提供支持
+                    <FormattedMessage id="About.subtitle" />
                   </span>
                 </span>
               </h1>
               <p className="mt-5 text-lg text-zinc-600">
-                因为你我，这个世界终将丰富多彩
+                <FormattedMessage id="About.slogan" />
               </p>
               <div className="mt-8 flex justify-center">
                 <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full"></div>
@@ -87,16 +88,13 @@ class About extends Component {
               </div>
               <div className="flex-1">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  青衫，神经科学博士
+                  <FormattedMessage id="About.founderTitle" />
                 </h2>
                 <p className="text-gray-600 mb-6 text-lg">
-                  青衫 Neuro 创始人，ASD 人士，公众号·微信读书·知乎 @青衫Neuro
+                  <FormattedMessage id="About.founderDescription" />
                 </p>
                 <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-                  青衫 Neuro
-                  开始于2016年1月，公众号注册于2017年4月，为公益非营利组织。青衫
-                  Neuro
-                  致力于神经多元的科普、资源和互助，希望能够帮助不一样的你和家人了解自己。
+                  <FormattedMessage id="About.founderInfo" />
                 </p>
               </div>
             </div>
@@ -107,7 +105,7 @@ class About extends Component {
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
                 <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
-                  维护者
+                  <FormattedMessage id="About.contributors" />
                 </p>
               </div>
 
@@ -147,13 +145,15 @@ class About extends Component {
 
               <div className="text-center mt-8">
                 <p className="text-gray-600">
-                  以及热心的贡献者们为项目提供力量
+                  <FormattedMessage id="About.contributorsNote" />
                   <a
                     href="https://github.com/ittuann/qingshanasd/graphs/contributors"
                     target="_blank"
                     className="ml-2 text-primary hover:text-accent inline-flex items-center"
                   >
-                    <span>前往 GitHub 查看</span>
+                    <span>
+                      <FormattedMessage id="About.viewOnGithub" />
+                    </span>
                     <i className="ri-arrow-right-line ml-1"></i>
                   </a>
                 </p>
@@ -166,14 +166,13 @@ class About extends Component {
             <div className="bg-white rounded-2xl p-10 shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
                 <span className="relative">
-                  财务公示
+                  <FormattedMessage id="About.financialTitle" />
                   <span className="absolute bottom-1 left-0 w-full h-2 bg-secondary -z-10"></span>
                 </span>
               </h2>
               <div className="max-w-3xl mx-auto">
                 <p className="text-gray-600 mb-8 text-center text-lg leading-relaxed">
-                  青衫 Neuro
-                  始终秉持公开透明的财务管理原则，定期发布资产负债表和资金池报告，以确保所有资金的使用都能得到合理说明。
+                  <FormattedMessage id="About.financialDescription" />
                 </p>
                 <div className="flex justify-center">
                   <a
@@ -181,7 +180,9 @@ class About extends Component {
                     target="_blank"
                     className="group inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-accent transition duration-300"
                   >
-                    <span>查看财务报告</span>
+                    <span>
+                      <FormattedMessage id="About.viewFinancialReport" />
+                    </span>
                     <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
                   </a>
                 </div>
