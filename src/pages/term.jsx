@@ -56,7 +56,6 @@ export default class Terms extends Component {
                       href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode"
                       className="text-primary hover:text-accent"
                       target="_blank"
-                      rel="noopener noreferrer"
                     >
                       知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议（CC
                       BY-NC-ND 4.0）
@@ -139,7 +138,6 @@ export default class Terms extends Component {
                   href="https://creativecommons.org"
                   className="text-primary hover:text-accent"
                   target="_blank"
-                  rel="noopener noreferrer"
                 >
                   creativecommons.org
                 </a>

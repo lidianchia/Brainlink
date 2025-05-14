@@ -140,7 +140,7 @@ class OAQ extends Component {
                 <a
                   href="https://www.amazon.com/Emotionally-Dumb-Alexithymia-Jason-Thompson-ebook/dp/B0038VZJ9U/"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className="underline hover:text-gray-600 transition-colors"
                 >
                   Jason著有与述情障碍相关的两本书（点击购买）

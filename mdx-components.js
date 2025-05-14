@@ -67,7 +67,6 @@ export function useMDXComponents(components) {
                 <Link
                   href={githubFileLink}
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="hover:text-blue-600 transition-colors"
                 >
                   GitHub

@@ -26,6 +26,18 @@ Feel free to directly submit a filing Pull Request.
 
 Thanks so much for helping us improve, and we look forward to your valuable contribution! Together, we can make this project even better!
 
+## Development Stacks
+
+The website is built with [React](https://react.dev/) and powered by the [Next.js](https://nextjs.org/) framework. For styling, [Tailwind CSS](https://tailwindcss.com/) v4 is used alongside the [shadcn/ui](https://ui.shadcn.com/) component library to implement responsive design.
+
+For the CI/CD workflows, automated code quality testing and builds are implemented via [GitHub Actions](https://github.com/features/actions). Specifically, [ESLint](https://eslint.org/) is used for static code analysis and quality standard enforcement, while [Prettier](https://prettier.org/) handles code formatting to ensure a consistent style. [Jest](https://jestjs.io/) is used for Unit Testing.
+
+[Format.js](https://github.com/formatjs/formatjs) (react-intl) is used to implement Internationalization (i18n) support.
+
+[Apache ECharts](https://echarts.apache.org/) is utilized for data visualization in the Visit Map feature (or: \[Apache ECharts\] is used for data visualization for the visit/appointment map). [RemixIcon](https://remixicon.com/) icon library is used for icon resources.
+
+For the blog implementation, [@next/mdx](https://www.npmjs.com/package/@next/mdx) is used to process [MDX](https://mdxjs.com/) files for content handling. It's integrated with the [remark-GFM](https://github.com/remarkjs/remark-gfm) extension to support GitHub-flavored Markdown (GFM) syntax features such as footnotes.
+
 ## Getting Started
 
 There are many ways to help:

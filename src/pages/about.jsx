@@ -178,6 +178,7 @@ class About extends Component {
                   <a
                     href="https://docs.qq.com/sheet/DT05BclBnZk9CYmhx"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="group inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-accent transition duration-300"
                   >
                     <span>

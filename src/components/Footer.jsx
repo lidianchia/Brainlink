@@ -105,6 +105,7 @@ class Footer extends Component {
                   <a
                     href="https://www.zhihu.com/people/QingshanAspie"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
                     <FormattedMessage id="Footer.zhihu" />
@@ -114,6 +115,7 @@ class Footer extends Component {
                   <a
                     href="https://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzgyMjY5NQ%3D%3D&hid=1"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
                     <FormattedMessage id="Footer.wechat" />
@@ -157,7 +159,6 @@ class Footer extends Component {
                 <a
                   href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
                   target="_blank"
-                  rel="license"
                 >
                   <img
                     src="/assets/img/cc-by-nc-nd.svg"

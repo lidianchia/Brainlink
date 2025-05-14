@@ -42,7 +42,6 @@ export default function PostsList({ posts }) {
           <a
             href="https://github.com/ittuann/qingshanasd/blob/main/src/pages/posts/"
             target="_blank"
-            rel="noopener noreferrer"
             className="flex items-center text-sm text-gray-600 hover:text-primary transition-colors"
           >
             <i className="ri-github-fill mr-1"></i>在 GitHub 上查看
