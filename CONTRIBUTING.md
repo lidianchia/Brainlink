@@ -1,6 +1,8 @@
 # Contributing Guidelines
 
-We're thrilled that you're interested in contributing to this project! Thank you!
+We're thrilled that you're interested in contributing to this open-source project! Thank you!
+
+Below you can find some guidance on how to be most effective when contributing to the project.
 
 ## Before Getting Started
 
@@ -14,9 +16,9 @@ We're thrilled that you're interested in contributing to this project! Thank you
 - If you want to make non-trivial changes:
 
 1. Please always begin by opening an issue or starting a discussion to outline your proposed changes before writing your code.
-2. Review existing issues and pull requests to avoid duplicates.
+2. Before opening a new issue, please searching the existing issues and pull requests, to review whether your concern has already been reported or is being addressed, which helps prevent duplicate and saves you time.
 3. Describe the changes you want to make in the issue or discussion.
-4. Await maintainer feedback before proceeding with development.
+4. Await maintainer feedback before starting code development.
 
 This will give us opportunity to flag any considerations you should be aware of before you spend time developing, ensuring your time and effort are well-directed.
 
@@ -24,7 +26,7 @@ This will give us opportunity to flag any considerations you should be aware of 
 
 Feel free to directly submit a filing Pull Request.
 
-Thanks so much for helping us improve, and we look forward to your valuable contribution! Together, we can make this project even better!
+Thanks so much for helping us improve, and we look forward to your valuable contribution!
 
 ## Development Stacks
 

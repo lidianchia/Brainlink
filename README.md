@@ -22,7 +22,7 @@
 
 ## 🛠️ Develop
 
-You can read our [CONTRIBUTING.md](https://github.com/ittuann/qingshanasd/blob/main/.github/CONTRIBUTING.md) documentation for comprehensive guidelines on how to develop and contribute.
+You can read our [CONTRIBUTING.md](https://github.com/ittuann/qingshanasd/blob/main/CONTRIBUTING.md) documentation for comprehensive guidelines on how to develop and contribute.
 
 1. Fork and Clone this Repository
 
