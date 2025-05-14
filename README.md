@@ -22,6 +22,8 @@
 
 ## 🛠️ Develop
 
+You can read our [CONTRIBUTING.md](https://github.com/ittuann/qingshanasd/blob/main/.github/CONTRIBUTING.md) documentation for comprehensive guidelines on how to develop and contribute.
+
 1. Fork and Clone this Repository
 
 - Create [your own fork](https://docs.github.com/get-started/quickstart/fork-a-repo) of this repository to your GitHub account.

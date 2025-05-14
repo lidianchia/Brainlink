@@ -34,7 +34,7 @@ For the CI/CD workflows, automated code quality testing and builds are implement
 
 [Format.js](https://github.com/formatjs/formatjs) (react-intl) is used to implement Internationalization (i18n) support.
 
-[Apache ECharts](https://echarts.apache.org/) is utilized for data visualization in the Visit Map feature (or: \[Apache ECharts\] is used for data visualization for the visit/appointment map). [RemixIcon](https://remixicon.com/) icon library is used for icon resources.
+[Apache ECharts](https://echarts.apache.org/) is utilized for data visualization in the Map. [RemixIcon](https://remixicon.com/) icon library is used for icon resources.
 
 For the blog implementation, [@next/mdx](https://www.npmjs.com/package/@next/mdx) is used to process [MDX](https://mdxjs.com/) files for content handling. It's integrated with the [remark-GFM](https://github.com/remarkjs/remark-gfm) extension to support GitHub-flavored Markdown (GFM) syntax features such as footnotes.
 
