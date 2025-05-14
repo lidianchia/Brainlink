@@ -78,7 +78,7 @@ export default class Index extends Component {
     return (
       <Layout
         title="青衫 Neuro"
-        description="青衫 Neuro 是一个为神经多元群体提供支持的公益非营利组织。致力于神经多元的科普、资源和互助。"
+        description="青衫 Neuro (原青衫 Aspie) 是一个为神经多元群体提供支持的公益非营利组织。致力于神经多元的科普、资源和互助。"
       >
         {/* Banner */}
         <div className="w-full px-4 py-12">

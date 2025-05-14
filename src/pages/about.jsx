@@ -4,6 +4,7 @@ import Image from "next/image";
 import Layout from "@/components/Layout";
 import "remixicon/fonts/remixicon.css";
 import { FormattedMessage } from "react-intl";
+import Head from "next/head";
 
 const contributors = [
   {
@@ -11,37 +12,76 @@ const contributors = [
     role: <FormattedMessage id="About.creatorRole" />,
     icon: "/assets/img/qingshan_150.png",
     link: "#",
+    email: "qingshan.aspire@gmail.com",
+    alternateName: "青衫 Aspire",
   },
   {
     name: "air wish",
     role: <FormattedMessage id="About.developerRole" />,
     icon: "/assets/img/ittuann.png",
     link: "https://github.com/ittuann",
+    email: "ittuann@outlook.com",
+    alternateName: "ittuann",
   },
   {
     name: "H-MALGANIS",
     role: <FormattedMessage id="About.developerRole" />,
     icon: "/assets/img/zealot.png",
     link: "#",
+    email: "#",
+    alternateName: "",
   },
   {
     name: "GLOOMYGHOST",
     role: <FormattedMessage id="About.developerRole" />,
     icon: "/assets/img/G-150x150.png",
     link: "https://github.com/YuzukiTsuru",
+    email: "#",
+    alternateName: "",
   },
   {
     name: "SPACEDUCK",
     role: <FormattedMessage id="About.maintainerRole" />,
     icon: "/assets/img/SpaceDuck.png",
     link: "#",
+    email: "#",
+    alternateName: "",
   },
 ];
 
 class About extends Component {
   render() {
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "青衫 Neuro",
+      description: "致力于神经多元的科普、资讯、资源",
+      slogan: "为神经多元群体提供支持",
+      keywords: "ADHD, ASD",
+      url: "https://qingshanasd.cn",
+      logo: "https://qingshanasd.cn/assets/img/logo.webp",
+      foundingDate: "2016",
+      member: contributors.map((contributor) => ({
+        "@type": "Person",
+        name: contributor.name,
+        alternateName:
+          contributor.alternateName && contributor.alternateName !== ""
+            ? contributor.alternateName
+            : undefined,
+        url: contributor.link !== "#" ? contributor.link : undefined,
+        email: contributor.email !== "#" ? contributor.email : undefined,
+        image: `https://qingshanasd.cn${contributor.icon}`,
+      })),
+    };
+
     return (
       <Layout title="关于青衫 | 青衫 Neuro" description="关于青衫 Neuro 团队">
+        <Head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+        </Head>
         <main className="max-w-7xl mx-auto px-4 py-16">
           {/* 标题部分 */}
           <div className={`mb-24 transition-opacity duration-700`}>
