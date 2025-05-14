@@ -92,9 +92,9 @@ export default class Index extends Component {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                   为神经多元群体提供支持
                 </h2>
-                <p className="text-lg md:text-xl mb-8 text-foreground/80">
+                <h3 className="text-lg md:text-xl mb-8 text-foreground/80">
                   因为你我，这个世界终将丰富多彩
-                </p>
+                </h3>
 
                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                   <Button

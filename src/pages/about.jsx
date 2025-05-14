@@ -54,16 +54,16 @@ class About extends Component {
               />
             </div>
             <div className="text-center">
-              <h1 className="tracking-tight font-extrabold text-gray-900">
-                <span className="block text-4xl md:text-5xl">
+              <div className="tracking-tight font-extrabold text-gray-900">
+                <h1 className="block text-4xl md:text-5xl">
                   <FormattedMessage id="About.title" />
-                </span>
+                </h1>
                 <span className="block mt-5">
                   <span className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
                     <FormattedMessage id="About.subtitle" />
                   </span>
                 </span>
-              </h1>
+              </div>
               <p className="mt-5 text-lg text-zinc-600">
                 <FormattedMessage id="About.slogan" />
               </p>
@@ -104,9 +104,9 @@ class About extends Component {
           <div className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-xl py-20 px-8 mb-32">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
-                <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
+                <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
                   <FormattedMessage id="About.contributors" />
-                </p>
+                </h2>
               </div>
 
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
@@ -134,9 +134,9 @@ class About extends Component {
                           {contributor.name}
                         </h3>
                         <div className="w-12 h-1 break-words bg-gradient-to-r from-primary to-teal-500 mx-auto my-3 rounded-full"></div>
-                        <p className="text-sm text-gray-500 mt-2">
+                        <h4 className="text-sm text-gray-500 mt-2">
                           {contributor.role}
-                        </p>
+                        </h4>
                       </div>
                     </a>
                   </div>
