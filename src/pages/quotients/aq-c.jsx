@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 import Cookies from "js-cookie";
 import Layout from "@/components/Layout";
 import QuestionInfo from "@/components/QuestionInfo";
@@ -179,24 +180,24 @@ class AQC extends Component {
           iconBg="bg-green-100"
           content={
             <>
-              <a
+              <Link
                 href="https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247483843&idx=1&sn=75b507e4e1e0fb6295123639b653c29e"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs mt-1 text-gray-600 hover:text-gray-700 transition-colors underline"
               >
                 量表介绍
-              </a>
+              </Link>
               <p className="text-xs text-gray-600 mt-1">本量表参考文献：</p>
               <p className="text-xs text-gray-500 mt-1">
-                <a
+                <Link
                   href="https://www.ncbi.nlm.nih.gov/pubmed/18064550?ordinalpos=2&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-gray-600 transition-colors"
                 >
                   Auyeung B, Baron-Cohen S, Wheelwright S, Allison C. (2007)
-                </a>
+                </Link>
               </p>
               <p className="text-xs text-gray-500 mt-1">
                 The Autism Spectrum Quotient: Children's Version (AQ-Child).

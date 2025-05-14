@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Pacifico } from "next/font/google";
 import Image from "next/image";
-import { withRouter } from "next/router";
 import Link from "next/link";
+import { Pacifico } from "next/font/google";
+import { withRouter } from "next/router";
 import "remixicon/fonts/remixicon.css";
 import { FormattedMessage } from "react-intl";
 import LangSwitcher from "@/i18n/LangSwitcher";
@@ -32,7 +32,7 @@ class Navbar extends Component {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <a href="/" className="flex items-center">
+              <Link href="/" className="flex items-center">
                 <Image
                   src="/assets/img/logo.webp"
                   alt="logo"
@@ -43,7 +43,7 @@ class Navbar extends Component {
                 <span className={`${pacifico.className} text-xl text-gray-900`}>
                   <FormattedMessage id="siteName" />
                 </span>
-              </a>
+              </Link>
             </div>
 
             {/* 移动端菜单按钮 */}

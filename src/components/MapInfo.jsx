@@ -1,4 +1,5 @@
 import React, { Component, useContext } from "react";
+import Link from "next/link";
 import { MedicalDataContext } from "@/context/MedicalDataContext";
 import "remixicon/fonts/remixicon.css";
 
@@ -64,13 +65,13 @@ class MapInfoNav extends Component {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
           <div className="flex flex-wrap gap-2">
             {currentData.medicalData.map((area, index) => (
-              <a
+              <Link
                 key={index}
                 href={`#${area.area}`}
                 className="px-6 py-2.5 text-sm bg-white rounded-full shadow hover:shadow-md hover:bg-primary hover:text-white transition-all duration-200 font-medium"
               >
                 {area.area}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -145,7 +146,7 @@ class MapInfo extends Component {
                             {doctor.shares.length > 0 && (
                               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                                 {doctor.shares.map((share, shareIndex) => (
-                                  <a
+                                  <Link
                                     key={shareIndex}
                                     href={share.link}
                                     target="_blank"
@@ -156,7 +157,7 @@ class MapInfo extends Component {
                                     <span className="text-sm font-medium">
                                       {share.name}
                                     </span>
-                                  </a>
+                                  </Link>
                                 ))}
                               </div>
                             )}

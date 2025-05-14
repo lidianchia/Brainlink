@@ -34,6 +34,14 @@ export default class Layout extends Component {
             content="https://qingshanasd.cn/assets/img/ogp.jpeg"
           />
           <meta property="og:image:alt" content="青衫 Neuro" />
+          <meta
+            name="google-site-verification"
+            content="0KtvMLWoVy32ZzcomvBYl0OS1C-keRSH7G8pSaDjJtQ"
+          />
+          <meta
+            name="msvalidate.01"
+            content="E73984A8E6A62AB2E04103B41EF00802"
+          />
         </Head>
 
         <I18n>

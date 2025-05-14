@@ -26,13 +26,13 @@ class Footer extends Component {
               <p className="text-gray-500 text-sm">
                 <FormattedMessage id="Footer.description" />
               </p>
-              <a
+              <Link
                 href="https://qingshanasd.cn/"
                 className="text-gray-500 hover:text-primary transition-colors duration-300 text-sm inline-flex items-center mt-1"
               >
                 <i className="ri-earth-line text-sm mr-1"></i>
                 qingshanasd.cn
-              </a>
+              </Link>
             </div>
             <div>
               <p className="font-medium text-gray-900 mb-4">
@@ -94,41 +94,41 @@ class Footer extends Component {
               </p>
               <ul className="space-y-2">
                 <li>
-                  <a
+                  <Link
                     href="mailto:qingshan.aspie@gmail.com"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
                     <FormattedMessage id="Footer.email" />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="https://www.zhihu.com/people/QingshanAspie"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
                     <FormattedMessage id="Footer.zhihu" />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="https://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzgyMjY5NQ%3D%3D&hid=1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
                     <FormattedMessage id="Footer.wechat" />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="https://github.com/ittuann/qingshanasd"
                     target="_blank"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
                     <FormattedMessage id="Footer.github" />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -145,31 +145,32 @@ class Footer extends Component {
               <div className="flex items-center space-x-2">
                 <p className="text-center text-gray-500 text-sm">
                   <FormattedMessage id="Footer.license" />{" "}
-                  <a
+                  <Link
                     href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
                     target="_blank"
                     className="text-primary hover:text-primary/80 transition"
                   >
                     <FormattedMessage id="Footer.licenseLink" />
-                  </a>{" "}
+                  </Link>{" "}
                   <FormattedMessage id="Footer.licenseSuffix" />
                 </p>
               </div>
               <div className="flex items-center space-x-2">
-                <a
+                <Link
                   href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
                   target="_blank"
                 >
-                  <img
+                  <Image
                     src="/assets/img/cc-by-nc-nd.svg"
                     alt="CC BY-NC-ND 4.0"
-                    width="88"
-                    height="31"
+                    width={88}
+                    height={31}
+                    className=""
                   />
-                </a>
+                </Link>
               </div>
               <div className="flex flex-col items-center space-y-2 mt-4">
-                <a
+                <Link
                   href="https://github.com/ittuann/qingshanasd"
                   target="_blank"
                   className="flex items-center space-x-2 text-gray-600 hover:text-gray-900"
@@ -178,7 +179,7 @@ class Footer extends Component {
                   <span>
                     <FormattedMessage id="Footer.sourceCode" />
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

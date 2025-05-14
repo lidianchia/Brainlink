@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 import Cookies from "js-cookie";
 import Layout from "@/components/Layout";
 import QuestionItem from "@/components/QuestionItem";
@@ -138,14 +139,14 @@ class BPD extends Component {
             <>
               <p className="text-xs text-gray-600">本量表参考文献：</p>
               <p className="text-xs text-gray-500 mt-1">
-                <a
+                <Link
                   href="https://www.zi-mannheim.de/fileadmin/user_upload/downloads/forschung/PSM_downloads/BSL-23_taiwanesisch.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-gray-600 transition-colors"
                 >
                   BSL-23.pdf
-                </a>
+                </Link>
               </p>
               <p className="text-xs text-gray-500 mt-1">
                 Yang, H., Lei, X., Zhong, M., Zhou, Q., Ling, Y., Jungkunz, M.,
@@ -241,24 +242,24 @@ class BPD extends Component {
               </h3>
               <div className="space-y-4">
                 <div>
-                  <a
+                  <Link
                     href="https://mp.weixin.qq.com/s/pRYTYnuvUvlJNNn-bVagcQ"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-lg font-medium text-gray-800 mb-2 hover:text-primary underline"
                   >
                     中国心理危机干预热线汇总
-                  </a>
+                  </Link>
                 </div>
                 <div>
-                  <a
+                  <Link
                     href="https://mp.weixin.qq.com/s/f2bpVY437pUO-tp0Ibgn9A"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-lg font-medium text-gray-800 mb-2 hover:text-primary underline"
                   >
                     心理CPR：每个人都要学会的危机干预
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

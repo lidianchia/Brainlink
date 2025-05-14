@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 import Cookies from "js-cookie";
 import Layout from "@/components/Layout";
 import QuestionItem from "@/components/QuestionItem";
@@ -123,7 +124,7 @@ class EQ60 extends Component {
             <>
               <p className="text-xs text-gray-600">本量表参考文献：</p>
               <p className="text-xs text-gray-500 mt-1">
-                <a
+                <Link
                   href="https://pubmed.ncbi.nlm.nih.gov/15162935/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -132,7 +133,7 @@ class EQ60 extends Component {
                   The Empathy Quotient: An Investigation of Adults with Asperger
                   Syndrome or High Functioning Autism, and Normal Sex
                   Differences
-                </a>
+                </Link>
               </p>
               <p className="text-xs text-gray-500 mt-2">
                 * 本站符合 GDPR 欧盟通用数据保护条例。页面在您的本地浏览器中使用

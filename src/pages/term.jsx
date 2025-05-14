@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/components/Layout";
 import "remixicon/fonts/remixicon.css";
@@ -55,14 +56,14 @@ export default class Terms extends Component {
                   </h3>
                   <p className="text-gray-700 mb-4">
                     除特别说明外，作品均采用
-                    <a
+                    <Link
                       href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode"
                       className="text-primary hover:text-accent"
                       target="_blank"
                     >
                       知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议（CC
                       BY-NC-ND 4.0）
-                    </a>
+                    </Link>
                     进行许可。
                   </p>
                   <p className="text-gray-700 mb-4">
@@ -137,13 +138,13 @@ export default class Terms extends Component {
             <div className="mt-10 text-center">
               <p className="text-gray-500">
                 For more information about Creative Commons licenses, visit{" "}
-                <a
+                <Link
                   href="https://creativecommons.org"
                   className="text-primary hover:text-accent"
                   target="_blank"
                 >
                   creativecommons.org
-                </a>
+                </Link>
               </p>
             </div>
           </div>

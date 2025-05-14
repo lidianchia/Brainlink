@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/components/Layout";
 import "remixicon/fonts/remixicon.css";
@@ -115,7 +116,7 @@ class About extends Component {
                     key={index}
                     className="h-full transform transition-all duration-300 hover:-translate-y-2"
                   >
-                    <a
+                    <Link
                       href={contributor.link}
                       target=""
                       className="block h-full"
@@ -138,7 +139,7 @@ class About extends Component {
                           {contributor.role}
                         </h4>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -146,7 +147,7 @@ class About extends Component {
               <div className="text-center mt-8">
                 <p className="text-gray-600">
                   <FormattedMessage id="About.contributorsNote" />
-                  <a
+                  <Link
                     href="https://github.com/ittuann/qingshanasd/graphs/contributors"
                     target="_blank"
                     className="ml-2 text-primary hover:text-accent inline-flex items-center"
@@ -155,7 +156,7 @@ class About extends Component {
                       <FormattedMessage id="About.viewOnGithub" />
                     </span>
                     <i className="ri-arrow-right-line ml-1"></i>
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -175,7 +176,7 @@ class About extends Component {
                   <FormattedMessage id="About.financialDescription" />
                 </p>
                 <div className="flex justify-center">
-                  <a
+                  <Link
                     href="https://docs.qq.com/sheet/DT05BclBnZk9CYmhx"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -185,7 +186,7 @@ class About extends Component {
                       <FormattedMessage id="About.viewFinancialReport" />
                     </span>
                     <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

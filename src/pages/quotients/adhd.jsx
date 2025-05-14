@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 import Cookies from "js-cookie";
 import Layout from "@/components/Layout";
 import QuestionItem from "@/components/QuestionItem";
@@ -179,24 +180,24 @@ class ADHD extends Component {
           iconBg="bg-green-100"
           content={
             <>
-              <a
+              <Link
                 href="https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247484259&idx=1&sn=c3aa8e8dbef9f5445212b1dfa2a31cd4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs mt-1 text-gray-600 hover:text-gray-700 transition-colors underline"
               >
                 量表介绍
-              </a>
+              </Link>
               <p className="text-xs text-gray-600 mt-1">本量表参考文献：</p>
               <p className="text-xs text-gray-500 mt-1">
-                <a
+                <Link
                   href="https://www.hcp.med.harvard.edu/ncs/ftpdir/adhd/adhd/Old%20Versions/18Q-Chinese-Traditional.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-gray-600 transition-colors"
                 >
                   18Q-Chinese-Traditional.pdf
-                </a>{" "}
+                </Link>{" "}
                 转自世界卫生组织 Composite International Diagnostic Interview
               </p>
               <p className="text-xs text-gray-500 mt-2">

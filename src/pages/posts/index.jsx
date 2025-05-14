@@ -42,13 +42,13 @@ export default function PostsList({ posts }) {
 
         {/* GitHub 链接 */}
         <div className="flex justify-end mb-8">
-          <a
+          <Link
             href="https://github.com/ittuann/qingshanasd/blob/main/src/pages/posts/"
             target="_blank"
             className="flex items-center text-sm text-gray-600 hover:text-primary transition-colors"
           >
             <i className="ri-github-fill mr-1"></i>在 GitHub 上查看
-          </a>
+          </Link>
         </div>
 
         {/* 文章列表容器 */}

@@ -15,14 +15,14 @@ function CustomLink({ href, children, ...props }) {
 
   if (href?.startsWith("#")) {
     return (
-      <a href={href} className={linkStyle} {...props}>
+      <Link href={href} className={linkStyle} {...props}>
         {children}
-      </a>
+      </Link>
     );
   }
 
   return (
-    <a
+    <Link
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -30,7 +30,7 @@ function CustomLink({ href, children, ...props }) {
       {...props}
     >
       {children}
-    </a>
+    </Link>
   );
 }
 

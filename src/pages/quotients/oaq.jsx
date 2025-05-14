@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 import Cookies from "js-cookie";
 import Layout from "@/components/Layout";
 import QuestionItem from "@/components/QuestionItem";
@@ -122,14 +123,14 @@ class OAQ extends Component {
           iconBg="bg-green-100"
           content={
             <>
-              <a
+              <Link
                 href="https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247484022&idx=1&sn=f088cdb2e239aa9db799fbce6aa3315a"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs mt-1 text-gray-600 hover:text-gray-700 transition-colors underline"
               >
                 量表介绍
-              </a>
+              </Link>
               <p className="text-xs text-gray-600 mt-1">本量表参考文献：</p>
               <p className="text-xs text-gray-500 mt-1">
                 青衫取得了OAQ- G2（Online Alexithymia
@@ -137,14 +138,14 @@ class OAQ extends Component {
                 述情障碍在线测试
               </p>
               <p className="text-xs text-gray-500 mt-1">
-                <a
+                <Link
                   href="https://www.amazon.com/Emotionally-Dumb-Alexithymia-Jason-Thompson-ebook/dp/B0038VZJ9U/"
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                   className="underline hover:text-gray-600 transition-colors"
                 >
                   Jason著有与述情障碍相关的两本书（点击购买）
-                </a>
+                </Link>
               </p>
               <p className="text-xs text-gray-500 mt-2">
                 * 本站符合 GDPR 欧盟通用数据保护条例。页面在您的本地浏览器中使用
