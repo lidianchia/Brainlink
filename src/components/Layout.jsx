@@ -17,10 +17,23 @@ export default class Layout extends Component {
         {/* 页面级 Head */}
         <Head>
           <title>{title}</title>
-          <meta name="description" content={description} />
-          <meta name="keywords" content="ASD,ADHD" />
+          <meta name="description" content={description} key="desc" />
+          <meta name="keywords" content="ASD, ADHD" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="author" content="ittuann" />
           <meta name="theme-color" content="#52b394" />
+          <meta property="og:title" content="青衫 Neuro" />
+          <meta
+            property="og:description"
+            content="致力于神经多元的科普、资讯、资源"
+          />
+          <meta property="og:locale" content="zh-CN" />
+          <meta property="og:locale:alternate" content="en_US" />
+          <meta
+            property="og:image"
+            content="https://qingshanasd.cn/assets/img/ogp.jpeg"
+          />
+          <meta property="og:image:alt" content="青衫 Neuro" />
         </Head>
 
         <I18n>

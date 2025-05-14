@@ -219,7 +219,7 @@ class ADHD extends Component {
     return (
       <Layout
         title="成人 ADHD 自填量表 (ASRS) | 青衫 Neuro"
-        description="注意力缺陷过动障碍（ADHD）成人测试量表，用于筛查成年人存在ADHD的可能性"
+        description="注意力缺陷过动障碍 (ADHD) 成人测试量表，用于筛查成年人存在ADHD的可能性"
       >
         <main className="max-w-3xl mx-auto px-4 py-8">
           <div className="bg-white rounded-lg shadow-sm p-8">

@@ -40,7 +40,7 @@ const contributors = [
 class About extends Component {
   render() {
     return (
-      <Layout title="关于青衫 - 青衫 Neuro">
+      <Layout title="关于青衫 | 青衫 Neuro" description="关于青衫 Neuro 团队">
         <main className="max-w-7xl mx-auto px-4 py-16">
           {/* 标题部分 */}
           <div className={`mb-24 transition-opacity duration-700`}>

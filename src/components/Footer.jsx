@@ -57,10 +57,10 @@ class Footer extends Component {
                 </li>
                 <li>
                   <Link
-                    href="/res"
+                    href="/posts/"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
-                    <FormattedMessage id="Footer.resourceIndex" />
+                    <FormattedMessage id="Footer.posts" />
                   </Link>
                 </li>
               </ul>

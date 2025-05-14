@@ -34,7 +34,10 @@ const resources = [
 
 export default function Resources() {
   return (
-    <Layout title="电子版手册 - 青衫 Neuro">
+    <Layout
+      title="电子版手册 | 青衫 Neuro"
+      description="青衫 Neuro 电子版手册，提供多种神经多样性相关的指南和手册"
+    >
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {resources.map((resource, index) => (

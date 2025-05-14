@@ -6,7 +6,10 @@ import "remixicon/fonts/remixicon.css";
 export default class Terms extends Component {
   render() {
     return (
-      <Layout title="使用条款 - 青衫 Neuro">
+      <Layout
+        title="使用条款 | 青衫 Neuro"
+        description="青衫 Neuro 网站使用条款和版权许可"
+      >
         <main className="max-w-7xl mx-auto px-4 py-16">
           {/* 标题 */}
           <div className={`mb-24 transition-opacity duration-700`}>

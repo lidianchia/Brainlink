@@ -13,7 +13,7 @@ const scales = [
     iconBg: "bg-orange-100",
     title: "成人 ADHD 自填量表 (ASRS)",
     description:
-      "注意力缺陷过动障碍（ADHD）成人测试量表，用于筛查成年人存在ADHD的可能性",
+      "注意力缺陷过动障碍 (ADHD) 成人测试量表，用于筛查成年人存在ADHD的可能性",
     tags: ["量表", "在线测试", "ADHD", "成人测试"],
     link: "/quotients/adhd",
   },
@@ -76,7 +76,10 @@ const scales = [
 export default class Index extends Component {
   render() {
     return (
-      <Layout>
+      <Layout
+        title="青衫 Neuro"
+        description="青衫 Neuro 是一个为神经多元群体提供支持的公益非营利组织。致力于神经多元的科普、资源和互助。"
+      >
         {/* Banner */}
         <div className="w-full px-4 py-12">
           <div className="container max-w-6xl mx-auto">

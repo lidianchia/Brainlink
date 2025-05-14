@@ -16,7 +16,7 @@ export default function Custom404() {
   }, []);
 
   return (
-    <Layout title="PageNotFound - 青衫 Neuro">
+    <Layout title="PageNotFound | 青衫 Neuro" description="页面未找到">
       <div className="min-h-[70vh] flex items-center justify-center px-4">
         <div className="text-center">
           <h1 className="text-9xl font-bold text-primary mb-4">404</h1>

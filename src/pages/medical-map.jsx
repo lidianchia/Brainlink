@@ -25,7 +25,10 @@ const MapChart = dynamic(() => import("@/components/MapChart"), {
 class MedicalMap extends Component {
   render() {
     return (
-      <Layout title="就诊地图 - 青衫 Neuro">
+      <Layout
+        title="就诊地图 | 青衫 Neuro"
+        description="青衫 Neuro 就诊地图，提供全国 ADHD/ASD 相关医院信息"
+      >
         <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
           <MedicalDataProvider>
             <div className="max-w-7xl mx-auto px-4 py-8">
