@@ -1,0 +1,37 @@
+# Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qingshanasd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: qingshanasd
+  template:
+    metadata:
+      labels:
+        app: qingshanasd
+    spec:
+      containers:
+      - name: nginx
+        image: qingshanasd:latest
+        imagePullPolicy: Never  # Use local docker images
+        ports:
+        - containerPort: 80
+
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: qingshanasd-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: qingshanasd
+  ports:
+  - port: 80
+    targetPort: 80
+
+# Ingress
