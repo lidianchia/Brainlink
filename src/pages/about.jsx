@@ -55,6 +55,7 @@ class About extends Component {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "青衫 Neuro",
+      alternateName: "青衫 Aspire",
       description: "致力于神经多元的科普、资讯、资源",
       slogan: "为神经多元群体提供支持",
       keywords: "ADHD, ASD",
