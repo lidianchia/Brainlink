@@ -45,9 +45,16 @@ export default function PostsList({ posts }) {
           <Link
             href="https://github.com/ittuann/qingshanasd/blob/main/src/pages/posts/"
             target="_blank"
-            className="flex items-center text-sm text-gray-600 hover:text-primary transition-colors"
+            className="flex items-center text-sm text-gray-600 hover:text-primary transition-colors mr-4"
           >
-            <i className="ri-github-fill mr-1"></i>在 GitHub 上查看
+            <i className="ri-github-fill mr-1"></i>View on GitHub
+          </Link>
+          <Link
+            href="https://github.com/search?q=repo%3Aittuann%2Fqingshanasd+path%3A%2F%5Esrc%5C%2Fpages%5C%2Fposts%5C%2F%2F+&type=code"
+            target="_blank"
+            className="flex items-center text-sm text-gray-600 hover:text-primary transition-colors mr-4"
+          >
+            <i className="ri-menu-search-line mr-1"></i>Search on GitHub
           </Link>
         </div>
 
@@ -92,6 +99,18 @@ export default function PostsList({ posts }) {
               </Link>
             </article>
           ))}
+        </div>
+
+        <div className="flex justify-end mt-8">
+          <Link href="/rss.xml" target="_blank" className="mr-4">
+            <i className="ri-rss-fill mr-1"></i>RSS
+          </Link>
+          <Link href="/sitemap.xml" target="_blank" className="mr-4">
+            <i className="ri-gps-line mr-1"></i>Sitemap
+          </Link>
+          <Link href="/atom.xml" target="_blank" className="mr-4">
+            <i className="ri-reactjs-line mr-1"></i>Atom
+          </Link>
         </div>
       </main>
     </Layout>
