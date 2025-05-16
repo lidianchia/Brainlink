@@ -40,6 +40,9 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: postbuild
+        run: pnpm postbuild
+
       - name: Prepare Deploy
         id: prepare_deploy
         run: |

@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/gen-sitemap.js && node scripts/gen-rss.js && node scripts/gen-atom.js",
     "serve": "serve dist/",
     "start": "next start",
     "lint": "next lint",
