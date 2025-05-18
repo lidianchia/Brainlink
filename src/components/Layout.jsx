@@ -18,7 +18,7 @@ export default class Layout extends Component {
         <Head>
           <title>{title}</title>
           <meta name="description" content={description} key="desc" />
-          <meta name="keywords" content="ASD, ADHD" />
+          <meta name="keywords" content="ASD, ADHD, Scale, 量表, 青衫, Neuro, Aspie" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="author" content="ittuann" />
           <meta name="theme-color" content="#52b394" />
