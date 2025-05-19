@@ -101,7 +101,10 @@ function About() {
           <div className="text-center">
             <div className="tracking-tight font-extrabold text-gray-900">
               <h1 className="block text-4xl md:text-5xl">
-                <FormattedMessage id="About.title" />
+                <FormattedMessage
+                  id="About.title"
+                  defaultMessage="关于青衫 Neuro"
+                />
               </h1>
               <span className="block mt-5">
                 <span className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">

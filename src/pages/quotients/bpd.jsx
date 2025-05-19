@@ -6,10 +6,13 @@ import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
 import QuestionInfo from "@/components/QuestionInfo";
 import QuestionInfoAlert from "@/components/QuestionInfoAlert";
-import questionData from "@/_data/questionBPD.json";
 import BackToTop from "@/components/BackToTop";
+import { FormattedMessage, injectIntl } from "react-intl";
+import { defaultLocale, LocaleContext } from "@/i18n/i18n";
 
 class BPD extends Component {
+  static contextType = LocaleContext;
+
   state = {
     quotientsName: "answers_bpd",
     answers: {},
@@ -17,6 +20,7 @@ class BPD extends Component {
     showInfoModal: true,
     score: 0,
     result: "",
+    questionData: null,
   };
 
   componentDidMount() {
@@ -26,7 +30,30 @@ class BPD extends Component {
         answers: JSON.parse(savedAnswers),
       });
     }
+
+    this.loadQuestionData();
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    // 如果语言变化，重新加载问题数据
+    if (this.context?.locale !== prevState.locale) {
+      this.loadQuestionData();
+    }
+  }
+
+  loadQuestionData = async () => {
+    try {
+      const locale = this.context?.locale || defaultLocale;
+      // 根据当前语言加载对应的问题数据
+      const data = await import(`@/_data/questionBPD.${locale}.json`);
+      this.setState({ questionData: data.default, locale });
+    } catch (error) {
+      // 如果找不到当前语言的问题数据，使用默认语言
+      console.error("Error loading question data:", error);
+      const data = await import(`@/_data/questionBPD.${defaultLocale}.json`);
+      this.setState({ questionData: data.default, locale: defaultLocale });
+    }
+  };
 
   closeModal = () => {
     this.setState({ showResultModal: false });
@@ -64,7 +91,9 @@ class BPD extends Component {
       (q) => q.id !== 0,
     ).length;
     if (answeredQuestions < requiredQuestions) {
-      alert("请完成量表所有问题的作答");
+      alert(
+        this.props.intl.formatMessage({ id: "quotients.completeAllQuestions" }),
+      );
       return;
     }
 
@@ -79,7 +108,7 @@ class BPD extends Component {
   };
 
   getQuestionDetail() {
-    return questionData.questionBPD;
+    return this.state.questionData?.questionBPD || [];
   }
 
   calculateScores() {
@@ -93,25 +122,32 @@ class BPD extends Component {
 
   calculateResult(score) {
     if (score < 0.3) {
-      return "None/Low 您不太可能有BPD";
+      return this.props.intl.formatMessage({ id: "BPD.resultNoneLow" });
     } else if (score < 1.1) {
-      return "Mild 您不太可能有BPD";
+      return this.props.intl.formatMessage({ id: "BPD.resultMild" });
     } else if (score < 1.5) {
-      return "Moderate 您不太可能有BPD";
+      return this.props.intl.formatMessage({ id: "BPD.resultModerate1" });
     } else if (score < 1.9) {
-      return "Moderate";
+      return this.props.intl.formatMessage({ id: "BPD.resultModerate2" });
     } else if (score < 2.7) {
-      return "High";
+      return this.props.intl.formatMessage({ id: "BPD.resultHigh" });
     } else if (score < 3.5) {
-      return "Very High";
+      return this.props.intl.formatMessage({ id: "BPD.resultVeryHigh" });
     } else {
-      return "Extremely High";
+      return this.props.intl.formatMessage({ id: "BPD.resultExtremelyHigh" });
     }
   }
 
   render() {
-    const { showResultModal, showInfoModal, score, result, answers } =
-      this.state;
+    const {
+      showResultModal,
+      showInfoModal,
+      score,
+      result,
+      answers,
+      questionData,
+    } = this.state;
+    const { intl } = this.props;
 
     const infoContent = (
       <>
@@ -120,13 +156,23 @@ class BPD extends Component {
           content={
             <>
               <p className="text-gray-600">
-                焦虑 / 抑郁 / 睡眠障碍<strong>等其他情况</strong>
-                均有可能造成分值偏高
+                <FormattedMessage
+                  id="quotients.info1"
+                  values={{
+                    strong: (chunks) => <strong>{chunks}</strong>,
+                  }}
+                />
               </p>
-              <p className="text-gray-600 mt-2">本量表可能含有情绪触动的内容</p>
               <p className="text-gray-600 mt-2">
-                本量表<strong>仅供筛查</strong>，<strong>不代表</strong>
-                确诊或作为诊断依据
+                <FormattedMessage
+                  id="quotients.info2"
+                  values={{
+                    strong: (chunks) => <strong>{chunks}</strong>,
+                  }}
+                />
+              </p>
+              <p className="text-gray-600 mt-2">
+                <FormattedMessage id="BPD.info" />
               </p>
             </>
           }
@@ -137,7 +183,9 @@ class BPD extends Component {
           iconBg="bg-green-100"
           content={
             <>
-              <p className="text-xs text-gray-600">本量表参考文献：</p>
+              <p className="text-xs text-gray-600">
+                <FormattedMessage id="BPD.reference" />
+              </p>
               <p className="text-xs text-gray-500 mt-1">
                 <Link
                   href="https://www.zi-mannheim.de/fileadmin/user_upload/downloads/forschung/PSM_downloads/BSL-23_taiwanesisch.pdf"
@@ -160,15 +208,13 @@ class BPD extends Component {
                 borderline symptom list (BSL). Psychopathology, 40(2), 126-132.
               </p>
               <p className="text-xs text-gray-500 mt-2">
-                * 本站符合 GDPR 欧盟通用数据保护条例。页面在您的本地浏览器中使用
-                Cookie 临时保存量表填写选项，并于2小时后自动
+                <FormattedMessage id="quotients.cookieNotice" />
                 <button
                   onClick={this.clearAnswersCookie}
                   className="underline hover:text-gray-600 transition-colors"
                 >
-                  删除
+                  <FormattedMessage id="quotients.cookieDelete" />
                 </button>
-                。
               </p>
             </>
           }
@@ -178,15 +224,15 @@ class BPD extends Component {
 
     return (
       <Layout
-        title="边缘人格障碍表现量表 BSL-23 | 青衫 Neuro"
-        description="边缘人格障碍表现量表 BSL-23"
+        title={intl.formatMessage({ id: "BPD.title" })}
+        description={intl.formatMessage({ id: "BPD.description" })}
       >
         <main className="max-w-3xl mx-auto px-4 py-8">
           <div className="bg-white rounded-lg shadow-sm p-8">
             {/* 信息 */}
             <div className="text-center mb-8">
               <h1 className="text-2xl font-semibold text-gray-900">
-                边缘人格障碍表现量表 BSL-23
+                <FormattedMessage id="BPD.pageTitle" />
               </h1>
 
               <div className="mt-2">{infoContent}</div>
@@ -205,7 +251,10 @@ class BPD extends Component {
                   <QuestionItem
                     key={`quotients_${question.id}`}
                     question={question}
-                    degree={["频繁", "没有"]}
+                    degree={[
+                      intl.formatMessage({ id: "BPD.degreeStrong" }),
+                      intl.formatMessage({ id: "BPD.degreeWeak" }),
+                    ]}
                     onAnswerChange={this.handleRadioChange}
                     checkedIndex={answers[question.id]?.index}
                   />
@@ -217,7 +266,7 @@ class BPD extends Component {
                 id="quotients-submit-bpd"
                 className="w-full bg-gradient-to-r from-green-600 to-indigo-600 text-white py-3 px-6 rounded-lg hover:from-green-600/90 hover:to-indigo-600/90 transition-all duration-200 shadow-lg shadow-green-600/20"
               >
-                提交
+                <FormattedMessage id="BPD.submit" />
               </button>
             </form>
           </div>
@@ -225,8 +274,8 @@ class BPD extends Component {
           <QuestionResult
             scores={[
               {
-                title: "分数（总分4.0）",
-                subtitle: "得分",
+                title: intl.formatMessage({ id: "BPD.scoreTitle" }),
+                subtitle: intl.formatMessage({ id: "BPD.scoreSubtitle" }),
                 score: score,
               },
             ]}
@@ -239,7 +288,7 @@ class BPD extends Component {
           <div className="mt-8 p-6 bg-white rounded-lg shadow-sm">
             <div className="border-l-4 border-red-500 pl-4">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                如果感到极为不适，这里可以帮到你：
+                <FormattedMessage id="BPD.crisisTitle" />
               </h3>
               <div className="space-y-4">
                 <div>
@@ -249,7 +298,7 @@ class BPD extends Component {
                     rel="noopener noreferrer"
                     className="text-lg font-medium text-gray-800 mb-2 hover:text-primary underline"
                   >
-                    中国心理危机干预热线汇总
+                    <FormattedMessage id="BPD.crisisHotline" />
                   </Link>
                 </div>
                 <div>
@@ -259,7 +308,7 @@ class BPD extends Component {
                     rel="noopener noreferrer"
                     className="text-lg font-medium text-gray-800 mb-2 hover:text-primary underline"
                   >
-                    心理CPR：每个人都要学会的危机干预
+                    <FormattedMessage id="BPD.crisisCPR" />
                   </Link>
                 </div>
               </div>
@@ -273,4 +322,4 @@ class BPD extends Component {
   }
 }
 
-export default BPD;
+export default injectIntl(BPD);

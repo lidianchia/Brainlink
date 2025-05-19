@@ -1,6 +1,7 @@
 import React from "react";
 import "remixicon/fonts/remixicon.css";
 import QuestionResultCard from "@/components/QuestionResultCard";
+import { FormattedMessage } from "react-intl";
 
 const QuestionResult = ({ scores, result, showModal, onClose }) => {
   if (!showModal) return null;
@@ -10,7 +11,9 @@ const QuestionResult = ({ scores, result, showModal, onClose }) => {
       <div className="fixed inset-0 bg-black/60" onClick={onClose}></div>
       <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4 relative z-10 max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-semibold text-gray-900">量表结果</h3>
+          <div className="text-xl font-semibold text-gray-900">
+            <FormattedMessage id="QuestionResult.title" />
+          </div>
           <button
             className="text-gray-400 hover:text-gray-500"
             onClick={onClose}
@@ -29,7 +32,9 @@ const QuestionResult = ({ scores, result, showModal, onClose }) => {
           <div className="border-t border-gray-200 pt-4">
             <div className="flex items-center mb-3">
               <i className="ri-mental-health-line text-primary text-xl mr-2"></i>
-              <h3 className="text-lg font-semibold">测试结果表示</h3>
+              <div className="text-lg font-semibold">
+                <FormattedMessage id="QuestionResult.resultTitle" />
+              </div>
             </div>
             <p className="text-gray-600 bg-gray-50 p-4 rounded-lg">{result}</p>
           </div>
@@ -39,17 +44,25 @@ const QuestionResult = ({ scores, result, showModal, onClose }) => {
             <div className="flex items-center mb-2">
               <i className="ri-information-line text-yellow-500 mr-2"></i>
               <span className="text-sm font-medium text-yellow-800">
-                注意事项
+                <FormattedMessage id="QuestionResult.noticeTitle" />
               </span>
             </div>
             <div className="text-sm text-yellow-700 space-y-1">
               <p>
-                * 焦虑 / 抑郁 / 睡眠障碍<strong>等其他情况</strong>
-                均有可能造成分值偏高
+                <FormattedMessage
+                  id="quotients.info1"
+                  values={{
+                    strong: (chunks) => <strong>{chunks}</strong>,
+                  }}
+                />
               </p>
               <p>
-                * 本量表<strong>仅供筛查</strong>，<strong>不代表</strong>
-                确诊或作为诊断依据
+                <FormattedMessage
+                  id="quotients.info2"
+                  values={{
+                    strong: (chunks) => <strong>{chunks}</strong>,
+                  }}
+                />
               </p>
             </div>
           </div>
