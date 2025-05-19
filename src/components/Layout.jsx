@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import I18n from "@/i18n/i18n";
 
 export default class Layout extends Component {
   render() {
@@ -18,7 +17,10 @@ export default class Layout extends Component {
         <Head>
           <title>{title}</title>
           <meta name="description" content={description} key="desc" />
-          <meta name="keywords" content="ASD, ADHD, Scale, 量表, 青衫, Neuro, Aspie" />
+          <meta
+            name="keywords"
+            content="ASD, ADHD, Scale, 量表, 青衫, Neuro, Aspie"
+          />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="author" content="ittuann" />
           <meta name="theme-color" content="#52b394" />
@@ -44,13 +46,11 @@ export default class Layout extends Component {
           />
         </Head>
 
-        <I18n>
-          <div className="bg-zinc-50 min-h-screen flex flex-col">
-            <Navbar />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-          </div>
-        </I18n>
+        <div className="bg-zinc-50 min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </div>
       </>
     );
   }
