@@ -13,12 +13,13 @@ MDX 是 Markdown 语法的扩展，集成了 JSX 功能。我们这里主要使�
 
 frontmatter 定义的 Metadata 结构如下：
 
-| Prop        | Status   | Type   | Example                         | Describe                   |
-| ----------- | -------- | ------ | ------------------------------- | -------------------------- |
-| title       | Required | String | title: Example Post             | 文章标题                   |
-| description | Required | String | title: Description of the post. | 文章简介                   |
-| pubDate     | Required | String | pubDate: 2025-04-29             | 发布日期。格式为YYYY-MM-DD |
-| modDate     | Optional | String | modDate: 2025-04-29             | 最后修改日期               |
+| Prop        | Status   | Type   | Example                         | Describe                             |
+| ----------- | -------- | ------ | ------------------------------- | ------------------------------------ |
+| title       | Required | String | title: Example Post             | 文章标题                             |
+| description | Required | String | title: Description of the post. | 文章简介                             |
+| pubDate     | Required | String | pubDate: 2025-04-29             | 发布日期。格式为YYYY-MM-DD(ISO 8601) |
+| modDate     | Optional | String | modDate: 2025-04-29             | 最后修改日期                         |
+| pin         | Optional | Number | pin: 2                          | 文章置顶。数字表示指定位序           |
 
 请务必正确填写所有标记为 `Required` 的必填字段，这是文章系统正常工作的必要条件。
 
@@ -37,7 +38,7 @@ modDate: 2025-05-01
 
 - 文件命名规范：
 
-文件命名至关重要，因为它将直接映射为文章网页的 URL 路径。请使用简洁且具有描述意义的全小写英文字词(以及数字)，并用连字符(-)连接单词(而不是使用下划线_)，例如`example-post.mdx`.
+文件命名至关重要，因为它将直接映射为文章网页的 URL 路径。请使用简洁且具有描述意义的全小写英文字词(以及数字)，并用连字符(-)连接单词(而不是使用下划线\_)，例如`example-post.mdx`.
 
 有关更详细的 URL 结构推荐阅读 [URL structure best practices for Google](https://developers.google.com/search/docs/crawling-indexing/url-structure).
 
@@ -80,15 +81,15 @@ modDate: 2025-05-01
 
 _Italic_
 
-***Bold and Italic*** & **_Bold and Italic_**
+**_Bold and Italic_** & **_Bold and Italic_**
 
 ~~Strikethrough~~ & ~one tildes~
 
-*one asterisks*
+_one asterisks_
 
 <u>underline</u>
 
-***<u>underline bold italic</u>***
+**_<u>underline bold italic</u>_**
 
 ---
 
@@ -97,12 +98,13 @@ _Italic_
 #### Unordered List
 
 - Item
+
 * Mix `-` and `*`
   - Subitem
   - To make a sub-item, indent two spaces.
     - This is a sub-sub-item. Indent two more spaces.
 
-***
+---
 
 #### Ordered List
 

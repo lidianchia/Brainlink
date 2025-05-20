@@ -9,12 +9,26 @@ import "remixicon/fonts/remixicon.css";
  */
 export async function getStaticProps() {
   const posts = await getPosts();
-  // 按发布日期降序排序
-  const sortedPosts = posts.sort(
+
+  // 分离置顶文章和普通文章
+  const pinnedPosts = posts.filter((post) => post.metadata.pin !== undefined);
+  const normalPosts = posts.filter((post) => post.metadata.pin === undefined);
+
+  // 对普通文章按发布日期降序排序
+  const sortedNormalPosts = normalPosts.sort(
     (a, b) =>
       new Date(b.metadata.pubDate).getTime() -
       new Date(a.metadata.pubDate).getTime(),
   );
+
+  // 对置顶文章按pin值升序排序
+  const sortedPinnedPosts = pinnedPosts.sort(
+    (a, b) => parseInt(a.metadata.pin) - parseInt(b.metadata.pin),
+  );
+
+  // 合并置顶文章和普通文章
+  const sortedPosts = [...sortedPinnedPosts, ...sortedNormalPosts];
+
   return {
     props: {
       posts: sortedPosts,
@@ -71,6 +85,11 @@ export default function PostsList({ posts }) {
                 {/* 文章标题 */}
                 <h2 className="text-2xl font-semibold mb-3 text-gray-900 group-hover:text-primary transition-colors duration-300">
                   {post.metadata.title}
+                  {post.metadata.pin !== undefined && (
+                    <span className="inline-flex items-center ml-2 px-2 py-0.5 rounded-full text-xs bg-primary/10 text-primary">
+                      <i className="ri-pushpin-fill mr-1"></i>
+                    </span>
+                  )}
                 </h2>
 
                 {/* 文章描述 */}
