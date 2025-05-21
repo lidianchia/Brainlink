@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useState } from "react";
 import { getPosts } from "@/utils/mdx";
 import Layout from "@/components/Layout";
 import "remixicon/fonts/remixicon.css";
@@ -43,6 +44,28 @@ export async function getStaticProps() {
  * @returns {JSX.Element}
  */
 export default function PostsList({ posts }) {
+  // 分页相关状态
+  const postsPerPage = 10;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // 计算总页数
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+
+  // 获取当前页的文章
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // 处理页面变化
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    // 页面切换后滚动到顶部
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <Layout
       title="文章列表 | 青衫 Neuro"
@@ -74,8 +97,8 @@ export default function PostsList({ posts }) {
 
         {/* 文章列表容器 */}
         <div className="space-y-8">
-          {/* 遍历文章数组，渲染每篇文章的预览卡片 */}
-          {posts.map((post) => (
+          {/* 遍历当前页的文章数组，渲染每篇文章的预览卡片 */}
+          {currentPosts.map((post) => (
             <article
               key={post.slug}
               className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-6 border border-gray-100 hover:border-primary/20 transform hover:-translate-y-1"
@@ -119,6 +142,62 @@ export default function PostsList({ posts }) {
             </article>
           ))}
         </div>
+
+        {/* 分页导航 */}
+        {totalPages > 1 && (
+          <div className="flex justify-center mt-12 mb-8">
+            <nav className="flex items-center">
+              {/* 上一页按钮 */}
+              <button
+                onClick={() =>
+                  currentPage > 1 && handlePageChange(currentPage - 1)
+                }
+                disabled={currentPage === 1}
+                className={`px-3 py-2 mx-1 rounded-md ${
+                  currentPage === 1
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-gray-700 hover:bg-primary/10 hover:text-primary"
+                } transition-colors duration-300`}
+              >
+                <i className="ri-arrow-left-s-line"></i>
+                上一页
+              </button>
+
+              {/* 页码按钮 */}
+              <div className="flex items-center">
+                {[...Array(totalPages)].map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => handlePageChange(i + 1)}
+                    className={`w-10 h-10 mx-1 rounded-full ${
+                      currentPage === i + 1
+                        ? "bg-primary text-white"
+                        : "bg-gray-100 text-gray-700 hover:bg-primary/10 hover:text-primary"
+                    } transition-colors duration-300`}
+                  >
+                    {i + 1}
+                  </button>
+                ))}
+              </div>
+
+              {/* 下一页按钮 */}
+              <button
+                onClick={() =>
+                  currentPage < totalPages && handlePageChange(currentPage + 1)
+                }
+                disabled={currentPage === totalPages}
+                className={`px-3 py-2 mx-1 rounded-md ${
+                  currentPage === totalPages
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-gray-700 hover:bg-primary/10 hover:text-primary"
+                } transition-colors duration-300`}
+              >
+                下一页
+                <i className="ri-arrow-right-s-line ml-1"></i>
+              </button>
+            </nav>
+          </div>
+        )}
 
         <div className="flex justify-end mt-8">
           <Link href="/rss.xml" target="_blank" className="mr-4">
