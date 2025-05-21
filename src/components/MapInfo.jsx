@@ -1,6 +1,7 @@
 import React, { Component, useContext } from "react";
 import Link from "next/link";
 import { MedicalDataContext } from "@/context/MedicalDataContext";
+import { FormattedMessage } from "react-intl";
 import "remixicon/fonts/remixicon.css";
 
 const MapInfoSelect = () => {
@@ -16,7 +17,7 @@ const MapInfoSelect = () => {
             : "bg-white text-gray-700 hover:bg-gray-50"
         }`}
       >
-        国内版
+        <FormattedMessage id="MedicalMap.MapInfoSelect.adult" />
       </button>
       <button
         onClick={() => switchData("child")}
@@ -26,7 +27,7 @@ const MapInfoSelect = () => {
             : "bg-white text-gray-700 hover:bg-gray-50"
         }`}
       >
-        儿童版
+        <FormattedMessage id="MedicalMap.MapInfoSelect.child" />
       </button>
       <button
         onClick={() => switchData("abroad")}
@@ -36,7 +37,7 @@ const MapInfoSelect = () => {
             : "bg-white text-gray-700 hover:bg-gray-50"
         }`}
       >
-        海外版
+        <FormattedMessage id="MedicalMap.MapInfoSelect.international" />
       </button>
     </div>
   );
