@@ -108,12 +108,12 @@ function About() {
               </h1>
               <span className="block mt-5">
                 <span className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                  <FormattedMessage id="About.subtitle" />
+                  <FormattedMessage id="subtitle" />
                 </span>
               </span>
             </div>
             <p className="mt-5 text-lg text-zinc-600">
-              <FormattedMessage id="About.slogan" />
+              <FormattedMessage id="slogan" />
             </p>
             <div className="mt-8 flex justify-center">
               <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full"></div>
