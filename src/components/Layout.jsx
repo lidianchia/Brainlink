@@ -24,11 +24,13 @@ export default class Layout extends Component {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="author" content="ittuann" />
           <meta name="theme-color" content="#52b394" />
+          <meta property="og:site_name" content="青衫 Neuro" />
           <meta property="og:title" content="青衫 Neuro" />
           <meta
             property="og:description"
             content="致力于神经多元的科普、资讯、资源"
           />
+          <meta property="og:url" content="https://qingshanasd.cn" />
           <meta property="og:locale" content="zh-CN" />
           <meta property="og:locale:alternate" content="en_US" />
           <meta

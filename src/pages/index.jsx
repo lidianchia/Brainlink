@@ -10,7 +10,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 const scales = [
   {
     icon: "ri-brain-line",
-    iconColor: "text-orange-500",
+    iconColor: "text-orange-700",
     iconBg: "bg-orange-100",
     title: <FormattedMessage id="Index.scales.adhd.title" />,
     description: <FormattedMessage id="Index.scales.adhd.description" />,
@@ -19,7 +19,7 @@ const scales = [
   },
   {
     icon: "ri-user-heart-line",
-    iconColor: "text-purple-500",
+    iconColor: "text-purple-700",
     iconBg: "bg-purple-100",
     title: <FormattedMessage id="Index.scales.aqa.title" />,
     description: <FormattedMessage id="Index.scales.aqa.description" />,
@@ -32,7 +32,7 @@ const scales = [
   },
   {
     icon: "ri-heart-pulse-line",
-    iconColor: "text-red-500",
+    iconColor: "text-red-700",
     iconBg: "bg-red-100",
     title: <FormattedMessage id="Index.scales.bpd.title" />,
     description: <FormattedMessage id="Index.scales.bpd.description" />,
@@ -41,7 +41,7 @@ const scales = [
   },
   {
     icon: "ri-hearts-line",
-    iconColor: "text-yellow-500",
+    iconColor: "text-yellow-700",
     iconBg: "bg-yellow-100",
     title: <FormattedMessage id="Index.scales.oaq.title" />,
     description: <FormattedMessage id="Index.scales.oaq.description" />,
@@ -50,7 +50,7 @@ const scales = [
   },
   {
     icon: "ri-empathize-line",
-    iconColor: "text-blue-500",
+    iconColor: "text-blue-700",
     iconBg: "bg-blue-100",
     title: <FormattedMessage id="Index.scales.aqc.title" />,
     description: <FormattedMessage id="Index.scales.aqc.description" />,
@@ -63,7 +63,7 @@ const scales = [
   },
   {
     icon: "ri-mental-health-line",
-    iconColor: "text-green-500",
+    iconColor: "text-green-700",
     iconBg: "bg-green-100",
     title: <FormattedMessage id="Index.scales.aspie.title" />,
     description: <FormattedMessage id="Index.scales.aspie.description" />,
@@ -76,7 +76,7 @@ const scales = [
   },
   {
     icon: "ri-guide-line",
-    iconColor: "text-teal-500",
+    iconColor: "text-teal-700",
     iconBg: "bg-teal-100",
     title: <FormattedMessage id="Index.scales.eq.title" />,
     description: <FormattedMessage id="Index.scales.eq.description" />,

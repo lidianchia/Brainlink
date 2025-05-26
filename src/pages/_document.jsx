@@ -18,7 +18,7 @@ export default class Document extends Component {
             src="/assets/lib/detection.min.js"
             data-website-id="ed6801de-a80a-452f-ab47-a81ddec2904a"
           />
-          <Script id="gtm" src="/lib/gtm.min.js" />
+          <Script id="gtm" src="/assets/lib/gtm.min.js" />
         </Head>
         <body>
           <noscript>
