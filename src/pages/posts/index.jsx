@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { getPosts } from "@/utils/mdx";
 import Layout from "@/components/Layout";
+import { FormattedMessage } from "react-intl";
 import "remixicon/fonts/remixicon.css";
 
 /**
@@ -74,7 +75,7 @@ export default function PostsList({ posts }) {
       <main className="max-w-4xl mx-auto px-4 py-12">
         {/* 标题 */}
         <h1 className="text-4xl font-bold mb-3 text-center text-gray-900">
-          文章列表
+          <FormattedMessage id="Posts.pageTitle" />
         </h1>
 
         {/* GitHub 链接 */}
