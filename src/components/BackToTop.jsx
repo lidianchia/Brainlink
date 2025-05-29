@@ -39,8 +39,7 @@ class BackToTop extends Component {
       }
     }
 
-    // 控制返回顶部按钮显示
-    if (isShowButton) {
+    if (isShowButton || isShowProgress) {
       if (window.scrollY > 300) {
         this.setState({ visible: true });
       } else {
@@ -80,7 +79,7 @@ class BackToTop extends Component {
               <i className="ri-arrow-up-line text-xl text-gray-600" />
             </button>
           )}
-          {isShowProgress && (
+          {isShowProgress && visible && (
             // SVG 圆环进度条
             <svg
               className="absolute transform -rotate-90 w-10 h-10 z-20 pointer-events-none"

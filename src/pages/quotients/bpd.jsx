@@ -315,7 +315,9 @@ class BPD extends Component {
             </div>
           </div>
 
-          <BackToTop isShowButton={true} isShowProgress={true} />
+          {!showResultModal && !showInfoModal && (
+            <BackToTop isShowButton={true} isShowProgress={true} />
+          )}
         </main>
       </Layout>
     );

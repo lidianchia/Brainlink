@@ -223,7 +223,9 @@ class OAQ extends Component {
             onClose={this.closeModal}
           />
 
-          <BackToTop isShowButton={true} isShowProgress={true} />
+          {!showResultModal && !showInfoModal && (
+            <BackToTop isShowButton={true} isShowProgress={true} />
+          )}
         </main>
       </Layout>
     );

@@ -37,8 +37,6 @@ function CustomLink({ href, children, ...props }) {
 export function useMDXComponents(components) {
   return {
     wrapper: ({ children }) => {
-      const githubFileLink = `https://github.com/ittuann/qingshanasd/blob/main/src/pages/posts/`;
-
       return (
         <Layout title={"青衫 Neuro"}>
           <main className="max-w-4xl mx-auto px-4 py-8">
@@ -65,7 +63,7 @@ export function useMDXComponents(components) {
               <span className="flex items-center gap-1">
                 <i className="ri-github-fill"></i>
                 <Link
-                  href={githubFileLink}
+                  href={"https://github.com/ittuann/qingshanasd/blob/main/src/pages/posts/"}
                   target="_blank"
                   className="hover:text-blue-600 transition-colors"
                 >
@@ -95,7 +93,7 @@ export function useMDXComponents(components) {
         className="border-l-4 border-gray-300 pl-4 italic my-4"
       />
     ),
-    br: (props) => <br {...props} className="mt-2 mb-2" />,
+    br: (props) => <br {...props} className="" />,
     code: (props) => (
       <code
         {...props}
