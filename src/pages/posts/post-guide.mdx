@@ -81,17 +81,23 @@ modDate: 2025-05-01
 
 ### Inline elements
 
-**Bold**
+**Bold** & __Bold__
 
-_Italic_
+*Italic* & _Italic_
 
-**_Bold and Italic_** & **_Bold and Italic_**
+***All bold and italic***
 
-~~Strikethrough~~ & ~one tildes~
+**Bold and _nested_ italic**
+
+~Strikethrough~ & ~~Strikethrough~~
+
+A <sub>subscript</sub> text
+
+A <sup>superscript</sup> text
 
 <u>underline</u>
 
-**_<u>underline bold italic</u>_**
+***<u>underline bold italic</u>***
 
 ---
 
@@ -119,11 +125,19 @@ _Italic_
 
 ---
 
+#### Nested Lists
+
+1. First list item
+   - First nested list item
+     - Second nested list item
+
+---
+
 ### Links
 
 [URL Link](https://qingshanasd.cn)
 
-[Relative Link](/posts)
+[Absolute Link](/posts)
 
 [Inside Link](#markdown-syntax-example)
 
@@ -154,7 +168,7 @@ def hello():
 
 ### Blockquotes
 
-> This is a blockquote.
+> This is a quote.
 >
 > > Nested blockquote.
 
