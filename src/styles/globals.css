@@ -18,13 +18,14 @@
   --accent: #1eb88e;
   --accent-content: oklch(0.37 0.03 259.73);
   --accent-foreground: oklch(0.208 0.042 265.755);
+  /* 柔和颜色 */
+  --muted: oklch(0.967 0.0029 264.5419);
+  --muted-foreground: oklch(0.551 0.0234 264.3637);
   /* UI Component Colors */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.28 0.04 260.03);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.28 0.04 260.03);
-  --muted: oklch(0.97 0 264.54);
-  --muted-foreground: oklch(0.55 0.02 264.36);
   /* Utility & Form Colors */
   --border: oklch(0.87 0.01 258.34);
   --input: oklch(0.87 0.01 258.34);
