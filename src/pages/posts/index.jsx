@@ -7,6 +7,7 @@ import "remixicon/fonts/remixicon.css";
 
 /**
  * 获取所有博客文章的静态属性
+ * 使用 next.js 的 getStaticProps 函数
  * @returns {Promise<{props: {posts: Array}}>} 包含所有博客文章数据的props对象
  */
 export async function getStaticProps() {

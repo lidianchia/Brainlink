@@ -38,7 +38,7 @@ export function useMDXComponents(components) {
   return {
     wrapper: ({ children }) => {
       return (
-        <Layout title={"青衫 Neuro"}>
+        <Layout title={"青衫 Neuro 文章"}>
           <main className="max-w-4xl mx-auto px-4 py-8">
             {/* Title */}
             {/* <h1 className="text-4xl font-bold mb-4 text-gray-900">
