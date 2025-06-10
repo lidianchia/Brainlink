@@ -5,7 +5,7 @@ import Card from "@/components/Card";
 const resources = [
   {
     icon: "ri-book-2-line",
-    iconColor: "text-lime-500",
+    iconColor: "text-lime-700",
     iconBg: "bg-lime-100",
     title: "初识神经多样性指南",
     description: "带你走进8亿NS(神经多样性)的世界——23年9月发布",
@@ -14,8 +14,8 @@ const resources = [
   },
   {
     icon: "ri-book-2-line",
-    iconColor: "text-lime-500",
-    iconBg: "bg-lime-100",
+    iconColor: "text-emerald-700",
+    iconBg: "bg-emerald-100",
     title: "独立生活能力指南",
     description: "独立生活能力清单电子书 Checklist——23年7月发布",
     tags: ["手册", "指南", "PDF"],
@@ -23,8 +23,8 @@ const resources = [
   },
   {
     icon: "ri-book-2-line",
-    iconColor: "text-lime-500",
-    iconBg: "bg-lime-100",
+    iconColor: "text-green-700",
+    iconBg: "bg-green-100",
     title: "成年DCD人士生活指南",
     description: "与发育协调性障碍共同生活——21年9月发布",
     tags: ["手册", "指南", "PDF"],
