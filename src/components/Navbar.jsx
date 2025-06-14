@@ -19,7 +19,7 @@ class Navbar extends Component {
 
   isActive = (path) => {
     return this.props.router.pathname === path
-      ? "text-primary/90 font-medium border-b-2 border-primary"
+      ? "text-primary font-medium border-b-2 border-primary"
       : "text-gray-500 hover:text-accent";
   };
 

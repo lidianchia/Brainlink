@@ -254,10 +254,10 @@ function About() {
         <div className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
           <div className="text-center mb-8">
             <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
-              <FormattedMessage id="About.mediaCoverage" />
+              <FormattedMessage id="About.media.title" />
             </h2>
             <p className="max-w-3xl mx-auto text-center text-gray-600">
-              <FormattedMessage id="About.mediaCoverageDescription" />
+              <FormattedMessage id="About.media.description" />
             </p>
           </div>
 
@@ -283,7 +283,7 @@ function About() {
                     <div className="text-sm text-gray-500 mt-1 flex items-center">
                       <span>
                         <FormattedMessage
-                          id="About.readArticle"
+                          id="About.media.read"
                           defaultMessage="阅读报道"
                         />
                       </span>
@@ -303,7 +303,7 @@ function About() {
                 rel="noopener noreferrer"
                 className="ml-2 text-primary hover:text-accent inline-flex items-center"
               >
-                <FormattedMessage id="About.viewAllMedia" />
+                <FormattedMessage id="About.media.viewAll" />
                 <i className="ri-arrow-right-line ml-1"></i>
               </Link>
             </p>
@@ -314,13 +314,13 @@ function About() {
         <div className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
             <span className="relative">
-              <FormattedMessage id="About.financialTitle" />
+              <FormattedMessage id="About.financial.title" />
               <span className="absolute bottom-1 left-0 w-full h-2 bg-secondary -z-10"></span>
             </span>
           </h2>
           <div className="max-w-3xl mx-auto">
             <p className="text-gray-600 mb-8 text-center text-lg leading-relaxed">
-              <FormattedMessage id="About.financialDescription" />
+              <FormattedMessage id="About.financial.description" />
             </p>
             <div className="flex justify-center">
               <Link
@@ -330,7 +330,7 @@ function About() {
                 className="group inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-accent transition duration-300"
               >
                 <span>
-                  <FormattedMessage id="About.viewFinancialReport" />
+                  <FormattedMessage id="About.financial.view" />
                 </span>
                 <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
               </Link>

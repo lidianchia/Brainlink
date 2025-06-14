@@ -9,7 +9,7 @@ class ScaleCard extends Component {
 
     return (
       <Link href={link} rel="" className="block h-full max-w-lg">
-        <div className="bg-card rounded-xl shadow-sm hover:shadow-md transition-all p-6 h-full flex flex-col">
+        <div className="bg-card rounded-xl shadow-sm hover:shadow-md border-2 border-transparent hover:border-primary transition-all p-6 h-full flex flex-col ">
           <div className="flex-grow">
             <div
               className={`w-16 h-16 ${iconBg} rounded-full flex items-center justify-center mb-4`}
