@@ -154,17 +154,20 @@ function Terms() {
             </div>
           </div>
 
-          <div className="mt-10 text-center">
-            <p className="text-gray-500">
-              For more information about Creative Commons licenses, visit{" "}
-              <Link
-                href="https://creativecommons.org"
-                className="text-primary hover:text-accent"
-                target="_blank"
-              >
-                creativecommons.org
-              </Link>
-            </p>
+          <div className="text-center mt-8">
+            <Link
+              href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+              target="_blank"
+              className="inline-block"
+            >
+              <Image
+                src="/assets/img/cc-by-nc-nd.svg"
+                alt="CC BY-NC-ND 4.0"
+                width={88}
+                height={31}
+                className="mx-auto"
+              />
+            </Link>
           </div>
         </div>
       </main>

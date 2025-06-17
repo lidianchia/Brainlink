@@ -159,21 +159,7 @@ class Footer extends Component {
                   <FormattedMessage id="Footer.licenseSuffix" />
                 </p>
               </div>
-              <div className="flex items-center space-x-2">
-                <Link
-                  href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
-                  target="_blank"
-                >
-                  <Image
-                    src="/assets/img/cc-by-nc-nd.svg"
-                    alt="CC BY-NC-ND 4.0"
-                    width={88}
-                    height={31}
-                    className=""
-                  />
-                </Link>
-              </div>
-              <div className="flex flex-col items-center space-y-2 mt-4">
+              <div className="flex flex-col items-center space-y-2">
                 <Link
                   href="https://github.com/ittuann/qingshanasd"
                   target="_blank"
