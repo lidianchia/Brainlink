@@ -114,7 +114,11 @@ function Index() {
               </h3>
 
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <Button asChild size="lg" className="rounded-full font-medium">
+                <Button
+                  asChild
+                  size="lg"
+                  className="font-medium hover:scale-105 rounded-full"
+                >
                   <Link href="/medical-map">
                     <FormattedMessage id="Navbar.medicalMap" />
                   </Link>
@@ -123,7 +127,7 @@ function Index() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="rounded-full font-medium"
+                  className="font-medium hover:scale-105 rounded-full"
                 >
                   <Link href="/about">
                     <FormattedMessage id="Navbar.about" />

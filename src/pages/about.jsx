@@ -198,6 +198,9 @@ function About() {
               <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-4">
                 <FormattedMessage id="About.contributors" />
               </h2>
+              <p className="max-w-3xl mx-auto text-center text-gray-600 mb-6">
+                <FormattedMessage id="About.contributorsDescription" />
+              </p>
             </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">

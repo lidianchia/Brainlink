@@ -486,9 +486,18 @@
       "area": "湖南省",
       "hospitals": [
         {
-          "name": "湘雅附属二医院",
+          "name": "中南大学湘雅二医院",
           "notes": "",
           "doctors": [
+            {
+              "name": "何玉琼",
+              "capacity": [
+                "ADHD",
+                "ASD"
+              ],
+              "shares": [],
+              "notes": ""
+            },
             {
               "name": "高雪屏",
               "capacity": [

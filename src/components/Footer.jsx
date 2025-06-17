@@ -98,6 +98,7 @@ class Footer extends Component {
                     href="mailto:qingshan.aspie@gmail.com"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
+                    <i className="ri-mail-fill"></i>
                     <FormattedMessage id="Footer.email" />
                   </Link>
                 </li>
@@ -108,6 +109,7 @@ class Footer extends Component {
                     rel="noopener noreferrer"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
+                    <i className="ri-zhihu-line"></i>
                     <FormattedMessage id="Footer.zhihu" />
                   </Link>
                 </li>
@@ -118,6 +120,7 @@ class Footer extends Component {
                     rel="noopener noreferrer"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
+                    <i className="ri-wechat-fill"></i>
                     <FormattedMessage id="Footer.wechat" />
                   </Link>
                 </li>
@@ -127,6 +130,7 @@ class Footer extends Component {
                     target="_blank"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
+                    <i className="ri-github-fill"></i>
                     <FormattedMessage id="Footer.github" />
                   </Link>
                 </li>

@@ -18,9 +18,10 @@ class Navbar extends Component {
   };
 
   isActive = (path) => {
-    return this.props.router.pathname === path
+    const isCurrentPath = this.props.router.pathname === path;
+    return isCurrentPath
       ? "text-primary font-medium border-b-2 border-primary"
-      : "text-gray-500 hover:text-accent";
+      : "text-gray-500 hover:text-accent hover-underline";
   };
 
   toggleMobileMenu = () => {

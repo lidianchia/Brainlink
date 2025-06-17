@@ -2347,23 +2347,16 @@
           "notes": "首诊病人建议前往儿童青少年精神心理门诊或学习困难与多动症门诊就诊。此外有自闭症专病门诊",
           "doctors": [
             {
-              "name": "崔夕龙",
+              "name": "何玉琼",
               "capacity": [
-                "ADHD"
+                "ADHD",
+                "ASD"
               ],
               "shares": [],
               "notes": ""
             },
             {
               "name": "⻩春香",
-              "capacity": [
-                "ADHD"
-              ],
-              "shares": [],
-              "notes": ""
-            },
-            {
-              "name": "苏林雁",
               "capacity": [
                 "ADHD"
               ],
@@ -2387,6 +2380,22 @@
                 }
               ],
               "notes": "自闭症专项门诊"
+            },
+            {
+              "name": "崔夕龙",
+              "capacity": [
+                "ADHD"
+              ],
+              "shares": [],
+              "notes": "无排班"
+            },
+            {
+              "name": "苏林雁",
+              "capacity": [
+                "ADHD"
+              ],
+              "shares": [],
+              "notes": "无排班"
             }
           ]
         }
