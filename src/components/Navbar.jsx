@@ -78,9 +78,6 @@ class Navbar extends Component {
               <Link href="/res" className={this.isActive("/res")}>
                 <FormattedMessage id="Navbar.res" />
               </Link>
-              <Link href="/term" className={this.isActive("/term")}>
-                <FormattedMessage id="Navbar.terms" />
-              </Link>
               <div className="">
                 <LangSwitcher />
               </div>
@@ -114,12 +111,6 @@ class Navbar extends Component {
                   className={`block px-3 py-2 rounded-md ${this.isActive("/res")}`}
                 >
                   <FormattedMessage id="Navbar.res" />
-                </Link>
-                <Link
-                  href="/term"
-                  className={`block px-3 py-2 rounded-md ${this.isActive("/term")}`}
-                >
-                  <FormattedMessage id="Navbar.terms" />
                 </Link>
                 <div className="">
                   <LangSwitcher />
