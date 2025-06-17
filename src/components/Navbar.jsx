@@ -21,7 +21,7 @@ class Navbar extends Component {
     const isCurrentPath = this.props.router.pathname === path;
     return isCurrentPath
       ? "text-primary font-medium border-b-2 border-primary"
-      : "text-gray-500 hover:text-accent hover-underline";
+      : "text-gray-500 transition hover:text-accent hover-underline";
   };
 
   toggleMobileMenu = () => {
@@ -87,32 +87,32 @@ class Navbar extends Component {
           {/* 移动端菜单面板 */}
           {this.state.isMobileMenuOpen && (
             <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1">
+              <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
                 <Link
                   href="/"
-                  className={`block px-3 py-2 rounded-md ${this.isActive("/")}`}
+                  className={`block px-3 py-2 ${this.isActive("/")}`}
                 >
                   <FormattedMessage id="Navbar.quotients" />
                 </Link>
                 <Link
                   href="/about"
-                  className={`block px-3 py-2 rounded-md ${this.isActive("/about")}`}
+                  className={`block px-3 py-2 ${this.isActive("/about")}`}
                 >
                   <FormattedMessage id="Navbar.about" />
                 </Link>
                 <Link
                   href="/medical-map"
-                  className={`block px-3 py-2 rounded-md ${this.isActive("/medical-map")}`}
+                  className={`block px-3 py-2 ${this.isActive("/medical-map")}`}
                 >
                   <FormattedMessage id="Navbar.medicalMap" />
                 </Link>
                 <Link
                   href="/res"
-                  className={`block px-3 py-2 rounded-md ${this.isActive("/res")}`}
+                  className={`block px-3 py-2 ${this.isActive("/res")}`}
                 >
                   <FormattedMessage id="Navbar.res" />
                 </Link>
-                <div className="">
+                <div className="block px-3 py-2">
                   <LangSwitcher />
                 </div>
               </div>
