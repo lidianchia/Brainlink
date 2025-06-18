@@ -19,10 +19,14 @@ export const supportedLocales = {
  * @returns {Object} 合并后的消息对象
  */
 const defaultMessageMerge = (defaultMessages, currentMessages) => {
-  if (!defaultMessages) return currentMessages || {};
-  if (!currentMessages) return defaultMessages;
+  // 处理模块导入的格式 确保获取实际的消息对象
+  const defaultMsgs = defaultMessages?.default || defaultMessages || {};
+  const currentMsgs = currentMessages?.default || currentMessages || {};
 
-  const merged = { ...defaultMessages };
+  if (!defaultMsgs) return currentMsgs;
+  if (!currentMsgs) return defaultMsgs;
+
+  const merged = { ...defaultMsgs };
 
   const deepMerge = (target, source) => {
     Object.keys(source).forEach((key) => {
@@ -48,7 +52,7 @@ const defaultMessageMerge = (defaultMessages, currentMessages) => {
     });
   };
 
-  deepMerge(merged, currentMessages);
+  deepMerge(merged, currentMsgs);
   return merged;
 };
 
@@ -96,7 +100,7 @@ export default function I18n(props) {
 
     setMessages(null);
 
-    const loadMessages = async () => {
+    const loadLocaleMessages = async () => {
       try {
         // 总是加载默认语言 作为回退
         const defaultMessages = await import(
@@ -105,7 +109,7 @@ export default function I18n(props) {
 
         if (locale === defaultLocale) {
           // 如果当前语言就是默认语言则直接使用
-          setMessages(defaultMessages);
+          setMessages(defaultMessages.default || defaultMessages);
         } else {
           // 如果是其他语言，加载当前语言并与默认语言合并
           try {
@@ -121,7 +125,7 @@ export default function I18n(props) {
               `Failed to load messages for locale ${locale}, falling back to ${defaultLocale}:`,
               err,
             );
-            setMessages(defaultMessages);
+            setMessages(defaultMessages.default || defaultMessages);
           }
         }
       } catch (err) {
@@ -132,7 +136,7 @@ export default function I18n(props) {
       }
     };
 
-    loadMessages();
+    loadLocaleMessages();
   }, [locale]);
 
   return !messages ? null : (
@@ -141,6 +145,7 @@ export default function I18n(props) {
         locale={locale}
         defaultLocale={defaultLocale}
         messages={messages}
+        key={locale}
       >
         {props.children}
       </IntlProvider>
