@@ -12,6 +12,50 @@ export const supportedLocales = {
   },
 };
 
+/**
+ * 合并当前语言和默认语言 实现翻译内容缺失时的回退
+ * @param {Object} defaultMessages - 默认语言的消息对象
+ * @param {Object} currentMessages - 当前语言的消息对象
+ * @returns {Object} 合并后的消息对象
+ */
+const defaultMessageMerge = (defaultMessages, currentMessages) => {
+  if (!defaultMessages) return currentMessages || {};
+  if (!currentMessages) return defaultMessages;
+
+  const merged = { ...defaultMessages };
+
+  const deepMerge = (target, source) => {
+    Object.keys(source).forEach((key) => {
+      if (
+        source[key] &&
+        typeof source[key] === "object" &&
+        !Array.isArray(source[key])
+      ) {
+        // 如果是对象，递归合并
+        if (!target[key] || typeof target[key] !== "object") {
+          target[key] = {};
+        }
+        deepMerge(target[key], source[key]);
+      } else if (
+        source[key] !== undefined &&
+        source[key] !== null &&
+        source[key] !== ""
+      ) {
+        // 如果当前语言有有效值，使用当前语言的值
+        target[key] = source[key];
+      }
+      // 如果当前语言的值为 undefined、null 或空字符串，保持默认语言的值
+    });
+  };
+
+  deepMerge(merged, currentMessages);
+  return merged;
+};
+
+/**
+ * Gets the user's browser locale and returns a supported locale.
+ * @returns {string} A supported locale string, or the default locale if no match is found
+ */
 const getBrowserLocale = () => {
   if (typeof window === "undefined") return defaultLocale;
 
@@ -52,11 +96,43 @@ export default function I18n(props) {
 
     setMessages(null);
 
-    import(`@/i18n/lang/${locale}.json`)
-      .then((messages_) => setMessages(messages_))
-      .catch((err) =>
-        console.error(`Error loading messages for locale ${locale}: `, err),
-      );
+    const loadMessages = async () => {
+      try {
+        // 总是加载默认语言 作为回退
+        const defaultMessages = await import(
+          `@/i18n/lang/${defaultLocale}.json`
+        );
+
+        if (locale === defaultLocale) {
+          // 如果当前语言就是默认语言则直接使用
+          setMessages(defaultMessages);
+        } else {
+          // 如果是其他语言，加载当前语言并与默认语言合并
+          try {
+            const currentMessages = await import(`@/i18n/lang/${locale}.json`);
+            const mergedMessages = defaultMessageMerge(
+              defaultMessages,
+              currentMessages,
+            );
+            setMessages(mergedMessages);
+          } catch (err) {
+            // 如果当前语言加载失败，使用默认语言
+            console.warn(
+              `Failed to load messages for locale ${locale}, falling back to ${defaultLocale}:`,
+              err,
+            );
+            setMessages(defaultMessages);
+          }
+        }
+      } catch (err) {
+        console.error(
+          `Error loading default messages for locale ${defaultLocale}:`,
+          err,
+        );
+      }
+    };
+
+    loadMessages();
   }, [locale]);
 
   return !messages ? null : (
