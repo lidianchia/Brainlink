@@ -10,6 +10,9 @@ export const supportedLocales = {
   en: {
     name: "English",
   },
+  "ja-JP": {
+    name: "Japanese",
+  },
 };
 
 /**
