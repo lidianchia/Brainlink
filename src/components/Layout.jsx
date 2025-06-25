@@ -33,6 +33,7 @@ export default class Layout extends Component {
           <meta property="og:url" content="https://qingshanasd.cn" />
           <meta property="og:locale" content="zh-CN" />
           <meta property="og:locale:alternate" content="en_US" />
+          <meta property="og:locale:alternate" content="ja_JP" />
           <meta
             property="og:image"
             content="https://qingshanasd.cn/assets/img/ogp.jpeg"

@@ -90,6 +90,27 @@ const scales = [
 ];
 
 function Index() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "青衫 Neuro",
+    alternateName: "青衫 Aspire",
+    description: "致力于神经多元的科普、资讯、资源",
+    slogan: "为神经多元群体提供支持",
+    keywords: "ADHD, ASD",
+    url: "https://qingshanasd.cn",
+    logo: "https://qingshanasd.cn/assets/img/logo.webp",
+    foundingDate: "2016",
+    member: {
+      "@type": "Person",
+      name: "air wish",
+      alternateName: "ittuann",
+      url: "https://github.com/ittuann",
+      email: "ittuann@outlook.com",
+      image: "https://qingshanasd.cn/assets/img/ittuann.png",
+      description: "Developer and maintainer.",
+    },
+  };
   const intl = useIntl();
 
   return (
@@ -97,71 +118,79 @@ function Index() {
       title={intl.formatMessage({ id: "siteName" })}
       description={intl.formatMessage({ id: "Index.description" })}
     >
-      {/* Banner */}
-      <div className="w-full px-4 py-12">
-        <div className="container max-w-6xl mx-auto">
-          <div className="flex flex-col-reverse md:flex-row items-center md:justify-between gap-8">
-            {/* Content */}
-            <div className="text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-                <FormattedMessage id="siteName" />
-              </h1>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                <FormattedMessage id="subtitle" />
-              </h2>
-              <h3 className="text-lg md:text-xl mb-8 text-foreground/80">
-                <FormattedMessage id="slogan" />
-              </h3>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </Head>
+      <main>
+        {/* Banner */}
+        <div className="w-full px-4 py-12">
+          <div className="container max-w-6xl mx-auto">
+            <div className="flex flex-col-reverse md:flex-row items-center md:justify-between gap-8">
+              {/* Content */}
+              <div className="text-center md:text-left">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
+                  <FormattedMessage id="siteName" />
+                </h1>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                  <FormattedMessage id="subtitle" />
+                </h2>
+                <h3 className="text-lg md:text-xl mb-8 text-foreground/80">
+                  <FormattedMessage id="slogan" />
+                </h3>
 
-              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <Button
-                  asChild
-                  size="lg"
-                  className="font-medium hover:scale-105 rounded-full"
-                >
-                  <Link href="/medical-map">
-                    <FormattedMessage id="Navbar.medicalMap" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="font-medium hover:scale-105 rounded-full"
-                >
-                  <Link href="/about">
-                    <FormattedMessage id="Navbar.about" />
-                  </Link>
-                </Button>
+                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="font-medium hover:scale-105 rounded-full"
+                  >
+                    <Link href="/medical-map">
+                      <FormattedMessage id="Navbar.medicalMap" />
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="font-medium hover:scale-105 rounded-full"
+                  >
+                    <Link href="/about">
+                      <FormattedMessage id="Navbar.about" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
-            </div>
 
-            <div
-              id="logo-index"
-              className="flex justify-center md:justify-start"
-            >
-              <Image
-                src="/assets/img/logo.webp"
-                alt="logo index"
-                width={128}
-                height={128}
-                priority={true}
-                fetchPriority="high"
-                className="rounded-full"
-              />
+              <div
+                id="logo-index"
+                className="flex justify-center md:justify-start"
+              >
+                <Image
+                  src="/assets/img/logo.webp"
+                  alt="logo index"
+                  width={128}
+                  height={128}
+                  priority={true}
+                  fetchPriority="high"
+                  className="rounded-full"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* 量表 */}
-      <div className="max-w-7xl mx-auto px-4 py-2">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {scales.map((scale, index) => (
-            <Card key={index} {...scale} />
-          ))}
+        {/* 量表 */}
+        <div className="max-w-7xl mx-auto px-4 py-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {scales.map((scale, index) => (
+              <Card key={index} {...scale} />
+            ))}
+          </div>
         </div>
-      </div>
+      </main>
     </Layout>
   );
 }
