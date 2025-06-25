@@ -237,18 +237,23 @@ function About() {
               ))}
             </div>
 
-            <div className="text-center mt-8">
+            <div className="text-center mt-6">
               <p className="text-gray-600">
                 <FormattedMessage id="About.contributorsNote" />
-                <Link
-                  href="https://github.com/ittuann/qingshanasd/graphs/contributors"
-                  target="_blank"
-                  className="ml-2 text-primary hover:text-accent inline-flex items-center"
-                >
-                  <FormattedMessage id="About.viewOnGithub" />
-                  <i className="ri-arrow-right-line ml-1"></i>
-                </Link>
               </p>
+            </div>
+
+            <div className="mt-6 flex justify-center">
+              <Link
+                href="https://github.com/ittuann/qingshanasd"
+                target="_blank"
+                className="group inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-accent transition duration-300"
+              >
+                <span>
+                  <FormattedMessage id="About.viewOnGithub" />
+                </span>
+                <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+              </Link>
             </div>
           </div>
         </div>
