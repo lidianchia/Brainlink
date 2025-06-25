@@ -49,46 +49,73 @@ const contributors = [
   },
 ];
 
-const mediaCoverage = [
+const mediaProjects = [
   {
-    name: <FormattedMessage id="About.media.tencent" />,
+    name: <FormattedMessage id="About.media.projects.tencent" />,
     link: "https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247514836&idx=1&sn=c12376cd562cbcb916b4bfc266a217ed",
   },
   {
-    name: <FormattedMessage id="About.media.sinaHummingbird" />,
+    name: <FormattedMessage id="About.media.projects.sinaHummingbird" />,
     link: "https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247529199&idx=1&sn=ed0483d7b63fbebf3fe517aff90fed6d",
   },
   {
-    name: <FormattedMessage id="About.media.xinhuaHealth" />,
+    name: <FormattedMessage id="About.media.projects.xinhuaHealth" />,
     link: "https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247502883&idx=1&sn=2dd3834f3c447518288a9e89575e1957",
   },
   {
-    name: <FormattedMessage id="About.media.phoenixWeekly" />,
+    name: <FormattedMessage id="About.media.projects.phoenixWeekly" />,
     link: "https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247502611&idx=1&sn=e6e888b8066c40b0ea2c590252cc67d7",
   },
   {
-    name: <FormattedMessage id="About.media.southernWindow" />,
+    name: <FormattedMessage id="About.media.projects.southernWindow" />,
     link: "https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247513738&idx=1&sn=7376f6f1bc4f983c8d25480456a7d2ea",
   },
   {
-    name: <FormattedMessage id="About.media.shanghaiResearch" />,
+    name: <FormattedMessage id="About.media.projects.shanghaiResearch" />,
     link: "https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247521093&idx=1&sn=edd802215eee1c76bc17971f37b65539",
   },
   {
-    name: <FormattedMessage id="About.media.xiehe" />,
+    name: <FormattedMessage id="About.media.projects.xiehe" />,
     link: "https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247487437&idx=1&sn=eed7b0912e54f234c089659af30be487",
   },
   {
-    name: <FormattedMessage id="About.media.wanxiangPodcast" />,
+    name: <FormattedMessage id="About.media.projects.wanxiangPodcast" />,
     link: "https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247528711&idx=1&sn=2fbb8fab1e14d9de87f219f6c216622e",
   },
   {
-    name: <FormattedMessage id="About.media.mindVoice" />,
+    name: <FormattedMessage id="About.media.projects.mindVoice" />,
     link: "https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247487441&idx=1&sn=7b0fcc4cf8c469b3b54461886eaf4c13",
   },
   {
-    name: <FormattedMessage id="About.media.worldOfChinese" />,
+    name: <FormattedMessage id="About.media.projects.worldOfChinese" />,
     link: "https://mp.weixin.qq.com/s?__biz=MzIyMzgyMjY5NQ==&mid=2247548059&idx=1&sn=421d64b152eb18b92edb897caab8652e",
+  },
+];
+
+const researchProjects = [
+  {
+    name: <FormattedMessage id="About.research.projects.pku" />,
+    link: "https://mp.weixin.qq.com/s/VNUziWfLt9gOF6oS-jqCNg",
+  },
+  {
+    name: <FormattedMessage id="About.research.projects.xiamenXianyue" />,
+    link: "https://mp.weixin.qq.com/s/EiglerYoRcORF5rzMqjDMQ",
+  },
+  {
+    name: <FormattedMessage id="About.research.projects.bupt" />,
+    link: "https://mp.weixin.qq.com/s/ubtULQqS9SXj2XV6H_K9Zw",
+  },
+  {
+    name: <FormattedMessage id="About.research.projects.sysu" />,
+    link: "https://mp.weixin.qq.com/s/ycSjPzJpPo_34xveSTpNXw",
+  },
+  {
+    name: <FormattedMessage id="About.research.projects.leiden" />,
+    link: "https://mp.weixin.qq.com/s/dv2LoL37tDtx_HEZo-2c7Q",
+  },
+  {
+    name: <FormattedMessage id="About.research.projects.anding" />,
+    link: "https://mp.weixin.qq.com/s/1PUcaiRcoU3LReejb112xg",
   },
 ];
 
@@ -270,10 +297,10 @@ function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {mediaCoverage.map((media, index) => (
+            {mediaProjects.map((project, index) => (
               <a
                 key={index}
-                href={media.link}
+                href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transform transition-all duration-300 hover:-translate-y-2"
@@ -286,7 +313,7 @@ function About() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">
-                      {media.name}
+                      {project.name}
                     </h3>
                     <div className="text-sm text-gray-500 mt-1 flex items-center">
                       <span>
@@ -312,6 +339,63 @@ function About() {
                 className="ml-2 text-primary hover:text-accent inline-flex items-center"
               >
                 <FormattedMessage id="About.media.viewAll" />
+                <i className="ri-arrow-right-line ml-1"></i>
+              </Link>
+            </p>
+          </div>
+        </div>
+
+        {/* 研究合作部分 */}
+        <div className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
+          <div className="text-center mb-8">
+            <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
+              <FormattedMessage id="About.research.title" />
+            </h2>
+            <p className="max-w-3xl mx-auto text-center text-gray-600">
+              <FormattedMessage id="About.research.description" />
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {researchProjects.map((project, index) => (
+              <a
+                key={index}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transform transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 border border-gray-100 h-full flex items-center">
+                  <div className="flex-shrink-0 mr-4">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center text-white">
+                      <i class="ri-file-list-3-line"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {project.name}
+                    </h3>
+                    <div className="text-sm text-gray-500 mt-1 flex items-center">
+                      <span>
+                        <FormattedMessage id="About.research.read" />
+                      </span>
+                      <i className="ri-external-link-line ml-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-gray-600">
+              <Link
+                href="https://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzgyMjY5NQ==&hid=1&sn=f3f557bb16f4781bf487fe58efa0c15f"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 text-primary hover:text-accent inline-flex items-center"
+              >
+                <FormattedMessage id="About.research.viewAll" />
                 <i className="ri-arrow-right-line ml-1"></i>
               </Link>
             </p>
