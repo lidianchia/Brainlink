@@ -22,7 +22,9 @@
 
 ## 🛠️ Develop
 
-You can read our [CONTRIBUTING.md](https://github.com/ittuann/qingshanasd/blob/main/CONTRIBUTING.md) documentation for comprehensive guidelines on how to develop and contribute.
+This website is built with [React](https://react.dev/) and powered by the [Next.js](https://nextjs.org/) framework, featuring responsive design through [Tailwind CSS](https://tailwindcss.com/) v4 and the [shadcn/ui](https://ui.shadcn.com/) component library.
+
+You can read our [CONTRIBUTING.md](https://github.com/ittuann/qingshanasd/blob/main/CONTRIBUTING.md) documentation for detailed information about tech stacks and comprehensive guidelines on how to develop and contribute.
 
 1. Fork and Clone this Repository
 

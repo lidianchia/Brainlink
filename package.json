@@ -17,8 +17,8 @@
     "serve": "serve dist/",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write '**/*.{js,mjs,ts,css,scss,json,mjs,jsx,md}'",
-    "format:check": "prettier --check .",
+    "format": "prettier --write '**/*.{js,jsx,mjs,ts,css,scss,json,yaml,yml,md}'",
+    "format:check": "prettier --check '**/*.{js,jsx,mjs,ts,css,scss,json,yaml,yml,md}'",
     "test": "jest",
     "test:watch": "jest --watch"
   },

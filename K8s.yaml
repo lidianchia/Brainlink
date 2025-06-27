@@ -14,11 +14,11 @@ spec:
         app: qingshanasd
     spec:
       containers:
-      - name: nginx
-        image: qingshanasd:latest
-        imagePullPolicy: Never  # Use local docker images
-        ports:
-        - containerPort: 80
+        - name: nginx
+          image: qingshanasd:latest
+          imagePullPolicy: Never # Use local docker images
+          ports:
+            - containerPort: 80
 
 ---
 # Service
@@ -31,7 +31,6 @@ spec:
   selector:
     app: qingshanasd
   ports:
-  - port: 80
-    targetPort: 80
-
+    - port: 80
+      targetPort: 80
 # Ingress
