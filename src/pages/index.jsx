@@ -176,7 +176,7 @@ function Index() {
                   height={128}
                   priority={true}
                   fetchPriority="high"
-                  className="rounded-full"
+                  className="rounded-full drop-shadow-[0_0_35px_rgba(134,239,172,0.8)]"
                 />
               </div>
             </div>

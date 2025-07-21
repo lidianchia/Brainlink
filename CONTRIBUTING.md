@@ -26,6 +26,8 @@ This will give us opportunity to flag any considerations you should be aware of 
 
 Feel free to directly submit a filing Pull Request.
 
+Anyone else reading this who wishes to contribute does not need to worry, I'm happy to explain and answer any questions via email if you want.
+
 Thanks so much for helping us improve, and we look forward to your valuable contribution!
 
 ## Development Stacks

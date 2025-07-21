@@ -9,6 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/ittuann/qingshanasd.git"
   },
+  "bugs": {
+    "url": "https://github.com/ittuann/qingshanasd/issues",
+    "email": "ittuann@outlook.com"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
