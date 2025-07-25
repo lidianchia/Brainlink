@@ -15,7 +15,7 @@ class AQC extends Component {
     quotientsName: "answers_aqc",
     answers: {},
     showResultModal: false,
-    showInfoModal: true,
+
     score: 0,
     result: "",
     socialScore: 0,
@@ -36,10 +36,6 @@ class AQC extends Component {
 
   closeModal = () => {
     this.setState({ showResultModal: false });
-  };
-
-  closeInfoModal = () => {
-    this.setState({ showInfoModal: false });
   };
 
   handleRadioChange = (questionId, value, index) => {
@@ -152,7 +148,6 @@ class AQC extends Component {
       score,
       result,
       showResultModal,
-      showInfoModal,
       socialScore,
       attentionSwitchingScore,
       attentionDetailScore,
@@ -258,11 +253,7 @@ class AQC extends Component {
               <div className="mt-2">{infoContent}</div>
             </div>
 
-            <QuestionInfoAlert
-              showModal={showInfoModal}
-              onClose={this.closeInfoModal}
-              content={infoContent}
-            />
+            <QuestionInfoAlert content={infoContent} />
 
             <form className="space-y-8" onSubmit={this.handleSubmit}>
               {/* 量表问题 */}
@@ -333,7 +324,7 @@ class AQC extends Component {
             onClose={this.closeModal}
           />
 
-          {!showResultModal && !showInfoModal && (
+          {!showResultModal && (
             <BackToTop isShowButton={true} isShowProgress={true} />
           )}
         </main>

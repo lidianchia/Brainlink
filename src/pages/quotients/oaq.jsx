@@ -15,7 +15,7 @@ class OAQ extends Component {
     quotientsName: "answers_oaq",
     answers: {},
     showResultModal: false,
-    showInfoModal: true,
+
     score: 0,
     result: "",
   };
@@ -31,10 +31,6 @@ class OAQ extends Component {
 
   closeModal = () => {
     this.setState({ showResultModal: false });
-  };
-
-  closeInfoModal = () => {
-    this.setState({ showInfoModal: false });
   };
 
   handleRadioChange = (questionId, value, index) => {
@@ -103,8 +99,7 @@ class OAQ extends Component {
     }
   }
   render() {
-    const { score, result, showResultModal, showInfoModal, answers } =
-      this.state;
+    const { score, result, showResultModal, answers } = this.state;
     const { intl } = this.props;
 
     const infoContent = (
@@ -185,11 +180,7 @@ class OAQ extends Component {
               <div className="mt-2">{infoContent}</div>
             </div>
 
-            <QuestionInfoAlert
-              showModal={showInfoModal}
-              onClose={this.closeInfoModal}
-              content={infoContent}
-            />
+            <QuestionInfoAlert content={infoContent} />
 
             <form className="space-y-8" onSubmit={this.handleSubmit}>
               {/* 量表问题 */}
@@ -228,7 +219,7 @@ class OAQ extends Component {
             showModal={showResultModal}
             onClose={this.closeModal}
           />
-          {!showResultModal && !showInfoModal && (
+          {!showResultModal && (
             <BackToTop isShowButton={true} isShowProgress={true} />
           )}
         </main>

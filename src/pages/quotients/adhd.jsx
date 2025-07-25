@@ -15,7 +15,6 @@ class ADHD extends Component {
     quotientsName: "answers_adhd",
     answers: {},
     showResultModal: false,
-    showInfoModal: true,
     scoreA: 0,
     scoreB: 0,
     result: "",
@@ -33,10 +32,6 @@ class ADHD extends Component {
 
   closeModal = () => {
     this.setState({ showResultModal: false });
-  };
-
-  closeInfoModal = () => {
-    this.setState({ showInfoModal: false });
   };
 
   handleRadioChange = (questionId, value, index) => {
@@ -157,8 +152,7 @@ class ADHD extends Component {
   }
 
   render() {
-    const { showResultModal, showInfoModal, scoreA, scoreB, result, answers } =
-      this.state;
+    const { showResultModal, scoreA, scoreB, result, answers } = this.state;
     const { intl } = this.props;
 
     const infoContent = (
@@ -246,11 +240,7 @@ class ADHD extends Component {
               <div className="mt-2">{infoContent}</div>
             </div>
 
-            <QuestionInfoAlert
-              showModal={showInfoModal}
-              onClose={this.closeInfoModal}
-              content={infoContent}
-            />
+            <QuestionInfoAlert content={infoContent} />
 
             {/* 量表 */}
             <form className="space-y-8" onSubmit={this.handleSubmit}>
@@ -298,7 +288,7 @@ class ADHD extends Component {
             onClose={this.closeModal}
           />
 
-          {!showResultModal && !showInfoModal && (
+          {!showResultModal && (
             <BackToTop isShowButton={true} isShowProgress={true} />
           )}
         </main>

@@ -17,7 +17,7 @@ class BPD extends Component {
     quotientsName: "answers_bpd",
     answers: {},
     showResultModal: false,
-    showInfoModal: true,
+
     score: 0,
     result: "",
     questionData: null,
@@ -57,10 +57,6 @@ class BPD extends Component {
 
   closeModal = () => {
     this.setState({ showResultModal: false });
-  };
-
-  closeInfoModal = () => {
-    this.setState({ showInfoModal: false });
   };
 
   handleRadioChange = (questionId, value, index) => {
@@ -139,14 +135,8 @@ class BPD extends Component {
   }
 
   render() {
-    const {
-      showResultModal,
-      showInfoModal,
-      score,
-      result,
-      answers,
-      questionData,
-    } = this.state;
+    const { showResultModal, score, result, answers, questionData } =
+      this.state;
     const { intl } = this.props;
 
     const infoContent = (
@@ -238,11 +228,7 @@ class BPD extends Component {
               <div className="mt-2">{infoContent}</div>
             </div>
 
-            <QuestionInfoAlert
-              showModal={showInfoModal}
-              onClose={this.closeInfoModal}
-              content={infoContent}
-            />
+            <QuestionInfoAlert content={infoContent} />
 
             <form className="space-y-8" onSubmit={this.handleSubmit}>
               {/* 量表问题 */}
@@ -315,7 +301,7 @@ class BPD extends Component {
             </div>
           </div>
 
-          {!showResultModal && !showInfoModal && (
+          {!showResultModal && (
             <BackToTop isShowButton={true} isShowProgress={true} />
           )}
         </main>
