@@ -4,6 +4,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
   DialogFooter,
   DialogClose,
 } from "@/components/ui/dialog";
@@ -21,6 +22,9 @@ function QuestionInfoAlert({ content, defaultOpen = true }) {
           <DialogTitle>
             <FormattedMessage id="QuestionInfoAlert.title" />
           </DialogTitle>
+          <DialogDescription>
+            <FormattedMessage id="QuestionInfoAlert.description" />
+          </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">

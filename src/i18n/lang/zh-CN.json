@@ -117,6 +117,7 @@
   "quotients.cookieNotice": "* 页面会在您的本地浏览器中使用 Cookie 临时保存量表填写选项，并于2小时后自动",
   "quotients.cookieDelete": "删除",
   "QuestionInfoAlert.title": "重要信息",
+  "QuestionInfoAlert.description": "量表信息说明",
   "QuestionInfoAlert.confirm": "确定",
   "QuestionResult.title": "量表结果",
   "QuestionResult.resultTitle": "测试结果表示",

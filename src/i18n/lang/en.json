@@ -118,6 +118,7 @@
   "quotients.cookieDelete": "Delete",
   "quotients.submit": "Submit",
   "QuestionInfoAlert.title": "Important Information",
+  "QuestionInfoAlert.description": "Scale Information Description",
   "QuestionInfoAlert.confirm": "OK",
   "QuestionResult.title": "Results",
   "QuestionResult.resultTitle": "Test Result Indicates",
