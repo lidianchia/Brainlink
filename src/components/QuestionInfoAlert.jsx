@@ -4,7 +4,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
   DialogFooter,
   DialogClose,
 } from "@/components/ui/dialog";
@@ -17,7 +16,7 @@ function QuestionInfoAlert({ content, defaultOpen = true }) {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-w-md w-full mx-4">
+      <DialogContent>
         <DialogHeader>
           <DialogTitle>
             <FormattedMessage id="QuestionInfoAlert.title" />
