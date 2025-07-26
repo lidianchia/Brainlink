@@ -24,6 +24,7 @@ export default class Layout extends Component {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="author" content="ittuann" />
           <meta name="theme-color" content="#52b394" />
+          <meta property="og:type" content="website" />
           <meta property="og:site_name" content="青衫 Neuro" />
           <meta property="og:title" content="青衫 Neuro" />
           <meta
@@ -39,6 +40,20 @@ export default class Layout extends Component {
             content="https://qingshanasd.cn/assets/img/ogp.jpeg"
           />
           <meta property="og:image:alt" content="青衫 Neuro" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@ittuann" />
+          <meta name="twitter:creator" content="@ittuann" />
+          <meta name="twitter:title" content="青衫 Neuro" />
+          <meta name="twitter:url" content="https://qingshanasd.cn" />
+          <meta
+            name="twitter:description"
+            content="致力于神经多元的科普、资讯、资源"
+          />
+          <meta
+            name="twitter:image"
+            content="https://qingshanasd.cn/assets/img/ogp.jpeg"
+          />
+          <meta name="twitter:image:alt" content="青衫 Neuro" />
           <meta
             name="google-site-verification"
             content="0KtvMLWoVy32ZzcomvBYl0OS1C-keRSH7G8pSaDjJtQ"
