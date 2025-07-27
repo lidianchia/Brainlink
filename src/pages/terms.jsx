@@ -10,8 +10,8 @@ function Terms() {
 
   return (
     <Layout
-      title={intl.formatMessage({ id: "Term.title" })}
-      description={intl.formatMessage({ id: "Term.description" })}
+      title={intl.formatMessage({ id: "Terms.title" })}
+      description={intl.formatMessage({ id: "Terms.description" })}
     >
       <main className="max-w-7xl mx-auto px-4 py-16">
         {/* 标题 */}
@@ -28,11 +28,11 @@ function Terms() {
           <div className="text-center">
             <h1 className="tracking-tight font-extrabold text-gray-900">
               <span className="block text-4xl md:text-5xl">
-                <FormattedMessage id="Term.heading" />
+                <FormattedMessage id="Terms.heading" />
               </span>
             </h1>
             <p className="mt-5 text-lg text-zinc-600">
-              <FormattedMessage id="Term.subheading" />
+              <FormattedMessage id="Terms.subheading" />
             </p>
             <div className="mt-8 flex justify-center">
               <div className="h-1 w-20 bg-gradient-to-r from-primary to-teal-500 rounded-full"></div>
@@ -59,17 +59,17 @@ function Terms() {
                   Overview
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  <FormattedMessage id="Term.overview.info" />
+                  <FormattedMessage id="Terms.overview.info" />
                   <Link
                     href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode"
                     className="text-primary hover:text-accent"
                     target="_blank"
                   >
-                    <FormattedMessage id="Term.overview.license" />
+                    <FormattedMessage id="Terms.overview.license" />
                   </Link>
                 </p>
                 <p className="text-gray-700 mb-4">
-                  <FormattedMessage id="Term.overview.sharing" />
+                  <FormattedMessage id="Terms.overview.sharing" />
                 </p>
                 <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
                   <div className="flex">
@@ -78,10 +78,10 @@ function Terms() {
                     </div>
                     <div className="ml-3">
                       <p className="text-sm text-yellow-700 items-center">
-                        <FormattedMessage id="Term.overview.warning1" />
+                        <FormattedMessage id="Terms.overview.warning1" />
                       </p>
                       <p className="text-sm text-yellow-700 items-center">
-                        <FormattedMessage id="Term.overview.warning2" />
+                        <FormattedMessage id="Terms.overview.warning2" />
                       </p>
                     </div>
                   </div>
@@ -90,35 +90,35 @@ function Terms() {
 
               <section className="mb-8">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  <FormattedMessage id="Term.abstract.title" />
+                  <FormattedMessage id="Terms.abstract.title" />
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  <FormattedMessage id="Term.abstract.paragraph1" />
+                  <FormattedMessage id="Terms.abstract.paragraph1" />
                 </p>
                 <p className="text-gray-700 mb-4">
-                  <FormattedMessage id="Term.abstract.paragraph2" />
+                  <FormattedMessage id="Terms.abstract.paragraph2" />
                 </p>
 
                 <div className="bg-gray-50 p-6 rounded-lg mb-6">
                   <h4 className="font-medium text-gray-900 mb-2">
-                    <FormattedMessage id="Term.abstract.youCanFreely" />
+                    <FormattedMessage id="Terms.abstract.youCanFreely" />
                   </h4>
                   <ul className="list-disc pl-5 text-gray-700 space-y-2">
                     <li>
                       <strong>
-                        <FormattedMessage id="Term.abstract.share.title" />
+                        <FormattedMessage id="Terms.abstract.share.title" />
                       </strong>
                       —
-                      <FormattedMessage id="Term.abstract.share.description" />
+                      <FormattedMessage id="Terms.abstract.share.description" />
                     </li>
                   </ul>
                   <h4 className="font-medium text-gray-900 mt-6 mb-2">
-                    <FormattedMessage id="Term.abstract.underConditions" />
+                    <FormattedMessage id="Terms.abstract.underConditions" />
                   </h4>
                   <ul className="list-disc pl-5 text-gray-700 space-y-4">
                     <li>
                       <FormattedMessage
-                        id="Term.abstract.attribution"
+                        id="Terms.abstract.attribution"
                         values={{
                           strong: (chunks) => <strong>{chunks}</strong>,
                         }}
@@ -126,7 +126,7 @@ function Terms() {
                     </li>
                     <li>
                       <FormattedMessage
-                        id="Term.abstract.nonCommercial"
+                        id="Terms.abstract.nonCommercial"
                         values={{
                           strong: (chunks) => <strong>{chunks}</strong>,
                         }}
@@ -134,7 +134,7 @@ function Terms() {
                     </li>
                     <li>
                       <FormattedMessage
-                        id="Term.abstract.noDerivatives"
+                        id="Terms.abstract.noDerivatives"
                         values={{
                           strong: (chunks) => <strong>{chunks}</strong>,
                         }}
@@ -142,7 +142,7 @@ function Terms() {
                     </li>
                     <li>
                       <FormattedMessage
-                        id="Term.abstract.noAdditionalRestrictions"
+                        id="Terms.abstract.noAdditionalRestrictions"
                         values={{
                           strong: (chunks) => <strong>{chunks}</strong>,
                         }}

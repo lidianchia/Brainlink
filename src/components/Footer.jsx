@@ -80,7 +80,7 @@ class Footer extends Component {
                 </li>
                 <li>
                   <Link
-                    href="/term"
+                    href="/terms"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
                     <FormattedMessage id="Footer.terms" />
