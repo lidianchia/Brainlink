@@ -7,9 +7,7 @@ const QuestionResultCard = ({ title, subtitle, score }) => {
         <h4 className="text-sm font-medium text-gray-500">{title}</h4>
         <p className="text-lg font-semibold mt-1">{subtitle}</p>
       </div>
-      <div className="text-4xl font-bold bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent">
-        {score}
-      </div>
+      <div className="text-4xl font-bold text-stone-700">{score}</div>
     </div>
   );
 };
