@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
 import Layout from "@/components/Layout";
 import ScaleCard from "@/components/Card";
 
@@ -77,27 +78,56 @@ export function useMDXComponents(components) {
         </Layout>
       );
     },
-    h1: (props) => <h1 {...props} className="text-3xl font-bold mt-8 mb-4" />,
-    h2: (props) => <h2 {...props} className="text-2xl font-bold mt-6 mb-3" />,
-    h3: (props) => <h3 {...props} className="text-xl font-bold mt-4 mb-2" />,
-    h4: (props) => <h4 {...props} className="text-lg font-bold mt-2 mb-1" />,
-    h5: (props) => <h5 {...props} className="text-base font-bold mt-1 mb-1" />,
-    h6: (props) => <h6 {...props} className="text-sm font-bold mt-1 mb-1" />,
-    p: (props) => <p {...props} className="mb-4 leading-relaxed" />,
+    h1: (props) => (
+      <h1
+        {...props}
+        className="text-4xl font-extrabold tracking-tight text-balance scroll-m-20 mt-8 mb-4"
+      />
+    ),
+    h2: (props) => (
+      <h2
+        {...props}
+        className="text-3xl font-bold tracking-tight text-balance scroll-m-20 first:mt-0 mt-6 mb-3"
+      />
+    ),
+    h3: (props) => (
+      <h3
+        {...props}
+        className="text-2xl font-semibold tracking-tight scroll-m-20 mt-4 mb-2"
+      />
+    ),
+    h4: (props) => (
+      <h4
+        {...props}
+        className="text-xl font-semibold tracking-tight scroll-m-20 mt-2 mb-1"
+      />
+    ),
+    h5: (props) => (
+      <h5
+        {...props}
+        className="text-lg font-semibold tracking-tight scroll-m-20 mt-1 mb-1"
+      />
+    ),
+    h6: (props) => (
+      <h6
+        {...props}
+        className="text-base font-semibold tracking-tight scroll-m-20 mt-1 mb-1"
+      />
+    ),
+    p: (props) => <p {...props} className="leading-relaxed mb-4" />,
     li: (props) => <li {...props} className="mb-2" />,
-    ul: (props) => <ul {...props} className="list-disc pl-6 mb-4" />,
-    ol: (props) => <ol {...props} className="list-decimal pl-6 mb-4" />,
+    ul: (props) => <ul {...props} className="list-disc ml-6 mt-2" />,
+    ol: (props) => <ol {...props} className="list-decimal ml-6 mt-2" />,
     blockquote: (props) => (
       <blockquote
         {...props}
-        className="border-l-4 border-gray-300 pl-4 italic my-4"
+        className="border-l-4 border-gray-300 pl-6 italic mt-6"
       />
     ),
-    br: (props) => <br {...props} className="" />,
     code: (props) => (
       <code
         {...props}
-        className="bg-gray-100 rounded px-1 py-1 mb-4 font-mono"
+        className="bg-gray-100 rounded px-1 py-1 font-mono font-semibold text-sm"
       />
     ),
     pre: (props) => (
@@ -106,21 +136,25 @@ export function useMDXComponents(components) {
         className="bg-gray-100 rounded p-4 overflow-x-auto mb-4 font-mono"
       />
     ),
+    br: () => <Separator />,
     a: CustomLink,
     del: (props) => <del {...props} className="text-gray-500" />,
     sup: (props) => <sup {...props} className="text-xs text-gray-600" />,
     table: (props) => (
-      <div className="overflow-x-auto mb-4">
+      <div className="overflow-x-auto overflow-y-auto my-6">
         <table
           {...props}
           className="table-auto border-collapse rounded text-sm"
         />
       </div>
     ),
-    thead: (props) => <thead {...props} className="bg-gray-100" />,
+    thead: (props) => <thead {...props} className="bg-gray-200" />,
     tbody: (props) => <tbody {...props} className="divide-y divide-gray-200" />,
     tr: (props) => (
-      <tr {...props} className="hover:bg-gray-50 transition-colors" />
+      <tr
+        {...props}
+        className="even:bg-muted hover:bg-gray-300 transition-colors"
+      />
     ),
     th: (props) => (
       <th
