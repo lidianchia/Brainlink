@@ -28,7 +28,7 @@ const QuestionResult = ({ scores, result, showModal, onClose }) => {
         element.style.overflowY = originalStyle.overflowY;
 
         const link = document.createElement("a");
-        link.download = "question-result.png";
+        link.download = `result-${new Date().toLocaleString()}.png`;
         link.href = canvas.toDataURL("image/png");
         link.click();
       });
@@ -110,10 +110,15 @@ const QuestionResult = ({ scores, result, showModal, onClose }) => {
           {/* 时间信息 */}
           <div id="image-footer" className="pt-1">
             <div className="flex justify-between items-center text-sm text-gray-500">
-              <span>
-                {new Date().toLocaleString()} (
-                {Intl.DateTimeFormat().resolvedOptions().timeZone})
-              </span>
+              <div>
+                <div>
+                  {new Date().toLocaleString()} (
+                  {Intl.DateTimeFormat().resolvedOptions().timeZone})
+                </div>
+                <div className="text-xs text-gray-400 mt-1">
+                  <FormattedMessage id="siteName" /> qingshanasd.cn
+                </div>
+              </div>
               <Image
                 src="/assets/img/qr-code.png"
                 alt="QR Code"
