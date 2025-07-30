@@ -6,6 +6,7 @@ import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
 import QuestionInfo from "@/components/QuestionInfo";
 import QuestionInfoAlert from "@/components/QuestionInfoAlert";
+import QuestionAlert from "@/components/QuestionAlert";
 import questionData from "@/_data/questionOAQ.json";
 import BackToTop from "@/components/BackToTop";
 import { FormattedMessage, injectIntl } from "react-intl";
@@ -15,6 +16,7 @@ class OAQ extends Component {
     quotientsName: "answers_oaq",
     answers: {},
     showResultModal: false,
+    showAlertModal: false,
 
     score: 0,
     result: "",
@@ -29,8 +31,12 @@ class OAQ extends Component {
     }
   }
 
-  closeModal = () => {
+  closeResultModal = () => {
     this.setState({ showResultModal: false });
+  };
+
+  closeAlertModal = () => {
+    this.setState({ showAlertModal: false });
   };
 
   handleRadioChange = (questionId, value, index) => {
@@ -60,9 +66,7 @@ class OAQ extends Component {
       (q) => q.id !== 0,
     ).length;
     if (answeredQuestions < requiredQuestions) {
-      alert(
-        this.props.intl.formatMessage({ id: "quotients.completeAllQuestions" }),
-      );
+      this.setState({ showAlertModal: true });
       return;
     }
 
@@ -99,7 +103,8 @@ class OAQ extends Component {
     }
   }
   render() {
-    const { score, result, showResultModal, answers } = this.state;
+    const { score, result, showResultModal, showAlertModal, answers } =
+      this.state;
     const { intl } = this.props;
 
     const infoContent = (
@@ -217,11 +222,14 @@ class OAQ extends Component {
             ]}
             result={result}
             showModal={showResultModal}
-            onClose={this.closeModal}
+            onClose={this.closeResultModal}
           />
           {!showResultModal && (
             <BackToTop isShowButton={true} isShowProgress={true} />
           )}
+
+          {/* 未完成量表填写提示 */}
+          <QuestionAlert open={showAlertModal} onClose={this.closeAlertModal} />
         </main>
       </Layout>
     );

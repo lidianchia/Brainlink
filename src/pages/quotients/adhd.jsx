@@ -6,6 +6,7 @@ import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
 import QuestionInfo from "@/components/QuestionInfo";
 import QuestionInfoAlert from "@/components/QuestionInfoAlert";
+import QuestionAlert from "@/components/QuestionAlert";
 import questionData from "@/_data/questionADHD.json";
 import BackToTop from "@/components/BackToTop";
 import { FormattedMessage, injectIntl } from "react-intl";
@@ -15,6 +16,7 @@ class ADHD extends Component {
     quotientsName: "answers_adhd",
     answers: {},
     showResultModal: false,
+    showAlertModal: false,
     scoreA: 0,
     scoreB: 0,
     result: "",
@@ -30,8 +32,12 @@ class ADHD extends Component {
     }
   }
 
-  closeModal = () => {
+  closeResultModal = () => {
     this.setState({ showResultModal: false });
+  };
+
+  closeAlertModal = () => {
+    this.setState({ showAlertModal: false });
   };
 
   handleRadioChange = (questionId, value, index) => {
@@ -62,9 +68,7 @@ class ADHD extends Component {
       (q) => q.id !== 0,
     ).length;
     if (answeredQuestions < requiredQuestions) {
-      alert(
-        this.props.intl.formatMessage({ id: "quotients.completeAllQuestions" }),
-      );
+      this.setState({ showAlertModal: true });
       return;
     }
 
@@ -152,7 +156,8 @@ class ADHD extends Component {
   }
 
   render() {
-    const { showResultModal, scoreA, scoreB, result, answers } = this.state;
+    const { showResultModal, showAlertModal, scoreA, scoreB, result, answers } =
+      this.state;
     const { intl } = this.props;
 
     const infoContent = (
@@ -285,12 +290,15 @@ class ADHD extends Component {
             ]}
             result={result}
             showModal={showResultModal}
-            onClose={this.closeModal}
+            onClose={this.closeResultModal}
           />
 
           {!showResultModal && (
             <BackToTop isShowButton={true} isShowProgress={true} />
           )}
+
+          {/* 未完成量表填写提示 */}
+          <QuestionAlert open={showAlertModal} onClose={this.closeAlertModal} />
         </main>
       </Layout>
     );

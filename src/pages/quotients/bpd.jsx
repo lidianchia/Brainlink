@@ -6,6 +6,7 @@ import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
 import QuestionInfo from "@/components/QuestionInfo";
 import QuestionInfoAlert from "@/components/QuestionInfoAlert";
+import QuestionAlert from "@/components/QuestionAlert";
 import BackToTop from "@/components/BackToTop";
 import { FormattedMessage, injectIntl } from "react-intl";
 import { defaultLocale, LocaleContext } from "@/i18n/i18n";
@@ -17,6 +18,7 @@ class BPD extends Component {
     quotientsName: "answers_bpd",
     answers: {},
     showResultModal: false,
+    showAlertModal: false,
 
     score: 0,
     result: "",
@@ -55,8 +57,12 @@ class BPD extends Component {
     }
   };
 
-  closeModal = () => {
+  closeResultModal = () => {
     this.setState({ showResultModal: false });
+  };
+
+  closeAlertModal = () => {
+    this.setState({ showAlertModal: false });
   };
 
   handleRadioChange = (questionId, value, index) => {
@@ -87,9 +93,7 @@ class BPD extends Component {
       (q) => q.id !== 0,
     ).length;
     if (answeredQuestions < requiredQuestions) {
-      alert(
-        this.props.intl.formatMessage({ id: "quotients.completeAllQuestions" }),
-      );
+      this.setState({ showAlertModal: true });
       return;
     }
 
@@ -135,7 +139,7 @@ class BPD extends Component {
   }
 
   render() {
-    const { showResultModal, score, result, answers, questionData } =
+    const { showResultModal, showAlertModal, score, result, answers } =
       this.state;
     const { intl } = this.props;
 
@@ -267,7 +271,7 @@ class BPD extends Component {
             ]}
             result={result}
             showModal={showResultModal}
-            onClose={this.closeModal}
+            onClose={this.closeResultModal}
           />
 
           {/* 危机干预 */}
@@ -304,6 +308,9 @@ class BPD extends Component {
           {!showResultModal && (
             <BackToTop isShowButton={true} isShowProgress={true} />
           )}
+
+          {/* 未完成量表填写提示 */}
+          <QuestionAlert open={showAlertModal} onClose={this.closeAlertModal} />
         </main>
       </Layout>
     );

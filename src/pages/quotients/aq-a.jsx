@@ -6,6 +6,7 @@ import QuestionItem from "@/components/QuestionItem";
 import QuestionResult from "@/components/QuestionResult";
 import QuestionInfo from "@/components/QuestionInfo";
 import QuestionInfoAlert from "@/components/QuestionInfoAlert";
+import QuestionAlert from "@/components/QuestionAlert";
 import questionData from "@/_data/questionAQA.json";
 import BackToTop from "@/components/BackToTop";
 import { FormattedMessage, injectIntl } from "react-intl";
@@ -15,6 +16,7 @@ class AQA extends Component {
     quotientsName: "answers_aqa",
     answers: {},
     showResultModal: false,
+    showAlertModal: false,
 
     score: 0,
     result: "",
@@ -34,8 +36,12 @@ class AQA extends Component {
     }
   }
 
-  closeModal = () => {
+  closeResultModal = () => {
     this.setState({ showResultModal: false });
+  };
+
+  closeAlertModal = () => {
+    this.setState({ showAlertModal: false });
   };
 
   handleRadioChange = (questionId, value, index) => {
@@ -66,9 +72,7 @@ class AQA extends Component {
       (q) => q.id !== 0,
     ).length;
     if (answeredQuestions < requiredQuestions) {
-      alert(
-        this.props.intl.formatMessage({ id: "quotients.completeAllQuestions" }),
-      );
+      this.setState({ showAlertModal: true });
       return;
     }
 
@@ -152,6 +156,7 @@ class AQA extends Component {
       score,
       result,
       showResultModal,
+      showAlertModal,
       socialScore,
       attentionSwitchingScore,
       attentionDetailScore,
@@ -315,12 +320,15 @@ class AQA extends Component {
             ]}
             result={result}
             showModal={showResultModal}
-            onClose={this.closeModal}
+            onClose={this.closeResultModal}
           />
 
           {!showResultModal && (
             <BackToTop isShowButton={true} isShowProgress={true} />
           )}
+
+          {/* 未完成量表填写提示 */}
+          <QuestionAlert open={showAlertModal} onClose={this.closeAlertModal} />
         </main>
       </Layout>
     );
