@@ -73,7 +73,7 @@ const scales = [
       "AQ",
       <FormattedMessage id="Index.tag.adult" />,
     ],
-    link: "https://www.rdos.net/china/index.php",
+    link: "https://www.rdos.net/china/index.php?utm_source=qingshanasd.cn",
   },
   {
     icon: "ri-guide-line",
