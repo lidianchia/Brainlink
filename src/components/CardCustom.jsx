@@ -19,7 +19,7 @@ class CardCustom extends Component {
         rel={isExternalLink ? "noopener noreferrer" : ""}
       >
         <Card
-          className={`flex flex-col h-full shadow-md hover:shadow-xl hover:shadow-accent/20 border-2 border-transparent hover:border-primary transition-all duration-300 bg-card hover:bg-gradient-to-br hover:from-accent/5 hover:to-card`}
+          className={`flex flex-col h-full shadow-md hover:shadow-xl hover:shadow-accent/20 border-2 border-transparent hover:border-primary transition-all duration-150 bg-card hover:bg-gradient-to-br hover:from-accent/5 hover:to-card`}
         >
           <CardContent className="flex flex-col h-full">
             <div className="flex-grow">

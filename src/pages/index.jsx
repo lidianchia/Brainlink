@@ -135,7 +135,7 @@ function Index() {
                 <h1 className="text-4xl md:text-5xl font-bold mt-2 md:mt-3 text-primary">
                   <FormattedMessage id="siteName" />
                 </h1>
-                <h2 className="text-3xl md:text-4xl font-bold mt-2 md:mt-3 text-foreground">
+                <h2 className="text-3xl md:text-4xl font-semibold mt-2 md:mt-3 text-transparent bg-gradient-to-r from-slate-500 via-emerald-500 to-accent bg-clip-text">
                   <FormattedMessage id="subtitle" />
                 </h2>
                 <h3 className="text-lg md:text-xl mt-2 md:mt-3 text-foreground/80">
