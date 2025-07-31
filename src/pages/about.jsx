@@ -274,12 +274,13 @@ function About() {
               <Link
                 href="https://github.com/ittuann/qingshanasd"
                 target="_blank"
-                className="group inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-accent transition duration-300"
+                className="group inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-accent transition-all duration-300"
               >
-                <span>
+                <span className="flex items-center">
+                  <i className="ri-sparkling-line mr-2 group-hover:rotate-360 transition-transform duration-500"></i>
                   <FormattedMessage id="About.viewOnGithub" />
                 </span>
-                <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+                <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform duration-500"></i>
               </Link>
             </div>
           </div>
