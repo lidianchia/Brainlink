@@ -165,7 +165,7 @@ export function useMDXComponents(components) {
     td: (props) => (
       <td {...props} className="px-4 py-3 border-b border-gray-100" />
     ),
-    Card: CardCustom,
+    CardCustom: CardCustom,
     ...components,
   };
 }
