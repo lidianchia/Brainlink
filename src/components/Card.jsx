@@ -7,8 +7,16 @@ class ScaleCard extends Component {
     const { icon, iconColor, iconBg, title, description, tags, link } =
       this.props;
 
+    // 检测外部链接 在新标签打开
+    const isExternalLink = link && link.startsWith("https://");
+
     return (
-      <Link href={link} rel="" className="block h-full max-w-lg group">
+      <Link
+        href={link}
+        className="block h-full max-w-lg group"
+        target={isExternalLink ? "_blank" : undefined}
+        rel={isExternalLink ? "noopener noreferrer" : ""}
+      >
         <div className="bg-card rounded-xl shadow-sm hover:shadow-md border-2 border-transparent hover:border-primary transition-all p-6 h-full flex flex-col ">
           <div className="flex-grow">
             <div
