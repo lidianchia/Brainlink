@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import Layout from "@/components/Layout";
-import ScaleCard from "@/components/Card";
+import CardCustom from "@/components/CardCustom";
 
 function CustomLink({ href, children, ...props }) {
   const linkStyle = "text-blue-600 hover:text-blue-800 underline";
@@ -165,7 +165,7 @@ export function useMDXComponents(components) {
     td: (props) => (
       <td {...props} className="px-4 py-3 border-b border-gray-100" />
     ),
-    Card: ScaleCard,
+    Card: CardCustom,
     ...components,
   };
 }

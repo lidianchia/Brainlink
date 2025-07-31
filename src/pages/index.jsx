@@ -4,7 +4,7 @@ import Link from "next/link";
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import Card from "@/components/Card";
+import CardCustom from "@/components/CardCustom";
 import "remixicon/fonts/remixicon.css";
 import { FormattedMessage, useIntl } from "react-intl";
 
@@ -187,7 +187,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {scales.map((scale, index) => (
-              <Card key={index} {...scale} />
+              <CardCustom key={index} {...scale} />
             ))}
           </div>
         </div>
