@@ -282,6 +282,7 @@ class AQA extends Component {
           </div>
 
           <QuestionResult
+            questionTitle={intl.formatMessage({ id: "AQA.pageTitle" })}
             scores={[
               {
                 title: intl.formatMessage({ id: "AQA.scoreTest" }),

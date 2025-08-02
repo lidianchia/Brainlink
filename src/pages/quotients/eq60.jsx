@@ -209,6 +209,7 @@ class EQ60 extends Component {
           </div>
 
           <QuestionResult
+            questionTitle={intl.formatMessage({ id: "EQ60.pageTitle" })}
             scores={[
               {
                 title: intl.formatMessage({ id: "EQ60.scoreTest" }),

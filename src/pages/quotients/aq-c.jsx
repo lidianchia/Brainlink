@@ -288,6 +288,7 @@ class AQC extends Component {
           </div>
 
           <QuestionResult
+            questionTitle={intl.formatMessage({ id: "AQC.pageTitle" })}
             scores={[
               {
                 title: intl.formatMessage({ id: "AQC.scoreTest" }),

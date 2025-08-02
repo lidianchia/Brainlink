@@ -276,6 +276,7 @@ class ADHD extends Component {
           </div>
 
           <QuestionResult
+            questionTitle={intl.formatMessage({ id: "ADHD.pageTitle" })}
             scores={[
               {
                 title: intl.formatMessage({ id: "ADHD.scorePartA" }),

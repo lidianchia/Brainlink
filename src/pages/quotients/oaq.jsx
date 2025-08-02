@@ -213,6 +213,7 @@ class OAQ extends Component {
             </form>
           </div>
           <QuestionResult
+            questionTitle={intl.formatMessage({ id: "OAQ.pageTitle" })}
             scores={[
               {
                 title: intl.formatMessage({ id: "OAQ.scoreTest" }),

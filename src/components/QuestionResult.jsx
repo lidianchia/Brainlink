@@ -5,7 +5,13 @@ import html2canvas from "html2canvas-pro";
 import { FormattedMessage } from "react-intl";
 import QuestionResultCard from "@/components/QuestionResultCard";
 
-const QuestionResult = ({ scores, result, showModal, onClose }) => {
+const QuestionResult = ({
+  questionTitle,
+  scores,
+  result,
+  showModal,
+  onClose,
+}) => {
   if (!showModal) return null;
 
   // 图片下载功能
@@ -43,8 +49,15 @@ const QuestionResult = ({ scores, result, showModal, onClose }) => {
         className="bg-white rounded-lg p-6 max-w-md w-full mx-4 relative z-10 max-h-[90vh] overflow-y-auto"
       >
         <div className="flex justify-between items-center mb-4">
-          <div className="text-xl font-semibold text-gray-900">
-            <FormattedMessage id="QuestionResult.title" />
+          <div>
+            <div className="text-xl font-semibold text-gray-900">
+              <FormattedMessage id="QuestionResult.title" />
+            </div>
+            {questionTitle && (
+              <div className="text-sm text-gray-500 mt-0.5">
+                {questionTitle}
+              </div>
+            )}
           </div>
           <div id="ignore-image" className="flex items-center">
             <button

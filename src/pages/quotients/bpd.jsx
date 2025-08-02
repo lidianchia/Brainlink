@@ -262,6 +262,7 @@ class BPD extends Component {
           </div>
 
           <QuestionResult
+            questionTitle={intl.formatMessage({ id: "BPD.pageTitle" })}
             scores={[
               {
                 title: intl.formatMessage({ id: "BPD.scoreTitle" }),
