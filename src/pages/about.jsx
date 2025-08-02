@@ -148,7 +148,7 @@ function About() {
   return (
     <Layout
       title={intl.formatMessage({ id: "About.title" })}
-      description={intl.formatMessage({ id: "About.tidescriptiontle" })}
+      description={intl.formatMessage({ id: "About.description" })}
     >
       <Head>
         <script
@@ -369,7 +369,7 @@ function About() {
                 <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 border border-gray-100 h-full flex items-center">
                   <div className="flex-shrink-0 mr-4">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center text-white">
-                      <i class="ri-file-list-3-line"></i>
+                      <i className="ri-file-list-3-line"></i>
                     </div>
                   </div>
                   <div>

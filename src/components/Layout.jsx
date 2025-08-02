@@ -3,6 +3,12 @@ import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+console.log(
+  "%c 青衫 Neuro %c 因为你我 这个世界终将丰富多彩",
+  "background: #52b394; color: white; padding:4px 8px; border-radius:4px 0 0 4px; font-weight:bold;",
+  "background: #1eb88e; color: black; padding:4px 8px; border-radius:0 4px 4px 0; font-weight:bold;",
+);
+
 export default class Layout extends Component {
   render() {
     const {
