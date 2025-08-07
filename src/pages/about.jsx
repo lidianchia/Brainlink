@@ -156,9 +156,9 @@ function About() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </Head>
-      <main className="max-w-7xl mx-auto px-4 py-16">
+      <main className="max-w-7xl mx-auto px-4 py-4">
         {/* 标题部分 */}
-        <div className={`mb-16 transition-opacity duration-700`}>
+        <div className={`mb-4 transition-opacity duration-700`}>
           <div className="flex items-center justify-center mb-4">
             <Image
               src="/assets/img/logo.webp"
@@ -169,38 +169,28 @@ function About() {
             />
           </div>
           <div className="text-center">
-            <div className="tracking-tight font-extrabold text-gray-900">
-              <h1 className="block text-4xl md:text-5xl">
-                <FormattedMessage
-                  id="About.title"
-                  defaultMessage="关于青衫 Neuro"
-                />
-              </h1>
-              <span className="block mt-4">
-                <span className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                  <FormattedMessage id="subtitle" />
-                </span>
-              </span>
-            </div>
-            <p className="mt-4 text-lg text-zinc-600">
-              <FormattedMessage id="slogan" />
-            </p>
-            <div className="mt-4 flex justify-center">
+            <h1 className="font-extrabold tracking-tight text-4xl md:text-5xl">
+              <FormattedMessage
+                id="About.title"
+                defaultMessage="关于青衫 Neuro"
+              />
+            </h1>
+            <div className="mt-8 flex justify-center">
               <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full"></div>
             </div>
           </div>
         </div>
 
         {/* 创始人介绍部分 */}
-        <div className="flex justify-center mb-16">
+        <div className="flex justify-center mb-8">
           <div className="flex flex-col md:flex-row items-center max-w-5xl gap-16">
             <div className="relative group">
               <div className="absolute -inset-2 bg-gradient-to-r rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
               <Image
                 src="/assets/img/qingshan.jpg"
                 alt="view"
-                width={240}
-                height={300}
+                width={200}
+                height={250}
                 className="rounded-xl relative shadow-lg hover:scale-[1.01] transition-transform duration-300"
               />
             </div>
@@ -221,8 +211,8 @@ function About() {
         {/* 贡献者部分 */}
         <div className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-4">
+            <div className="text-center mb-4">
+              <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-4">
                 <FormattedMessage id="About.contributors" />
               </h2>
               <p className="max-w-3xl mx-auto text-center text-gray-600 mb-6">
@@ -288,8 +278,8 @@ function About() {
 
         {/* 媒体报道部分 */}
         <div className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
-          <div className="text-center mb-8">
-            <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
+          <div className="text-center mb-4">
+            <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
               <FormattedMessage id="About.media.title" />
             </h2>
             <p className="max-w-3xl mx-auto text-center text-gray-600">
@@ -348,8 +338,8 @@ function About() {
 
         {/* 研究合作部分 */}
         <div className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
-          <div className="text-center mb-8">
-            <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
+          <div className="text-center mb-4">
+            <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
               <FormattedMessage id="About.research.title" />
             </h2>
             <p className="max-w-3xl mx-auto text-center text-gray-600">

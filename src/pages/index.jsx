@@ -71,7 +71,7 @@ const scales = [
     tags: [
       <FormattedMessage id="Index.tag.autism" />,
       "AQ",
-      <FormattedMessage id="Index.tag.adult" />,
+      <FormattedMessage id="Index.tag.external" />,
     ],
     link: "https://www.rdos.net/china/index.php?utm_source=qingshanasd.cn",
   },
@@ -81,11 +81,7 @@ const scales = [
     iconBg: "bg-teal-100",
     title: <FormattedMessage id="Index.scales.eq.title" />,
     description: <FormattedMessage id="Index.scales.eq.description" />,
-    tags: [
-      <FormattedMessage id="Index.tag.empathy" />,
-      "EQ",
-      <FormattedMessage id="Index.tag.adult" />,
-    ],
+    tags: [<FormattedMessage id="Index.tag.empathy" />, "EQ"],
     link: "/quotients/eq60",
   },
 ];
