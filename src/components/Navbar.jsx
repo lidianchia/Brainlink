@@ -62,7 +62,7 @@ class Navbar extends Component {
             </div>
 
             {/* 桌面端菜单 */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               <Link href="/" className={this.isActive("/")}>
                 <FormattedMessage id="Navbar.quotients" />
               </Link>
@@ -78,8 +78,32 @@ class Navbar extends Component {
               <Link href="/res" className={this.isActive("/res")}>
                 <FormattedMessage id="Navbar.res" />
               </Link>
+
+              <div className="h-6 w-px bg-gray-300"></div>
+
               <div className="">
                 <LangSwitcher />
+              </div>
+
+              <div className="h-6 w-px bg-gray-300"></div>
+
+              <div className="flex items-center space-x-3">
+                <Link
+                  href="https://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzgyMjY5NQ%3D%3D&hid=1"
+                  target="_blank"
+                  className="text-gray-500 hover:text-green-600 transition-colors"
+                  aria-label="WeChat Public Account"
+                >
+                  <i className="ri-wechat-fill text-xl"></i>
+                </Link>
+                <Link
+                  href="https://github.com/ittuann/qingshanasd"
+                  target="_blank"
+                  className="text-gray-500 hover:text-black transition-colors"
+                  aria-label="GitHub"
+                >
+                  <i className="ri-github-fill text-xl"></i>
+                </Link>
               </div>
             </div>
           </div>
@@ -112,8 +136,28 @@ class Navbar extends Component {
                 >
                   <FormattedMessage id="Navbar.res" />
                 </Link>
+
                 <div className="block px-3 py-2">
                   <LangSwitcher />
+                </div>
+
+                <div className="flex items-center justify-start space-x-4 px-3 py-2">
+                  <Link
+                    href="https://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzgyMjY5NQ%3D%3D&hid=1"
+                    target="_blank"
+                    className="text-gray-500 hover:text-green-600 transition-colors"
+                    aria-label="微信公众号"
+                  >
+                    <i className="ri-wechat-fill text-2xl"></i>
+                  </Link>
+                  <Link
+                    href="https://github.com/ittuann/qingshanasd"
+                    target="_blank"
+                    className="text-gray-500 hover:text-black transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <i className="ri-github-fill text-2xl"></i>
+                  </Link>
                 </div>
               </div>
             </div>

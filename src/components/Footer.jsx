@@ -96,7 +96,8 @@ class Footer extends Component {
                 <li>
                   <Link
                     href="mailto:qingshan.aspie@gmail.com"
-                    className="text-gray-500 hover:text-red-600 text-sm"
+                    className="text-gray-500 hover:text-red-600 transition-colors"
+                    aria-label="Official Email"
                   >
                     <i className="ri-mail-fill mr-1"></i>
                     <FormattedMessage id="Footer.email" />
@@ -107,7 +108,8 @@ class Footer extends Component {
                     href="https://www.zhihu.com/people/QingshanAspie"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-blue-600 text-sm"
+                    className="text-gray-500 hover:text-blue-600 transition-colors"
+                    aria-label="Zhihu"
                   >
                     <i className="ri-zhihu-line mr-1"></i>
                     <FormattedMessage id="Footer.zhihu" />
@@ -117,8 +119,8 @@ class Footer extends Component {
                   <Link
                     href="https://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzgyMjY5NQ%3D%3D&hid=1"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-green-600 text-sm"
+                    className="text-gray-500 hover:text-green-600 transition-colors"
+                    aria-label="WeChat Public Account"
                   >
                     <i className="ri-wechat-fill mr-1"></i>
                     <FormattedMessage id="Footer.wechat" />
@@ -128,7 +130,8 @@ class Footer extends Component {
                   <Link
                     href="https://github.com/ittuann/qingshanasd"
                     target="_blank"
-                    className="text-gray-500 hover:text-black text-sm"
+                    className="text-gray-500 hover:text-black transition-colors"
+                    aria-label="GitHub"
                   >
                     <i className="ri-github-fill mr-1"></i>
                     <FormattedMessage id="Footer.github" />

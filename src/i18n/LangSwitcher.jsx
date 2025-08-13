@@ -18,7 +18,7 @@ export default function LangSwitcher() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center text-gray-500 hover:text-primary"
-        aria-label="切换语言"
+        aria-label="Language Switcher"
       >
         <i className="ri-translate-ai-2 text-xl"></i>
       </button>
