@@ -211,3 +211,26 @@ body {
 .hover-underline:hover::after {
   width: 100%;
 }
+
+/* Logo Shadow Animation */
+@keyframes logo-shadow-glow {
+  0% {
+    filter: drop-shadow(0 0 45px rgba(82, 179, 148, 0.8));
+  }
+  25% {
+    filter: drop-shadow(0 0 45px rgba(30, 184, 142, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 45px rgba(124, 207, 0, 0.8));
+  }
+  75% {
+    filter: drop-shadow(0 0 45px rgba(0, 188, 125, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 45px rgba(0, 187, 167, 0.8));
+  }
+}
+
+.logo-drop-shadow-glow {
+  animation: logo-shadow-glow 4s ease-in-out infinite;
+}
