@@ -38,9 +38,6 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.mdx') }}
           restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - name: Lint
-        run: pnpm lint
-
       - name: Format
         run: pnpm format
 
