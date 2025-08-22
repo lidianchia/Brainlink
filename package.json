@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "QingShan Neuro",
   "author": "ittuann <ittuann@outlook.com> (https://github.com/ittuann)",
-  "license": "GPL-3.0",
+  "license": "AGPL-3.0",
   "homepage": "https://github.com/ittuann/qingshanasd",
   "repository": {
     "type": "git",
