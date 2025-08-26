@@ -29,7 +29,7 @@ class Navbar extends Component {
   };
   render() {
     return (
-      <nav className="bg-white shadow-sm">
+      <nav className="bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
