@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import CardCustom from "@/components/CardCustom";
+import { FormattedMessage, useIntl } from "react-intl";
 
 const resources = [
   {
@@ -89,9 +90,19 @@ const resources = [
 ];
 
 export default function Resources() {
+  const intl = useIntl();
+
   return (
-    <Layout title="资源索引 | 青衫 Neuro" description="青衫 Neuro 资源索引">
+    <Layout
+      title={intl.formatMessage({ id: "Res.title" })}
+      description={intl.formatMessage({ id: "Res.description" })}
+    >
       <main className="max-w-7xl mx-auto px-4 py-8">
+        <h1 className="text-3xl font-semibold mb-8 relative inline-block">
+          <FormattedMessage id="Res.heading" />
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-primary/20"></div>
+        </h1>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {resources.map((resource, index) => (
             <CardCustom key={index} {...resource} />

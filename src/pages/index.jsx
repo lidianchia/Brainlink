@@ -128,13 +128,13 @@ function Index() {
             <div className="flex flex-col-reverse md:flex-row items-center md:justify-between">
               {/* Content */}
               <div className="text-center md:text-left">
-                <h1 className="text-4xl md:text-5xl font-bold mt-2 md:mt-3 text-primary">
+                <h1 className="text-4xl md:text-5xl font-bold mt-2 md:mt-3 pb-2 text-primary">
                   <FormattedMessage id="siteName" />
                 </h1>
-                <h2 className="text-3xl md:text-4xl font-semibold mt-2 md:mt-3 text-transparent bg-gradient-to-r from-slate-500 via-emerald-500 to-accent bg-clip-text">
+                <h2 className="text-3xl md:text-4xl font-semibold mt-2 md:mt-3 pb-2 text-transparent bg-gradient-to-r from-slate-500 via-emerald-500 to-accent bg-clip-text">
                   <FormattedMessage id="subtitle" />
                 </h2>
-                <h3 className="text-lg md:text-xl mt-2 md:mt-3 text-foreground/80">
+                <h3 className="text-lg md:text-xl mt-2 md:mt-3 pb-2 text-foreground/80">
                   <FormattedMessage id="slogan" />
                 </h3>
 
