@@ -8,37 +8,39 @@ const MapInfoSelect = () => {
   const { dataType, switchData } = useContext(MedicalDataContext);
 
   return (
-    <div className="flex justify-end space-x-3 my-4">
-      <button
-        onClick={() => switchData("domestic")}
-        className={`px-4 py-2 text-sm rounded-lg shadow-sm transition-all duration-200 ${
-          dataType === "domestic"
-            ? "bg-primary text-white"
-            : "bg-white text-gray-700 hover:bg-gray-50"
-        }`}
-      >
-        <FormattedMessage id="MedicalMap.MapInfoSelect.adult" />
-      </button>
-      <button
-        onClick={() => switchData("child")}
-        className={`px-4 py-2 text-sm rounded-lg shadow-sm transition-all duration-200 ${
-          dataType === "child"
-            ? "bg-primary text-white"
-            : "bg-white text-gray-700 hover:bg-gray-50"
-        }`}
-      >
-        <FormattedMessage id="MedicalMap.MapInfoSelect.child" />
-      </button>
-      <button
-        onClick={() => switchData("abroad")}
-        className={`px-4 py-2 text-sm rounded-lg shadow-sm transition-all duration-200 ${
-          dataType === "abroad"
-            ? "bg-primary text-white"
-            : "bg-white text-gray-700 hover:bg-gray-50"
-        }`}
-      >
-        <FormattedMessage id="MedicalMap.MapInfoSelect.international" />
-      </button>
+    <div className="flex justify-end">
+      <div className="inline-flex bg-gray-50 rounded-xl space-x-3 p-2 shadow-lg border border-gray-200">
+        <button
+          onClick={() => switchData("domestic")}
+          className={`px-4 py-2 text-sm rounded-lg transition-all duration-200 ${
+            dataType === "domestic"
+              ? "bg-primary text-white shadow-sm"
+              : "bg-transparent text-gray-700 hover:bg-white hover:shadow-sm"
+          }`}
+        >
+          <FormattedMessage id="MedicalMap.MapInfoSelect.adult" />
+        </button>
+        <button
+          onClick={() => switchData("child")}
+          className={`px-4 py-2 text-sm rounded-lg transition-all duration-200 ${
+            dataType === "child"
+              ? "bg-primary text-white shadow-sm"
+              : "bg-transparent text-gray-700 hover:bg-white hover:shadow-sm"
+          }`}
+        >
+          <FormattedMessage id="MedicalMap.MapInfoSelect.child" />
+        </button>
+        <button
+          onClick={() => switchData("abroad")}
+          className={`px-4 py-2 text-sm rounded-lg transition-all duration-200 ${
+            dataType === "abroad"
+              ? "bg-primary text-white shadow-sm"
+              : "bg-transparent text-gray-700 hover:bg-white hover:shadow-sm"
+          }`}
+        >
+          <FormattedMessage id="MedicalMap.MapInfoSelect.international" />
+        </button>
+      </div>
     </div>
   );
 };
