@@ -27,9 +27,9 @@ const resources = [
     iconColor: "text-violet-500",
     iconBg: "bg-violet-100",
     title: "就诊故事",
-    description: "国内外 ASD ADHD 等发育障碍辅诊经历分享",
+    description: "就诊经历分享 就诊者的个人体验",
     tags: ["就诊", "经历"],
-    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzIyMzgyMjY5NQ==&scene=1&album_id=1516342663438974979",
+    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=1516342663438974979",
   },
   {
     icon: "ri-user-heart-line",
@@ -38,7 +38,7 @@ const resources = [
     title: "个人故事",
     description: "我们，只是有不同和障碍而已",
     tags: ["故事", "分享"],
-    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzIyMzgyMjY5NQ==&scene=1&album_id=1337447071791808512",
+    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=1337447071791808512",
   },
   {
     icon: "ri-user-voice-line",
@@ -47,7 +47,16 @@ const resources = [
     title: "孤独者说",
     description: "ASD 科普及自倡导",
     tags: ["自倡导", "科普"],
-    link: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyMzgyMjY5NQ==&action=getalbum&album_id=1799112142906769409",
+    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=1799112142906769409",
+  },
+  {
+    icon: "ri-user-location-line",
+    iconColor: "text-purple-500",
+    iconBg: "bg-purple-100",
+    title: "分心者说",
+    description: "ADHD 科普及自倡导",
+    tags: ["自倡导", "科普"],
+    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=2034139219853361154",
   },
   {
     icon: "ri-team-line",
@@ -56,16 +65,25 @@ const resources = [
     title: "家长助攻",
     description: "一起前行，一起努力，一起发声",
     tags: ["家长", "支持"],
-    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzIyMzgyMjY5NQ==&scene=1&album_id=1527570966829121539",
+    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=1527570966829121539",
+  },
+  {
+    icon: "ri-community-line",
+    iconColor: "text-pink-500",
+    iconBg: "bg-pink-100",
+    title: "医学前沿",
+    description: "基于循证医学的科普",
+    tags: ["医学", "科普"],
+    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=2034170521843449858",
   },
   {
     icon: "ri-mental-health-line",
     iconColor: "text-sky-500",
     iconBg: "bg-sky-100",
-    title: "ASD 共现障碍",
-    description: "ADHD 焦虑障碍 抑郁障碍 等",
+    title: "共现障碍",
+    description: "发育障碍，往往与很多其他障碍共现",
     tags: ["共现", "障碍"],
-    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzIyMzgyMjY5NQ==&scene=1&album_id=1516372997148819457",
+    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=1516372997148819457",
   },
   {
     icon: "ri-guide-line",
@@ -73,9 +91,9 @@ const resources = [
     iconBg: "bg-fuchsia-100",
     title: "人类社会生存指南",
     description:
-      "ASDerf 社交、职场规则、应对挑战与障碍的秘诀 hhhh，其他 NA 人士和 INT 也可以适用哦",
+      "ASDer 社交、职场规则、应对挑战与障碍的秘诀 hhhh，其他 ND 人士和 NT 也可以适用哦",
     tags: ["指南", "规则"],
-    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzIyMzgyMjY5NQ==&scene=1&album_id=1534892050054168579",
+    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=1534892050054168579",
   },
   {
     icon: "ri-heart-line",
@@ -83,9 +101,9 @@ const resources = [
     iconBg: "bg-emerald-100",
     title: "共情",
     description:
-      "ASD 缺少同理心？柏拉图对同理心有什么误解。同理心（共情）包括两种不同的方面，而 ASD 人士其实可以有更强的情感共情",
+      "ASD 缺少同理心？怕是对同理心有什么误解。同理心（共情）包括两种不同的方面，而 ASD 人士甚至可以有更强的情感共情",
     tags: ["共情", "情感"],
-    link: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyMzgyMjY5NQ==&action=getalbum&album_id=1337438238923128832",
+    link: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=1337438238923128832",
   },
 ];
 
