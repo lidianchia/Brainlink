@@ -27,7 +27,7 @@ class Footer extends Component {
                 <FormattedMessage id="Footer.description" />
               </p>
               <Link
-                href="https://qingshanasd.cn/"
+                href="https://qingshanasd.cn"
                 className="text-gray-500 hover:text-primary transition-colors duration-300 text-sm inline-flex items-center mt-1"
               >
                 <i className="ri-earth-line text-sm mr-1"></i>

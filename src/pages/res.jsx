@@ -97,7 +97,7 @@ export default function Resources() {
       title={intl.formatMessage({ id: "Res.title" })}
       description={intl.formatMessage({ id: "Res.description" })}
     >
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-semibold mb-8 relative inline-block">
           <FormattedMessage id="Res.heading" />
           <div className="absolute bottom-0 left-0 w-full h-1 bg-primary/20"></div>
@@ -108,7 +108,7 @@ export default function Resources() {
             <CardCustom key={index} {...resource} />
           ))}
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }

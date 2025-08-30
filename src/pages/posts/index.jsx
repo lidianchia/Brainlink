@@ -73,7 +73,7 @@ export default function PostsList({ posts }) {
       title="文章列表 | 青衫 Neuro"
       description="青衫 Neuro 所发布的文章列表"
     >
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 py-12">
         {/* 标题 */}
         <h1 className="text-4xl font-bold mb-3 text-center text-gray-900">
           <FormattedMessage id="Posts.pageTitle" />
@@ -212,7 +212,7 @@ export default function PostsList({ posts }) {
             <i className="ri-reactjs-line mr-1"></i>Atom
           </Link>
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }

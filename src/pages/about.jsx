@@ -156,9 +156,9 @@ function About() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </Head>
-      <main className="max-w-7xl mx-auto px-4 py-4">
+      <div className="max-w-7xl mx-auto px-4 py-4">
         {/* 标题部分 */}
-        <div className={`mb-4 transition-opacity duration-700`}>
+        <header className={`mb-4 transition-opacity duration-700`}>
           <div className="flex items-center justify-center mb-4">
             <Image
               src="/assets/img/logo.webp"
@@ -169,7 +169,7 @@ function About() {
             />
           </div>
           <div className="text-center">
-            <h1 className="font-extrabold tracking-tight text-4xl md:text-5xl">
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
               <FormattedMessage
                 id="About.title"
                 defaultMessage="关于青衫 Neuro"
@@ -179,10 +179,10 @@ function About() {
               <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full"></div>
             </div>
           </div>
-        </div>
+        </header>
 
         {/* 创始人介绍部分 */}
-        <div className="flex justify-center mb-8">
+        <section className="flex justify-center mb-8">
           <div className="flex flex-col md:flex-row items-center max-w-5xl gap-16">
             <div className="relative group">
               <div className="absolute -inset-2 bg-gradient-to-r rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
@@ -206,10 +206,10 @@ function About() {
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* 贡献者部分 */}
-        <div className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
+        <section className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-4">
               <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-4">
@@ -222,7 +222,7 @@ function About() {
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
               {contributors.map((contributor, index) => (
-                <div
+                <article
                   key={index}
                   className="h-full transform transition-all duration-300 hover:-translate-y-2"
                 >
@@ -250,7 +250,7 @@ function About() {
                       </h4>
                     </div>
                   </Link>
-                </div>
+                </article>
               ))}
             </div>
 
@@ -274,10 +274,10 @@ function About() {
               </Link>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* 媒体报道部分 */}
-        <div className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
+        <section className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
           <div className="text-center mb-4">
             <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
               <FormattedMessage id="About.media.title" />
@@ -334,10 +334,10 @@ function About() {
               </Link>
             </p>
           </div>
-        </div>
+        </section>
 
         {/* 研究合作部分 */}
-        <div className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
+        <section className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
           <div className="text-center mb-4">
             <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 md:text-4xl mb-6">
               <FormattedMessage id="About.research.title" />
@@ -391,10 +391,10 @@ function About() {
               </Link>
             </p>
           </div>
-        </div>
+        </section>
 
         {/* 财务公示部分 */}
-        <div className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
+        <section className="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-3xl py-8 px-8 mb-16">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
             <span className="relative">
               <FormattedMessage id="About.financial.title" />
@@ -419,8 +419,8 @@ function About() {
               </Link>
             </div>
           </div>
-        </div>
-      </main>
+        </section>
+      </div>
     </Layout>
   );
 }

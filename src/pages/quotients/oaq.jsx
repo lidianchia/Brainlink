@@ -174,7 +174,7 @@ class OAQ extends Component {
         title={intl.formatMessage({ id: "OAQ.title" })}
         description={intl.formatMessage({ id: "OAQ.description" })}
       >
-        <main className="max-w-3xl mx-auto px-4 py-8">
+        <div className="max-w-3xl mx-auto px-4 py-8">
           <div className="bg-white rounded-lg shadow-sm p-8">
             {/* 信息 */}
             <div className="text-center mb-8">
@@ -231,7 +231,7 @@ class OAQ extends Component {
 
           {/* 未完成量表填写提示 */}
           <QuestionAlert open={showAlertModal} onClose={this.closeAlertModal} />
-        </main>
+        </div>
       </Layout>
     );
   }

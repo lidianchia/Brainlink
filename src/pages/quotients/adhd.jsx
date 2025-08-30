@@ -235,7 +235,7 @@ class ADHD extends Component {
         title={intl.formatMessage({ id: "ADHD.title" })}
         description={intl.formatMessage({ id: "ADHD.description" })}
       >
-        <main className="max-w-3xl mx-auto px-4 py-8">
+        <div className="max-w-3xl mx-auto px-4 py-8">
           <div className="bg-white rounded-lg shadow-sm p-8">
             <div className="text-center mb-8">
               <h1 className="text-2xl font-semibold text-gray-900 mb-4">
@@ -300,7 +300,7 @@ class ADHD extends Component {
 
           {/* 未完成量表填写提示 */}
           <QuestionAlert open={showAlertModal} onClose={this.closeAlertModal} />
-        </main>
+        </div>
       </Layout>
     );
   }

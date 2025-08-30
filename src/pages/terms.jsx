@@ -13,7 +13,7 @@ function Terms() {
       title={intl.formatMessage({ id: "Terms.title" })}
       description={intl.formatMessage({ id: "Terms.description" })}
     >
-      <main className="max-w-7xl mx-auto px-4 py-16">
+      <div className="max-w-7xl mx-auto px-4 py-16">
         {/* 标题 */}
         <div className={`mb-24 transition-opacity duration-700`}>
           <div className="flex items-center justify-center mb-10">
@@ -170,7 +170,7 @@ function Terms() {
             </Link>
           </div>
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }
