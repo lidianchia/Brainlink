@@ -97,7 +97,10 @@ function Index() {
     keywords: "ADHD, ASD",
     url: "https://qingshanasd.cn",
     logo: "https://qingshanasd.cn/assets/img/logo.webp",
+    sameAs: "https://github.com/ittuann/qingshanasd",
     foundingDate: "2016",
+    publishingPrinciples:
+      "https://github.com/ittuann/qingshanasd/blob/main/LICENSE",
     member: {
       "@type": "Person",
       name: "air wish",
@@ -107,6 +110,12 @@ function Index() {
       image: "https://qingshanasd.cn/assets/img/ittuann.png",
       description: "Developer and maintainer.",
     },
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "ittuann@outlook.com",
+      contactType: "Technical Service"
+    },
+    knowsLanguage: ["zh-CN", "en-US", "ja-JP"],
   };
   const intl = useIntl();
 
