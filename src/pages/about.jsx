@@ -13,7 +13,7 @@ const contributors = [
     icon: "/assets/img/qingshan_150.png",
     link: "#",
     email: "qingshan.aspire@gmail.com",
-    alternateName: "青衫 Aspire",
+    alternateName: "",
   },
   {
     name: "air wish",
@@ -148,7 +148,7 @@ function About() {
     contactPoint: {
       "@type": "ContactPoint",
       email: "ittuann@outlook.com",
-      contactType: "Technical Service"
+      contactType: "Technical Service",
     },
     knowsLanguage: ["zh-CN", "en-US", "ja-JP"],
   };

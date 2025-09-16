@@ -111,8 +111,8 @@ async function generateRSS() {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${SITE_TITLE}</title>
-    <link>${sitemap.BASE_URL}</link>
     <description>${SITE_DESCRIPTION}</description>
+    <link>${sitemap.BASE_URL}</link>
     <language>zh-CN</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${sitemap.BASE_URL}/rss.xml" rel="self" type="application/rss+xml" />

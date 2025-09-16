@@ -27,6 +27,7 @@ class Navbar extends Component {
   toggleMobileMenu = () => {
     this.setState((prev) => ({ isMobileMenuOpen: !prev.isMobileMenuOpen }));
   };
+
   render() {
     return (
       <nav className="bg-white">

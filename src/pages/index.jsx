@@ -113,7 +113,7 @@ function Index() {
     contactPoint: {
       "@type": "ContactPoint",
       email: "ittuann@outlook.com",
-      contactType: "Technical Service"
+      contactType: "Technical Service",
     },
     knowsLanguage: ["zh-CN", "en-US", "ja-JP"],
   };

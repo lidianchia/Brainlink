@@ -25,10 +25,10 @@ async function generateAtom() {
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>${SITE_TITLE}</title>
   <subtitle>${SITE_DESCRIPTION}</subtitle>
+  <link href="${BASE_URL}"/>
   <link href="${BASE_URL}/atom.xml" rel="self" type="application/atom+xml"/>
-  <link href="${BASE_URL}/"/>
+  <id>${BASE_URL}</id>
   <updated>${updated}</updated>
-  <id>${BASE_URL}/</id>
   <author><name>${SITE_TITLE}</name></author>
 ${posts
   .map(

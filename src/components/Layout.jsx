@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,73 +9,66 @@ console.log(
   "background: #1eb88e; color: black; padding:4px 8px; border-radius:0 4px 4px 0; font-weight:bold;",
 );
 
-export default class Layout extends Component {
-  render() {
-    const {
-      children,
-      title = "青衫 Neuro",
-      description = "致力于神经多元的科普、资讯、资源",
-    } = this.props;
+export default function Layout({
+  children,
+  title = "青衫 Neuro",
+  description = "致力于神经多元的科普、资讯、资源",
+}) {
+  return (
+    <>
+      {/* 页面级 Head */}
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} key="desc" />
+        <meta
+          name="keywords"
+          content="青衫, 青衫 Neuro, 青衫 Aspie, ADHD 自测, 量表, 测试, 青衫 ADHD, ASD, ADHD"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="ittuann" />
+        <meta name="theme-color" content="#52b394" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="青衫 Neuro" />
+        <meta property="og:title" content="青衫 Neuro" />
+        <meta
+          property="og:description"
+          content="致力于神经多元的科普、资讯、资源"
+        />
+        <meta property="og:url" content="https://qingshanasd.cn" />
+        <meta property="og:locale" content="zh-CN" />
+        <meta property="og:locale:alternate" content="en_US" />
+        <meta property="og:locale:alternate" content="ja_JP" />
+        <meta
+          property="og:image"
+          content="https://qingshanasd.cn/assets/img/ogp.jpeg"
+        />
+        <meta property="og:image:alt" content="青衫 Neuro" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@ittuann" />
+        <meta name="twitter:creator" content="@ittuann" />
+        <meta name="twitter:title" content="青衫 Neuro" />
+        <meta name="twitter:url" content="https://qingshanasd.cn" />
+        <meta
+          name="twitter:description"
+          content="致力于神经多元的科普、资讯、资源"
+        />
+        <meta
+          name="twitter:image"
+          content="https://qingshanasd.cn/assets/img/ogp.jpeg"
+        />
+        <meta name="twitter:image:alt" content="青衫 Neuro" />
+        <meta
+          name="google-site-verification"
+          content="0KtvMLWoVy32ZzcomvBYl0OS1C-keRSH7G8pSaDjJtQ"
+        />
+        <meta name="msvalidate.01" content="E73984A8E6A62AB2E04103B41EF00802" />
+      </Head>
 
-    return (
-      <>
-        {/* 页面级 Head */}
-        <Head>
-          <title>{title}</title>
-          <meta name="description" content={description} key="desc" />
-          <meta
-            name="keywords"
-            content="ASD, ADHD, Scale, 量表, 青衫, Neuro, Aspie"
-          />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="author" content="ittuann" />
-          <meta name="theme-color" content="#52b394" />
-          <meta property="og:type" content="website" />
-          <meta property="og:site_name" content="青衫 Neuro" />
-          <meta property="og:title" content="青衫 Neuro" />
-          <meta
-            property="og:description"
-            content="致力于神经多元的科普、资讯、资源"
-          />
-          <meta property="og:url" content="https://qingshanasd.cn" />
-          <meta property="og:locale" content="zh-CN" />
-          <meta property="og:locale:alternate" content="en_US" />
-          <meta property="og:locale:alternate" content="ja_JP" />
-          <meta
-            property="og:image"
-            content="https://qingshanasd.cn/assets/img/ogp.jpeg"
-          />
-          <meta property="og:image:alt" content="青衫 Neuro" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@ittuann" />
-          <meta name="twitter:creator" content="@ittuann" />
-          <meta name="twitter:title" content="青衫 Neuro" />
-          <meta name="twitter:url" content="https://qingshanasd.cn" />
-          <meta
-            name="twitter:description"
-            content="致力于神经多元的科普、资讯、资源"
-          />
-          <meta
-            name="twitter:image"
-            content="https://qingshanasd.cn/assets/img/ogp.jpeg"
-          />
-          <meta name="twitter:image:alt" content="青衫 Neuro" />
-          <meta
-            name="google-site-verification"
-            content="0KtvMLWoVy32ZzcomvBYl0OS1C-keRSH7G8pSaDjJtQ"
-          />
-          <meta
-            name="msvalidate.01"
-            content="E73984A8E6A62AB2E04103B41EF00802"
-          />
-        </Head>
-
-        <div className="bg-zinc-50 min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
-      </>
-    );
-  }
+      <div className="bg-zinc-50 min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </div>
+    </>
+  );
 }
