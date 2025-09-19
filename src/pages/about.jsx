@@ -436,6 +436,8 @@ function About() {
 
 export default About;
 
-export async function getServerSideProps() {
-  return { notFound: true };
+export function getStaticProps() {
+  return {
+    notFound: true,
+  };
 }
