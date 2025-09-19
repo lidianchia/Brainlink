@@ -1,0 +1,11 @@
+---
+description: Coding style aligned to ESLint/Prettier and repo conventions
+globs: "**/*.js","**/*.jsx","**/*.mjs"
+---
+# Coding Style
+
+- Follow repository ESLint rules: [`eslint.config.mjs`](mdc:eslint.config.mjs) and formatting via [`prettier.config.mjs`](mdc:prettier.config.mjs).
+- Prefer meaningful, descriptive names; avoid cryptic abbreviations.
+- Keep components presentational and focused; extract reusable UI into `src/components/ui/`.
+- For data loading of large JSON, prefer lazy loading and client-side splitting when possible.
+- Keep comments concise and explain "why" rather than "how" for non-trivial logic.

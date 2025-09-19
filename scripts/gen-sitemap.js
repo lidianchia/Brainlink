@@ -5,7 +5,7 @@ const path = require("path");
  * 网站基础URL
  * @constant {string}
  */
-const BASE_URL = "https://qingshanasd.cn";
+const BASE_URL = "https://lindsey.xin";
 
 /**
  * 扫描目录获取文件

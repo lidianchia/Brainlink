@@ -10,79 +10,31 @@ import { FormattedMessage, useIntl } from "react-intl";
 
 const scales = [
   {
-    icon: "ri-brain-line",
-    iconColor: "text-orange-700",
-    iconBg: "bg-orange-100",
-    title: <FormattedMessage id="Index.scales.adhd.title" />,
-    description: <FormattedMessage id="Index.scales.adhd.description" />,
-    tags: ["ADHD", <FormattedMessage id="Index.tag.adult" />],
-    link: "/quotients/adhd",
-  },
-  {
-    icon: "ri-user-heart-line",
-    iconColor: "text-purple-700",
-    iconBg: "bg-purple-100",
-    title: <FormattedMessage id="Index.scales.aqa.title" />,
-    description: <FormattedMessage id="Index.scales.aqa.description" />,
-    tags: [
-      <FormattedMessage id="Index.tag.autism" />,
-      "AQ",
-      <FormattedMessage id="Index.tag.adult" />,
-    ],
-    link: "/quotients/aq-a",
-  },
-  {
-    icon: "ri-heart-pulse-line",
-    iconColor: "text-red-700",
-    iconBg: "bg-red-100",
-    title: <FormattedMessage id="Index.scales.bpd.title" />,
-    description: <FormattedMessage id="Index.scales.bpd.description" />,
-    tags: ["BPD", "BSL-23"],
-    link: "/quotients/bpd",
-  },
-  {
-    icon: "ri-hearts-line",
-    iconColor: "text-yellow-700",
-    iconBg: "bg-yellow-100",
-    title: <FormattedMessage id="Index.scales.oaq.title" />,
-    description: <FormattedMessage id="Index.scales.oaq.description" />,
-    tags: [<FormattedMessage id="Index.tag.alexithymia" />, "OAQ"],
-    link: "/quotients/oaq",
-  },
-  {
-    icon: "ri-empathize-line",
+    icon: "ri-test-tube-line",
     iconColor: "text-blue-700",
     iconBg: "bg-blue-100",
-    title: <FormattedMessage id="Index.scales.aqc.title" />,
-    description: <FormattedMessage id="Index.scales.aqc.description" />,
-    tags: [
-      <FormattedMessage id="Index.tag.autism" />,
-      "AQ",
-      <FormattedMessage id="Index.tag.child" />,
-    ],
-    link: "/quotients/aq-c",
+    title: "testing",
+    description: "testing",
+    tags: ["testing"],
+    link: "/404",
   },
   {
-    icon: "ri-mental-health-line",
+    icon: "ri-flask-line",
     iconColor: "text-green-700",
     iconBg: "bg-green-100",
-    title: <FormattedMessage id="Index.scales.aspie.title" />,
-    description: <FormattedMessage id="Index.scales.aspie.description" />,
-    tags: [
-      <FormattedMessage id="Index.tag.autism" />,
-      "AQ",
-      <FormattedMessage id="Index.tag.external" />,
-    ],
-    link: "https://www.rdos.net/china/index.php?utm_source=qingshanasd.cn",
+    title: "testing",
+    description: "testing",
+    tags: ["testing"],
+    link: "/404",
   },
   {
-    icon: "ri-guide-line",
-    iconColor: "text-teal-700",
-    iconBg: "bg-teal-100",
-    title: <FormattedMessage id="Index.scales.eq.title" />,
-    description: <FormattedMessage id="Index.scales.eq.description" />,
-    tags: [<FormattedMessage id="Index.tag.empathy" />, "EQ"],
-    link: "/quotients/eq60",
+    icon: "ri-flask-fill",
+    iconColor: "text-purple-700",
+    iconBg: "bg-purple-100",
+    title: "testing",
+    description: "testing",
+    tags: ["testing"],
+    link: "/404",
   },
 ];
 
@@ -95,8 +47,8 @@ function Index() {
     description: "致力于神经多元的科普、资讯、资源",
     slogan: "为神经多元群体提供支持",
     keywords: "ADHD, ASD",
-    url: "https://qingshanasd.cn",
-    logo: "https://qingshanasd.cn/assets/img/logo.webp",
+    url: "https://lindsey.xin",
+    logo: "https://lindsey.xin/assets/img/test_logo.jpg",
     sameAs: "https://github.com/ittuann/qingshanasd",
     foundingDate: "2016",
     publishingPrinciples:
@@ -107,7 +59,7 @@ function Index() {
       alternateName: "ittuann",
       url: "https://github.com/ittuann",
       email: "ittuann@outlook.com",
-      image: "https://qingshanasd.cn/assets/img/ittuann.png",
+      image: "https://lindsey.xin/assets/img/ittuann.png",
       description: "Developer and maintainer.",
     },
     contactPoint: {
@@ -155,8 +107,8 @@ function Index() {
                   size="lg"
                   className="font-medium hover:scale-105 rounded-full"
                 >
-                  <Link href="/medical-map">
-                    <FormattedMessage id="Navbar.medicalMap" />
+                  <Link href="/404">
+                    <FormattedMessage id="Navbar.projects" />
                   </Link>
                 </Button>
                 <Button
@@ -165,7 +117,7 @@ function Index() {
                   size="lg"
                   className="font-medium hover:scale-105 rounded-full"
                 >
-                  <Link href="/about">
+                  <Link href="/404">
                     <FormattedMessage id="Navbar.about" />
                   </Link>
                 </Button>
@@ -177,7 +129,7 @@ function Index() {
               className="flex justify-center md:justify-start"
             >
               <Image
-                src="/assets/img/logo.webp"
+                src="/assets/img/test_logo.jpg"
                 alt="Qingshan Neuro Logo index"
                 width={128}
                 height={128}
@@ -190,8 +142,11 @@ function Index() {
         </div>
       </section>
 
-      {/* Scales Section */}
-      <section className="max-w-7xl mx-auto px-4" aria-labelledby="scales">
+      {/* Projects Section */}
+      <section className="max-w-7xl mx-auto px-4" aria-labelledby="projects">
+        <h2 className="text-2xl font-bold mb-4">
+          <FormattedMessage id="Index.projects.title" />
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {scales.map((scale, index) => (
             <CardCustom key={index} {...scale} />

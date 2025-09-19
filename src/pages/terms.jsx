@@ -18,7 +18,7 @@ function Terms() {
         <div className={`mb-24 transition-opacity duration-700`}>
           <div className="flex items-center justify-center mb-10">
             <Image
-              src="/assets/img/logo.webp"
+              src="/assets/img/test_logo.jpg"
               alt="logo"
               width={64}
               height={64}

@@ -36,7 +36,7 @@ class Navbar extends Component {
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/assets/img/logo.webp"
+                  src="/assets/img/test_logo.jpg"
                   alt="logo"
                   width={32}
                   height={32}
@@ -67,18 +67,13 @@ class Navbar extends Component {
               <Link href="/" className={this.isActive("/")}>
                 <FormattedMessage id="Navbar.quotients" />
               </Link>
-              <Link href="/about" className={this.isActive("/about")}>
+              <Link href="/404" className={this.isActive("/404")}>
+                <FormattedMessage id="Navbar.projects" />
+              </Link>
+              <Link href="/404" className={this.isActive("/404")}>
                 <FormattedMessage id="Navbar.about" />
               </Link>
-              <Link
-                href="/medical-map"
-                className={this.isActive("/medical-map")}
-              >
-                <FormattedMessage id="Navbar.medicalMap" />
-              </Link>
-              <Link href="/res" className={this.isActive("/res")}>
-                <FormattedMessage id="Navbar.res" />
-              </Link>
+              
 
               <div className="h-6 w-px bg-gray-300"></div>
 
@@ -97,14 +92,6 @@ class Navbar extends Component {
                 >
                   <i className="ri-wechat-fill text-xl"></i>
                 </Link>
-                <Link
-                  href="https://github.com/ittuann/qingshanasd"
-                  target="_blank"
-                  className="text-gray-500 hover:text-black transition-colors"
-                  aria-label="GitHub"
-                >
-                  <i className="ri-github-fill text-xl"></i>
-                </Link>
               </div>
             </div>
           </div>
@@ -120,23 +107,18 @@ class Navbar extends Component {
                   <FormattedMessage id="Navbar.quotients" />
                 </Link>
                 <Link
-                  href="/about"
-                  className={`block px-3 py-2 ${this.isActive("/about")}`}
+                  href="/404"
+                  className={`block px-3 py-2 ${this.isActive("/404")}`}
+                >
+                  <FormattedMessage id="Navbar.projects" />
+                </Link>
+                <Link
+                  href="/404"
+                  className={`block px-3 py-2 ${this.isActive("/404")}`}
                 >
                   <FormattedMessage id="Navbar.about" />
                 </Link>
-                <Link
-                  href="/medical-map"
-                  className={`block px-3 py-2 ${this.isActive("/medical-map")}`}
-                >
-                  <FormattedMessage id="Navbar.medicalMap" />
-                </Link>
-                <Link
-                  href="/res"
-                  className={`block px-3 py-2 ${this.isActive("/res")}`}
-                >
-                  <FormattedMessage id="Navbar.res" />
-                </Link>
+                
 
                 <div className="block px-3 py-2">
                   <LangSwitcher />
@@ -150,14 +132,6 @@ class Navbar extends Component {
                     aria-label="微信公众号"
                   >
                     <i className="ri-wechat-fill text-2xl"></i>
-                  </Link>
-                  <Link
-                    href="https://github.com/ittuann/qingshanasd"
-                    target="_blank"
-                    className="text-gray-500 hover:text-black transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <i className="ri-github-fill text-2xl"></i>
                   </Link>
                 </div>
               </div>

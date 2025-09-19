@@ -1,0 +1,27 @@
+---
+alwaysApply: true
+---
+# Project Structure Guide
+
+This repository is a Next.js Pages Router app. Start exploring from:
+
+- Entry points: [`_app.jsx`](mdc:src/pages/_app.jsx), [`_document.jsx`](mdc:src/pages/_document.jsx)
+- Home page: [`index.jsx`](mdc:src/pages/index.jsx)
+- Maps: [`medical-map.jsx`](mdc:src/pages/medical-map.jsx) using [`MapChart.jsx`](mdc:src/components/MapChart.jsx) and [`MapInfo.jsx`](mdc:src/components/MapInfo.jsx)
+- Quotients (questionnaires): [`quotients/`](mdc:src/pages/quotients/index.jsx) and children pages (e.g. [`aq-a.jsx`](mdc:src/pages/quotients/aq-a.jsx))
+- Posts (MDX): [`posts/`](mdc:src/pages/posts/index.jsx) with MDX docs like [`manual.mdx`](mdc:src/pages/posts/manual.mdx) bound via [`mdx-components.js`](mdc:src/mdx-components.js)
+- i18n: [`i18n.jsx`](mdc:src/i18n/i18n.jsx) with dictionaries in [`lang/`](mdc:src/i18n/lang/)
+- Medical data context: [`MedicalDataContext.jsx`](mdc:src/context/MedicalDataContext.jsx)
+- Data and schema: [`_data/`](mdc:src/_data/)
+- Utilities: [`utils.js`](mdc:src/lib/utils.js), [`dataTransform.js`](mdc:src/utils/dataTransform.js)
+- Tests: [`dataTransform.test.js`](mdc:__tests__/dataTransform.test.js)
+- Public assets: [`public/`](mdc:public/)
+
+Build and tooling:
+
+- Package: [`package.json`](mdc:package.json)
+- Lint/format: [`eslint.config.mjs`](mdc:eslint.config.mjs), [`prettier.config.mjs`](mdc:prettier.config.mjs)
+- Next config: [`next.config.mjs`](mdc:next.config.mjs)
+- Deployment: [`vercel.json`](mdc:vercel.json), [`Dockerfile`](mdc:Dockerfile), [`K8s.yaml`](mdc:K8s.yaml)
+
+Scripts generating feeds/Sitemap are in [`scripts/`](mdc:scripts/): [`gen-rss.js`](mdc:scripts/gen-rss.js), [`gen-atom.js`](mdc:scripts/gen-atom.js), [`gen-sitemap.js`](mdc:scripts/gen-sitemap.js)

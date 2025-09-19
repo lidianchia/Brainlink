@@ -1,0 +1,11 @@
+---
+globs: src/pages/**/*.jsx
+---
+# Pages Router Conventions
+
+- Prefer file-based routing under `src/pages/`.
+- Keep page components as default exports.
+- Put shared layout in [`_app.jsx`](mdc:src/pages/_app.jsx); document structure in [`_document.jsx`](mdc:src/pages/_document.jsx).
+- Use MDX pages within `src/pages/posts/` for content pages; component mapping in [`mdx-components.js`](mdc:src/mdx-components.js).
+- For questionnaires under `src/pages/quotients/`, use data from `_data/` and present via components in `src/components/`.
+- Avoid dynamic API routes here; this repo is static-site oriented. If needed, use static generation or client-side fetch.

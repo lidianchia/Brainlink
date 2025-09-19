@@ -1,0 +1,10 @@
+---
+description: Data location and testing guidance
+globs: src/_data/**/*,__tests__/**/*.js,src/utils/**/*.js
+---
+# Data and Tests
+
+- Business data lives under [`src/_data/`](mdc:src/_data/): medical datasets and questionnaire banks. Maintain schemas such as [`medicalData.schema.json`](mdc:src/_data/medicalData.schema.json).
+- Transformations/utilities are under [`src/utils/`](mdc:src/utils/) and [`src/lib/`](mdc:src/lib/).
+- Unit tests use Jest and live under [`__tests__/`](mdc:__tests__/), e.g. [`dataTransform.test.js`](mdc:__tests__/dataTransform.test.js) for [`dataTransform.js`](mdc:src/utils/dataTransform.js).
+- When adding new utilities, create corresponding tests and keep them deterministic with sample data.

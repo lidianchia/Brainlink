@@ -13,7 +13,7 @@ class Footer extends Component {
             <div>
               <div className="flex items-center mb-4">
                 <Image
-                  src="/assets/img/logo.webp"
+                  src="/assets/img/test_logo.jpg"
                   alt="logo"
                   width={32}
                   height={32}
@@ -27,11 +27,11 @@ class Footer extends Component {
                 <FormattedMessage id="Footer.description" />
               </p>
               <Link
-                href="https://qingshanasd.cn"
+                href="https://lindsey.xin"
                 className="text-gray-500 hover:text-primary transition-colors duration-300 text-sm inline-flex items-center mt-1"
               >
                 <i className="ri-earth-line text-sm mr-1"></i>
-                qingshanasd.cn
+                lindsey.xin
               </Link>
             </div>
             <div>
@@ -39,22 +39,6 @@ class Footer extends Component {
                 <FormattedMessage id="Footer.resources" />
               </p>
               <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/"
-                    className="text-gray-500 hover:text-gray-900 text-sm"
-                  >
-                    <FormattedMessage id="Footer.selfTest" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/medical-map"
-                    className="text-gray-500 hover:text-gray-900 text-sm"
-                  >
-                    <FormattedMessage id="Footer.medicalMap" />
-                  </Link>
-                </li>
                 <li>
                   <Link
                     href="/posts/"
@@ -80,7 +64,7 @@ class Footer extends Component {
                 </li>
                 <li>
                   <Link
-                    href="/terms"
+                    href="/404"
                     className="text-gray-500 hover:text-gray-900 text-sm"
                   >
                     <FormattedMessage id="Footer.terms" />
@@ -105,18 +89,6 @@ class Footer extends Component {
                 </li>
                 <li>
                   <Link
-                    href="https://www.zhihu.com/people/QingshanAspie"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-blue-600 transition-colors"
-                    aria-label="Zhihu"
-                  >
-                    <i className="ri-zhihu-line mr-1"></i>
-                    <FormattedMessage id="Footer.zhihu" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="https://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzgyMjY5NQ%3D%3D&hid=1"
                     target="_blank"
                     className="text-gray-500 hover:text-green-600 transition-colors"
@@ -126,28 +98,28 @@ class Footer extends Component {
                     <FormattedMessage id="Footer.wechat" />
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="https://github.com/ittuann/qingshanasd"
-                    target="_blank"
-                    className="text-gray-500 hover:text-black transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <i className="ri-github-fill mr-1"></i>
-                    <FormattedMessage id="Footer.github" />
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
           <div className="border-t mt-12 pt-8">
             <div className="flex flex-col items-center space-y-4">
-              <p className="text-center text-gray-500 text-sm">
-                <FormattedMessage id="Footer.version" />: 1.1.7
-              </p>
-              <p className="text-center text-gray-500 text-sm">
-                © {new Date().getFullYear()} <FormattedMessage id="siteName" />
-                . All rights reserved.
+              <p
+                style={{ textAlign: "center", fontSize: "14px", color: "#666", marginTop: "20px" }}
+              >
+                主题基于
+                {" "}
+                <a href="https://github.com/ittuann/qingshanasd" target="_blank" rel="noopener noreferrer">
+                  qingshanasd
+                </a>
+                {" "}，遵循 {" "}
+                <a
+                  href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  CC BY-NC-ND 4.0
+                </a>
+                {" "} 协议。<br />© 2025 Brainlink. 本站文章及内容版权归团队及原创作者所有。
               </p>
               <div className="flex items-center space-x-2">
                 <p className="text-center text-gray-500 text-sm">

@@ -1,13 +1,13 @@
-# [青衫 Neuro](https://qingshanasd.cn)
+# [青衫 Neuro](https://lindsey.xin)
 
 > [!TIP]
-> 访问 青衫 Neuro 网站: <https://qingshanasd.cn>
+> 访问 青衫 Neuro 网站: <https://lindsey.xin>
 
 [![CDN][cdn-img]][cdn-url]
 [![License][license-img]][license-url]
 
 [cdn-img]: https://img.shields.io/badge/GitHub_Pages-CDN-blue?logo=github
-[cdn-url]: https://qingshanasd.cn
+[cdn-url]: https://lindsey.xin
 [license-img]: https://img.shields.io/github/license/ittuann/qingshanasd
 [license-url]: https://github.com/ittuann/qingshanasd/blob/main/LICENSE
 
@@ -23,7 +23,7 @@
 ## English Version
 
 > [!TIP]
-> Visit Qingshan Neuro website: <https://qingshanasd.cn>
+> Visit Qingshan Neuro website: <https://lindsey.xin>
 
 Unless otherwise specified, all works are licensed under [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)](https://github.com/ittuann/qingshanasd/blob/main/LICENSE-CC-BY-NC-ND). The website code is licensed under [GNU AGPLv3](https://github.com/ittuann/qingshanasd/blob/main/LICENSE).
 

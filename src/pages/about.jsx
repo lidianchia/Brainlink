@@ -128,8 +128,8 @@ function About() {
     description: "致力于神经多元的科普、资讯、资源",
     slogan: "为神经多元群体提供支持",
     keywords: "ADHD, ASD",
-    url: "https://qingshanasd.cn",
-    logo: "https://qingshanasd.cn/assets/img/logo.webp",
+    url: "https://lindsey.xin",
+    logo: "https://lindsey.xin/assets/img/test_logo.jpg",
     sameAs: "https://github.com/ittuann/qingshanasd",
     foundingDate: "2016",
     publishingPrinciples:
@@ -143,7 +143,7 @@ function About() {
           : undefined,
       url: contributor.link !== "#" ? contributor.link : undefined,
       email: contributor.email !== "#" ? contributor.email : undefined,
-      image: `https://qingshanasd.cn${contributor.icon}`,
+      image: `https://lindsey.xin${contributor.icon}`,
     })),
     contactPoint: {
       "@type": "ContactPoint",
@@ -170,7 +170,7 @@ function About() {
         <header className={`mb-4 transition-opacity duration-700`}>
           <div className="flex items-center justify-center mb-4">
             <Image
-              src="/assets/img/logo.webp"
+              src="/assets/img/test_logo.jpg"
               alt="logo"
               width={64}
               height={64}
@@ -435,3 +435,7 @@ function About() {
 }
 
 export default About;
+
+export async function getServerSideProps() {
+  return { notFound: true };
+}

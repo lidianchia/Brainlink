@@ -1,0 +1,11 @@
+---
+description: i18n usage with local JSON dictionaries
+globs: src/i18n/**/*.jsx,src/i18n/lang/*.json,src/components/**/*.jsx,src/pages/**/*.jsx
+---
+# i18n Guide
+
+- Dictionaries live in [`src/i18n/lang`](mdc:src/i18n/lang/): `en.json`, `ja-JP.json`, `zh-CN.json`.
+- The i18n bootstrap is in [`src/i18n/i18n.jsx`](mdc:src/i18n/i18n.jsx). Use provided helpers/contexts to read the active locale.
+- UI language switching is handled by [`LangSwitcher.jsx`](mdc:src/i18n/LangSwitcher.jsx).
+- Add new keys consistently across all dictionaries; avoid hard-coded strings in pages/components.
+- When adding new UI, reference dictionary keys and ensure fallbacks for missing keys.

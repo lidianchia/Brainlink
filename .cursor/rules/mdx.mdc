@@ -1,0 +1,10 @@
+---
+description: MDX usage for posts and component mapping
+globs: src/pages/posts/**/*,src/mdx-components.js
+---
+# MDX Usage
+
+- Author content pages as `.mdx` under [`src/pages/posts/`](mdc:src/pages/posts/).
+- Component mappings for MDX are in [`src/mdx-components.js`](mdc:src/mdx-components.js). Extend this when introducing new MDX components.
+- Keep presentational components in `src/components/` and re-use them via MDX mapping.
+- For images/assets referenced in MDX, place them in `public/` and reference via absolute paths.

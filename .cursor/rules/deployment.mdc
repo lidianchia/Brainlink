@@ -1,0 +1,10 @@
+---
+description: Deployment guidance for Vercel, Docker and K8s
+globs: vercel.json,Dockerfile,Dockerfile.dev,K8s.yaml,scripts/**/*.js,public/**/*
+---
+# Deployment & Feeds
+
+- Default deployment target is Vercel per [`vercel.json`](mdc:vercel.json).
+- Containerization supported with [`Dockerfile`](mdc:Dockerfile) and [`Dockerfile.dev`](mdc:Dockerfile.dev); orchestration via [`K8s.yaml`](mdc:K8s.yaml).
+- Static feeds (`rss.xml`, `atom.xml`, `sitemap.xml`) reside in `public/`. Scripts to generate them: [`gen-rss.js`](mdc:scripts/gen-rss.js), [`gen-atom.js`](mdc:scripts/gen-atom.js), [`gen-sitemap.js`](mdc:scripts/gen-sitemap.js).
+- Automate feed generation in CI before deploy to avoid committing generated artifacts.

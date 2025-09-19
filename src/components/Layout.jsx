@@ -4,14 +4,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 console.log(
-  "%c 青衫 Neuro %c 因为你我 这个世界终将丰富多彩",
+  "%c Brainlink %c 因为你我 这个世界终将丰富多彩",
   "background: #52b394; color: white; padding:4px 8px; border-radius:4px 0 0 4px; font-weight:bold;",
   "background: #1eb88e; color: black; padding:4px 8px; border-radius:0 4px 4px 0; font-weight:bold;",
 );
 
 export default function Layout({
   children,
-  title = "青衫 Neuro",
+  title = "Brainlink",
   description = "致力于神经多元的科普、资讯、资源",
 }) {
   return (
@@ -40,38 +40,38 @@ export default function Layout({
           sizes="180x180"
           href="/apple-touch-icon.png"
         />
-        <meta name="apple-mobile-web-app-title" content="青衫 Neuro" />
+        <meta name="apple-mobile-web-app-title" content="Brainlink" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="青衫 Neuro" />
-        <meta property="og:title" content="青衫 Neuro" />
+        <meta property="og:site_name" content="Brainlink" />
+        <meta property="og:title" content="Brainlink" />
         <meta
           property="og:description"
           content="致力于神经多元的科普、资讯、资源"
         />
-        <meta property="og:url" content="https://qingshanasd.cn" />
+        <meta property="og:url" content="https://lindsey.xin" />
         <meta property="og:locale" content="zh-CN" />
         <meta property="og:locale:alternate" content="en_US" />
         <meta property="og:locale:alternate" content="ja_JP" />
         <meta
           property="og:image"
-          content="https://qingshanasd.cn/assets/img/ogp.jpeg"
+          content="https://lindsey.xin/assets/img/ogp.jpeg"
         />
-        <meta property="og:image:alt" content="青衫 Neuro" />
+        <meta property="og:image:alt" content="Brainlink" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@ittuann" />
         <meta name="twitter:creator" content="@ittuann" />
-        <meta name="twitter:title" content="青衫 Neuro" />
-        <meta name="twitter:url" content="https://qingshanasd.cn" />
+        <meta name="twitter:title" content="Brainlink" />
+        <meta name="twitter:url" content="https://lindsey.xin" />
         <meta
           name="twitter:description"
           content="致力于神经多元的科普、资讯、资源"
         />
         <meta
           name="twitter:image"
-          content="https://qingshanasd.cn/assets/img/ogp.jpeg"
+          content="https://lindsey.xin/assets/img/ogp.jpeg"
         />
-        <meta name="twitter:image:alt" content="青衫 Neuro" />
+        <meta name="twitter:image:alt" content="Brainlink" />
         <meta
           name="google-site-verification"
           content="0KtvMLWoVy32ZzcomvBYl0OS1C-keRSH7G8pSaDjJtQ"
