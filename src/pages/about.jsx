@@ -253,7 +253,7 @@ function About() {
                       <h3 className="text-lg font-bold text-gray-900 break-words">
                         {contributor.name}
                       </h3>
-                      <div className="w-12 h-1 break-words bg-gradient-to-r from-primary to-teal-500 mx-auto my-3 rounded-full"></div>
+                      <div className="w-12 h-1 break-words bg-gradient-to-r from-primary to-yellow-500 mx-auto my-3 rounded-full"></div>
                       <h4 className="text-sm text-gray-500 mt-2">
                         {contributor.role}
                       </h4>

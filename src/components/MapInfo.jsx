@@ -154,7 +154,7 @@ class MapInfo extends Component {
                                     href={share.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-green-200 rounded-lg text-primary hover:text-green-600 transition-colors duration-200"
+                                    className="flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-yellow-200 rounded-lg text-primary hover:text-yellow-600 transition-colors duration-200"
                                   >
                                     <i className="ri-link text-lg"></i>
                                     <span className="text-sm font-medium">

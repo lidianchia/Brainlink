@@ -35,7 +35,7 @@ function Terms() {
               <FormattedMessage id="Terms.subheading" />
             </p>
             <div className="mt-8 flex justify-center">
-              <div className="h-1 w-20 bg-gradient-to-r from-primary to-teal-500 rounded-full"></div>
+              <div className="h-1 w-20 bg-gradient-to-r from-primary to-yellow-500 rounded-full"></div>
             </div>
           </div>
         </div>

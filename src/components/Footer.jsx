@@ -91,7 +91,7 @@ class Footer extends Component {
                   <Link
                     href="https://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzgyMjY5NQ%3D%3D&hid=1"
                     target="_blank"
-                    className="text-gray-500 hover:text-green-600 transition-colors"
+                    className="text-gray-500 hover:text-yellow-600 transition-colors"
                     aria-label="WeChat Public Account"
                   >
                     <i className="ri-wechat-fill mr-1"></i>

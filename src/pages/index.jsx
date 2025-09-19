@@ -20,8 +20,8 @@ const scales = [
   },
   {
     icon: "ri-flask-line",
-    iconColor: "text-green-700",
-    iconBg: "bg-green-100",
+    iconColor: "text-yellow-700",
+    iconBg: "bg-yellow-100",
     title: "testing",
     description: "testing",
     tags: ["testing"],

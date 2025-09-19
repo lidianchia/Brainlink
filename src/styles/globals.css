@@ -6,7 +6,7 @@
 :root {
   /* To preview the theme: https://tweakcn.com/editor/theme */
   /* 主色调 */
-  --primary: #52b394;
+  --primary: #f59e0b;
   --primary-foreground: oklch(0.984 0.003 247.858); /* 内容文本颜色 */
   /* Base Colors */
   --background: oklch(0.98 0 247.86);
@@ -15,7 +15,7 @@
   --secondary: #e8f9f1;
   --secondary-foreground: oklch(0.208 0.042 265.755);
   /* 强调颜色 */
-  --accent: #1eb88e;
+  --accent: #d97706;
   --accent-content: oklch(0.37 0.03 259.73);
   --accent-foreground: oklch(0.208 0.042 265.755);
   /* 柔和颜色 */
@@ -163,13 +163,13 @@ body {
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: #52b394;
+  --primary: #f59e0b;
   --primary-foreground: oklch(0.208 0.042 265.755);
   --secondary: #e8f9f1;
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
   --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: #1eb88e;
+  --accent: #d97706;
   --accent-foreground: oklch(0.984 0.003 247.858);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
