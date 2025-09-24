@@ -215,19 +215,19 @@ body {
 /* Logo Shadow Animation */
 @keyframes logo-shadow-glow {
   0% {
-    filter: drop-shadow(0 0 45px rgba(82, 179, 148, 0.8));
+    filter: drop-shadow(0 0 45px rgba(245, 158, 11, 0.8));
   }
   25% {
-    filter: drop-shadow(0 0 45px rgba(30, 184, 142, 0.8));
+    filter: drop-shadow(0 0 45px rgba(234, 179, 8, 0.8));
   }
   50% {
-    filter: drop-shadow(0 0 45px rgba(124, 207, 0, 0.8));
+    filter: drop-shadow(0 0 45px rgba(217, 119, 6, 0.85));
   }
   75% {
-    filter: drop-shadow(0 0 45px rgba(0, 188, 125, 0.8));
+    filter: drop-shadow(0 0 45px rgba(202, 138, 4, 0.85));
   }
   100% {
-    filter: drop-shadow(0 0 45px rgba(0, 187, 167, 0.8));
+    filter: drop-shadow(0 0 45px rgba(251, 191, 36, 0.8));
   }
 }
 

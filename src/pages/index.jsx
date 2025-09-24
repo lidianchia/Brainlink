@@ -94,7 +94,7 @@ function Index() {
               <h1 className="text-4xl md:text-5xl font-extrabold text-pretty md:text-balance mt-2 md:mt-3 pb-2 text-primary">
                 <FormattedMessage id="siteName" />
               </h1>
-              <h2 className="text-3xl md:text-4xl font-bold text-pretty md:text-balance mt-2 md:mt-3 pb-2 text-transparent bg-gradient-to-r from-slate-500 via-yellow-500 to-accent bg-clip-text">
+              <h2 className="text-3xl md:text-4xl font-bold text-pretty md:text-balance mt-2 md:mt-3 pb-2 text-primary">
                 <FormattedMessage id="subtitle" />
               </h2>
               <h3 className="text-lg md:text-xl font-semibold text-pretty md:text-balance mt-2 md:mt-3 pb-2 text-foreground/80">

@@ -67,6 +67,9 @@ class Navbar extends Component {
               <Link href="/" className={this.isActive("/")}>
                 <FormattedMessage id="Navbar.quotients" />
               </Link>
+              <Link href="/meditation" className={this.isActive("/meditation")}>
+                <FormattedMessage id="Navbar.meditation" />
+              </Link>
               <Link href="/404" className={this.isActive("/404")}>
                 <FormattedMessage id="Navbar.projects" />
               </Link>
@@ -105,6 +108,12 @@ class Navbar extends Component {
                   className={`block px-3 py-2 ${this.isActive("/")}`}
                 >
                   <FormattedMessage id="Navbar.quotients" />
+                </Link>
+                <Link
+                  href="/meditation"
+                  className={`block px-3 py-2 ${this.isActive("/meditation")}`}
+                >
+                  <FormattedMessage id="Navbar.meditation" />
                 </Link>
                 <Link
                   href="/404"
